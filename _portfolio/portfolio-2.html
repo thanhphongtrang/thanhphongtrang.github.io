@@ -1,7 +1,232 @@
 ---
-title: "Portfolio item number 2"
-excerpt: "Short description of portfolio item number 2 <br/><img src='/images/500x300.png'>"
+title: "Product Discovery: Learning while Waiting"
+excerpt: "Led product discovery for Volvo's Order-to-Delivery Experience, transforming an 8-12 month waiting period into a personalized learning journey that reduces agent workload and strengthens brand trust.<br/><img src='/assets/portfolio-img/order-delivery/hero-banner.png'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+*By Phong Trang - Software Product Manager - thanhphong.trang@gmail.com*
+
+![Order-to-Delivery Hero](/assets/porfolio-img/otd/banner.png)
+
+## 🚗 Overview
+
+When global supply chain issues (2021-2023) extended car delivery times to 8-12 months, the post-purchase "waiting" phase became a critical churn risk. I initiated and led the development of a new digital experience to engage, educate, and support customers from the moment of order to the day of delivery.
+
+During 2021–2023, global logistics disruptions and the semiconductor shortage caused car delivery times to stretch up to **8–12 months**. This left a major engagement gap between **order and delivery**.
+
+While most traditional OEMs only provided **delivery tracking**, **Tesla** stood out by offering an **educational experience** that built anticipation and product understanding before delivery.
+
+In 2023, I led the **Order-to-Delivery Mobile Experience** project to turn this waiting period into a **learning journey**, empowering customers to explore their upcoming car, understand ownership options (PCP, PCH, etc.), and feel emotionally connected while waiting.
+
+### My Dual Role
+
+- As **Product Manager**, I defined the strategy, conducted market research, managed the backlog, and aligned stakeholders on transforming this "problem" into a competitive advantage.
+- As **Instructional Designer**, I structured the educational journey, designing bite-sized learning modules about complex car features, EV charging, and financial terms (PCP/PCH).
+
+![Dual Role Diagram](/assets/porfolio-img/otd/dual-role.png)
+
+---
+
+## 💡 Problem Statement
+
+### Customers faced:
+
+- Long waiting periods (up to 1 year) with limited updates - the wait was a "black box" for customers
+- Modern cars are complex. Customers were arriving on delivery day with zero knowledge of their new vehicle's features, EV charging, or their own financial agreements (PCP/PCH/Subscription).
+- Reduced excitement and trust due to poor transparency and lack of engagement.
+
+### For the brand:
+
+- Lost engagement opportunities during the most emotionally charged phase.
+- Increased pressure on agents due to repetitive inquiries ("When will my car arrive?").
+- Missed potential to upsell or reinforce brand loyalty before delivery.
+
+---
+
+## Market Analysis
+
+### Competitive Landscape
+
+### Competitive Landscape
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+<div>
+
+![Market Analysis 1](/assets/porfolio-img/otd/market-analysis-tesla1.png.png)
+
+![Market Analysis 2](/assets/porfolio-img/otd/market-analysis-Nio2.png)
+
+</div>
+<div>
+
+![Market Analysis 3](/assets/porfolio-img/otd/market-analysis-germancars3.png)
+
+![Market Analysis 4](/assets/portfolio-img/order-delivery/market-analysis-4.png)
+
+</div>
+</div>
+
+> **💡 Analysis Outcome:**
+>
+> - Traditional OEMs focus on **delivery logistics**, not **customer experience**.
+> - EV-first brands (Tesla, NIO) view waiting time as a **key educational and emotional touchpoint**.
+> - **Opportunity:** Develop a hybrid model — blending Tesla's guided learning with NIO's community feel, tailored for a premium European brand identity.
+
+---
+
+## User Research
+
+We conducted qualitative research to understand the **needs, emotions, and behaviors** of customers during the long order-to-delivery period — a critical but often overlooked engagement phase.
+
+### 🧩 Participant Segments
+
+| Segment | Description | Key Questions Explored |
+|---------|-------------|------------------------|
+| **1. First-time EV Buyers** | New to electric vehicles; excited but anxious. | "What do I need to know before my car arrives?" "Will I understand how to charge and maintain it?" |
+| **2. Returning Customers** | Existing brand customers switching to EV or new model. | "What's different this time?" "How can I customize or prepare before delivery?" |
+| **3. Customer Support Team** | Frontline staff handling inquiries and call logs. | "What do customers most frequently ask or misunderstand?" "How can we reduce repetitive questions?" |
+
+> **💡 Opportunities Identified**
+>
+> 1. **Transform waiting into learning:** Introduce bite-sized educational modules.
+> 2. **Build anticipation:** Story-based milestones and progress updates.
+> 3. **Reduce support dependency:** Preemptively answer FAQs through in-app content and onboarding flows.
+> 4. **Personalize by persona:** Offer distinct learning paths for first-time vs. returning customers.
+
+---
+
+## 💭 Ideation Phase
+
+To move from research insights to actionable concepts, I organized two cross-functional ideation workshops, bringing together six key teams:
+
+- Web Checkout
+- Salesforce Order Management
+- Mobile Apps
+- Backend Integration
+- Customer Experience
+- Digital Learning & Content
+
+The goal was to align on a shared vision of the Order-to-Delivery experience and identify feasible MVP solutions within our technical and organizational constraints.
+
+![Workshop Overview](/assets/portfolio-img/order-delivery/workshop-overview.png)
+
+### Backend-for-frontend Workshop
+
+![Backend Workshop](/assets/portfolio-img/order-delivery/backend-workshop.png)
+
+- **Objective:** Explore how backend systems could support a personalized, learning-driven customer experience without overloading agents.
+- **Approach:** Visualized the end-to-end data flow from order creation → tracking → customer communication.
+- **Outcome:** Identified dependencies between legacy systems and new mobile modules; clarified integration touchpoints.
+
+> **💡 Insight:** The team realized that enabling dynamic order modifications (e.g., color or package change) would dramatically increase complexity — data handoffs, pricing recalculations, and agent escalations.
+
+### Customer Journey Mapping Workshop
+
+![Customer Journey Workshop](/assets/portfolio-img/order-delivery/journey-workshop.png)
+
+- **Objective:** Map the emotional and functional journey from order to delivery, identifying engagement gaps and opportunities for learning.
+- **Activities:** Step-by-step mapping of customer emotions, pain points, and informational needs; alignment with internal workflows.
+- **Outcome:**
+  - Highlighted critical "silence" periods between order and delivery where engagement drops.
+  - Proposed learning and storytelling interventions (e.g., "Your Car Is in Production" microlearning moments).
+  - Aligned marketing, tech, and service teams around a unified customer timeline.
+
+**A Big Question:** Should we enable order change? (tradeoff, handover to agents, but want to reduce the agents workload)
+
+> **❓ Key Strategic Challenge: "Should we enable order changes during the waiting period?"**
+>
+> - **Trade-off:**
+>   - *Pros:* Improved customer flexibility and satisfaction.
+>   - *Cons:* Major operational complexity, risk of delayed deliveries, and agent overload.
+> - **Decision:** Technical systems were **not yet ready**, so we designed **scenarios and recommendations** for phased enablement — starting with informational updates and limited change requests.
+
+---
+
+## 🧩 Ideation Outcomes
+
+### 1. System Anatomy Analysis
+
+![System Anatomy 1](/assets/portfolio-img/order-delivery/system-anatomy-1.png)
+![System Anatomy 2](/assets/portfolio-img/order-delivery/system-anatomy-2.png)
+
+- Mapped all dependencies across frontend, backend, CRM, and learning systems.
+- Identified core modules for MVP (tracking, learning hub, notification engine).
+
+### 2. Stakeholder Mapping
+
+- Clarified ownership across web, mobile, and service teams.
+- Defined collaboration model for post-MVP iterations.
+
+### 3. Feature Prioritization Framework
+
+- Balanced feasibility (tech readiness) with impact (user engagement).
+- Established roadmap milestones aligned to release cycles.
+
+### 4. Curriculum Design & Learning Ecosystem
+
+![Learning Ecosystem](/assets/portfolio-img/order-delivery/learning-ecosystem.png)
+
+- Designed the **microlearning curriculum** to guide users from curiosity to confidence before delivery.
+- Defined **modalities of learning** — short **text explainers**, **interactive visuals**, and **short-form video tutorials**.
+- Introduced a **Community of Practice** through the *Volvo Fan Forum*, encouraging peer learning, early adopters' tips, and brand storytelling.
+- Ensured alignment with **adult learning principles** (self-directed, relevant, and emotionally engaging).
+
+---
+
+## 🔄 Handover & Transition
+
+As the project reached the execution planning phase, a **company-wide reorganization** took place. My role transitioned from leading the *Order-to-Delivery Experience* initiative to becoming the **Product Manager of Web Foundation**, focusing on the **eCommerce Search product** — the underlying search and discovery experience across all digital channels.
+
+Recognizing the strategic importance of continuity, I led a **structured handover process** to ensure the project's successful progression under the new Mobile Product Manager.
+
+### 🧩 Handover Activities
+
+- Created a comprehensive **handover package**, including:
+  - Workshop summaries, research findings, and system anatomy documentation.
+  - MVP roadmap and prioritized backlog in collaboration with UX and Tech leads.
+  - Learning content strategy and modular curriculum plan.
+- Conducted **joint review sessions** with the new PM, UX lead, and engineering manager to ensure alignment on product vision and dependencies.
+- Continued to support the **mobile product team** as an advisor on:
+  - Learning content integration and instructional design consistency.
+  - Data-informed engagement metrics.
+  - System interoperability with web and CRM foundations.
+
+This ensured **knowledge continuity**, minimized delivery risk, and maintained strategic alignment across the product ecosystem.
+
+---
+
+## 🌱 Key Learnings
+
+### 1. Customer Education as a Growth Lever
+
+Turning waiting time into a learning experience transformed a logistical problem into a brand-building opportunity. This reinforced how **instructional design can elevate customer experience and retention**.
+
+### 2. Cross-Domain Collaboration Is Critical
+
+Bringing together teams from sales, backend, web, mobile, and content required not just coordination, but a shared understanding of *why* the customer experience mattered beyond individual functions.
+
+### 3. System Thinking Enables Scalable Design
+
+By mapping system dependencies early, we avoided isolated solutions. The **System Anatomy** became a blueprint for future connected experiences across web and mobile.
+
+### 4. Designing for Emotion and Information
+
+Balancing **emotional anticipation** (storytelling, milestones) with **practical education** (how-to, finance learning) created a deeper, more meaningful engagement journey.
+
+### 5. Adaptability in Product Leadership
+
+Navigating organizational change taught me the importance of **clear documentation, collaborative handovers, and continuous stakeholder engagement** — ensuring product momentum even beyond one's direct ownership.
+
+---
+
+## Skills Demonstrated
+
+- Product Discovery & Strategy
+- User Research & Journey Mapping
+- Instructional Design
+- Workshop Facilitation
+- Cross-functional Collaboration
+- Stakeholder Management
+- System Thinking
+- Competitive Analysis
+- Product Handover & Transition
