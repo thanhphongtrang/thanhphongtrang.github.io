@@ -17,6 +17,15 @@ I love translating analytics into stories that drive clarity, inspire action, an
 
 ---
 
+## Product Portfolio
+
+Explore my work and projects:
+
+- [**Product Portfolio**](/portfolio/) - Featured projects and case studies
+- [**Example Work**](https://phong-trang.notion.site) - Live examples of my product and analytics work
+
+---
+
 ## Work Experience
 
 ### Data Platform Product Manager
@@ -44,16 +53,7 @@ I love translating analytics into stories that drive clarity, inspire action, an
 - Led product initiatives reducing passenger information discrepancies by 30%
 - Collaborated across operations, engineering, and commercial teams
 
----
 
-## Portfolio
-
-Explore my work and projects:
-
-- [**Product Portfolio**](/portfolio/) - Featured projects and case studies
-- [**Example Work**](https://phong-trang.notion.site) - Live examples of my product and analytics work
-
----
 
 ## About This Site
 Feel free to explore my [portfolio](/portfolio/), check out my [CV](/cv/), or [connect with me on LinkedIn](https://linkedin.com/in/phongtrangtt/).
