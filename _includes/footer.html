@@ -25,6 +25,6 @@
 </div>
 {% endcomment %}
 <div class="page__footer-copyright">
-  &copy; site.time | date: '%Y'   site.name | default: site.title .<br />
-  Site last updated  "now" | date: '%Y-%m-%d' 
+  &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}<br />
+  Site last updated {{ "now" | date: '%Y-%m-%d' }} 
 </div>
