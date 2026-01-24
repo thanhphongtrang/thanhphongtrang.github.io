@@ -1,6 +1,6 @@
 ---
 title: "AI Semantic Search for New Car Sales"
-excerpt: "Led development of an intelligent search system using AI-powered intent recognition, achieving 85% search accuracy and driving 11% higher purchase conversion.<br/><img src='assets/portfolio-img/ai-search/hero-banner.png'>"
+excerpt: "Led development of an intelligent search system using AI-powered intent recognition, achieving 85% search accuracy and driving 11% higher purchase conversion.<br/><img src='/assets/portfolio-img/ai-search/hero-banner.png'>"
 collection: portfolio
 ---
 
@@ -18,7 +18,7 @@ collection: portfolio
 - **+11% conversion** rate for search users
 - **Sub-second** response times at scale
 
-![Semantic Search Architecture](assets/portfolio-img/ai-search/hero-banner.png)
+![Semantic Search Architecture](/assets/portfolio-img/ai-search/hero-banner.png)
 
 ---
 
@@ -149,7 +149,7 @@ For German market expansion:
 
 Built a real-time demo application using semi-live UK market data to showcase the semantic search capabilities and validate performance with stakeholders.
 
-![Semantic Search Demo - Lexical vs Semantic](assets/portfolio-img/ai-search/interactive-demo.png)
+![Semantic Search Demo - Lexical vs Semantic](/assets/portfolio-img/ai-search/interactive-demo.png)
 
 **Comparison:**
 - **Lexical Search Results:** Traditional keyword matching showing limited, often irrelevant matches for "leather family car with sun roof"
@@ -165,9 +165,9 @@ Built a real-time demo application using semi-live UK market data to showcase th
 
 ### System Architecture
 
-![Implementation Architecture](assets/portfolio-img/ai-search/implementation.png)
+![Implementation Architecture](/assets/portfolio-img/ai-search/implementation.png)
 
-![Final Product](assets/portfolio-img/ai-search/final-product.png)
+![Final Product](/assets/portfolio-img/ai-search/final-product.png)
 
 ### 🪙 Cost-Effective Implementation
 
@@ -188,7 +188,7 @@ Built a real-time demo application using semi-live UK market data to showcase th
 
 **🥇 Model Performance Ranking**
 
-![Model Performance Comparison](assets/portfolio-img/ai-search/model-performance.png)
+![Model Performance Comparison](/assets/portfolio-img/ai-search/model-performance.png)
 
 **🌍 Cross-Market Validation**
 - **UK Market:** 85% NDCG performance
