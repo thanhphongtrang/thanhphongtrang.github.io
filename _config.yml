@@ -13,9 +13,9 @@ title: "Phong Trang"
 title_separator: "-"
 name: &name "Phong Trang"
 description: &description "Product Manager with 5+ years leading cross-functional teams and driving data-driven product strategy"
-url: https://phongtrangtt.github.io
+url: https://thanhphongtrang.github.io
 baseurl: ""
-repository: "phongtrangtt/phongtrangtt.github.io"
+repository: "thanhphongtrang/thanhphongtrang.github.io"
 
 # Site Author
 author:
@@ -46,7 +46,7 @@ author:
   bitbucket:
   codepen:
   dribbble:
-  github: "phongtrangtt"
+  github: "thanhphongtrang"
   kaggle:
   stackoverflow:
 
@@ -61,7 +61,7 @@ author:
   keybase:
   instagram:
   lastfm:
-  linkedin: "phongtrangtt"
+  linkedin: "https://www.linkedin.com/in/phongtrangtt/"
   mastodon:
   medium:
   pinterest:
