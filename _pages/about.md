@@ -9,13 +9,13 @@ redirect_from:
 
 ## Hi, I'm Phong 👋
 
-I'm a **Product Manager** with a background in Data Analytics, passionate about using data and storytelling to build digital experiences that feel human, not just functional. Over the past few years, I've worked across web, mobile, and digital learning, leading projects that turn complex systems into intuitive, meaningful customer experiences.
+I'm a **Software Product Manager** with a background in Data Analytics, passionate about using data and storytelling to build digital experiences that feel human, not just functional. Over the past few years, I've worked across web, mobile, and digital learning, leading projects that turn complex systems into intuitive, meaningful customer experiences.
 
 From designing an LLM-powered semantic search used across 100+ markets to creating the Order-to-Delivery learning experience that reimagined customer onboarding, my focus is always on connecting data insights with empathy.
 
-I love translating analytics into stories that drive clarity, inspire action, and help teams make smarter decisions. For me, great products aren't just built — they're **understood**, **felt**, and **learned from**.
+I love translating analytics into stories that drive clarity, inspire action, and help teams make smarter decisions. For me, great products aren't just built but they're understood, felt, and learned from.
 
----
+
 
 ## Product Portfolio
 
@@ -24,7 +24,7 @@ Explore my work and projects:
 - [**Product Portfolio**](/portfolio/) - Featured projects and case studies
 - [**Example Work**](https://phong-trang.notion.site) - Live examples of my product and analytics work
 
----
+
 
 ## Work Experience
 
