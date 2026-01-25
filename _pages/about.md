@@ -22,7 +22,7 @@ I love translating analytics into stories that drive clarity, inspire action, an
 Explore my work and projects:
 
 - [**Product Portfolio**](/portfolio/) - Featured projects and case studies
-- [**Example Work**](https://phong-trang.notion.site) - Live examples of my product and analytics work
+- [**Other Example Work on Notion**](https://phong-trang.notion.site/Hi-I-m-Phong-Software-Product-Manager-20403e893f1f80c6b63bd5bf7767c54d) 
 
 
 
