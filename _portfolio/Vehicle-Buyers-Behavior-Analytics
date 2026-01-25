@@ -62,9 +62,10 @@ collection: portfolio
 </ul>
 
 <h3>The Technical Implementation</h3>
-
+<pre>
 <div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
-<code>-- Regional-product averaging approach for NULL handling
+<code>-- 
+Regional-product averaging approach for NULL handling
 WITH regional_product_avg AS (
     SELECT 
         region,
@@ -90,7 +91,7 @@ sales_enriched AS (
 )
 SELECT * FROM sales_enriched;</code>
 </div>
-
+</pre>
 <h3>Outcome & Transparency</h3>
 
 <p>The approach delivered:</p>
@@ -166,7 +167,7 @@ SELECT * FROM sales_enriched;</code>
 </ul>
 
 <h3>Analysis Implementation</h3>
-
+<pre>
 <div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;"><code>import pandas as pd
 
 # Load GA4 search behavior data from Databricks
@@ -198,7 +199,7 @@ zero_results = search_events[
     search_events['search_result_count'] == 0
 ].groupby('search_term').size().sort_values(ascending=False)</code>
 </div>
-
+</pre>
 <h3>Key Insights Delivered</h3>
 
 <ul>
@@ -245,13 +246,13 @@ zero_results = search_events[
 </ul>
 
 <h3>Technical Architecture</h3>
-
+<pre>
 <div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
 <code >GA4 (Behavioral Data) ──────┐
                              ├──> Databricks ETL ──> Curated Tables ──> Power BI
 Snowflake (Order Data) ──────┘</code>
 </div>
-
+</pre>
 <hr>
 
 <h2>📊 Results & Impact</h2>
@@ -367,7 +368,7 @@ Snowflake (Order Data) ──────┘</code>
 <h2>📂 Appendix: Artifacts on GitHub</h2>
 
 <h3>Repository Structure</h3>
-
+<pre>
 <div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
 <code>/search-analytics
 │
@@ -384,7 +385,7 @@ Snowflake (Order Data) ──────┘</code>
 └── /powerbi
     └── dax_measures.txt</code>
 </div>
-
+</pre>
 <p style="margin-top: 2rem;">View complete code repository:<br>
 <a href="https://github.com/thanhphongtrang/search-analytics" style="font-size: 1.1em; font-weight: 600;">GitHub: thanhphongtrang/search-analytics</a></p>
 
