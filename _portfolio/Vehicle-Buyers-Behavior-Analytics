@@ -63,8 +63,8 @@ collection: portfolio
 
 <h3>The Technical Implementation</h3>
 
-<pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 4px; overflow-x: auto;">
-<code>-- Regional-product averaging approach for NULL handling
+<pre style="background: #f5f5f5; border: 1px solid #ddd; padding: 1rem; border-radius: 4px; overflow-x: auto;">
+<code style="color: #333;">-- Regional-product averaging approach for NULL handling
 WITH regional_product_avg AS (
     SELECT 
         region,
@@ -167,8 +167,8 @@ SELECT * FROM sales_enriched;</code>
 
 <h3>Analysis Implementation</h3>
 
-<pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 4px; overflow-x: auto;">
-<code>import pandas as pd
+<pre style="background: #f5f5f5; border: 1px solid #ddd; padding: 1rem; border-radius: 4px; overflow-x: auto;">
+<code style="color: #333;">import pandas as pd
 
 # Load GA4 search behavior data from Databricks
 search_events = spark.sql("""
@@ -247,8 +247,8 @@ zero_results = search_events[
 
 <h3>Technical Architecture</h3>
 
-<pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 4px;">
-<code>GA4 (Behavioral Data) ──────┐
+<pre style="background: #f5f5f5; border: 1px solid #ddd; padding: 1rem; border-radius: 4px;">
+<code style="color: #333;">GA4 (Behavioral Data) ──────┐
                              ├──> Databricks ETL ──> Curated Tables ──> Power BI
 Snowflake (Order Data) ──────┘</code>
 </pre>
@@ -369,8 +369,8 @@ Snowflake (Order Data) ──────┘</code>
 
 <h3>Repository Structure</h3>
 
-<pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 4px;">
-<code>/search-analytics
+<pre style="background: #f5f5f5; border: 1px solid #ddd; padding: 1rem; border-radius: 4px;">
+<code style="color: #333;">/search-analytics
 │
 ├── /sql
 │   ├── null_handling_subquery.sql
@@ -481,3 +481,5 @@ Snowflake (Order Data) ──────┘</code>
     }
   }
 </style>
+</table>
+</table>
