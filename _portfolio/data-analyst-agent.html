@@ -1,0 +1,592 @@
+---
+title: "Data Analyst Agent: Reducing Ad-hoc Requests by 40% with LangGraph"
+excerpt: "Built an intelligent SQL query agent that automated 40% of repetitive data requests, saving 50 hours/month for the analytics team through pragmatic AI workflow design.<br/><img src='/assets/portfolio-img/data-agent/banner.png'>"
+collection: portfolio
+---
+
+<p><em>By Phong Trang - Data Platform Product Manager - thanhphong.trang@gmail.com</em></p>
+
+<img src="/assets/portfolio-img/data-agent/banner.png" alt="Data Analyst Agent Banner" style="width: 100%; margin-bottom: 2rem;">
+
+<h2>ℹ️ Executive Summary</h2>
+
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+  <ul style="margin: 0;">
+    <li><strong>Role:</strong> Product Manager | <strong>Industry:</strong> Web Analytics & Data Platform</li>
+    <li><strong>Key Impact:</strong>
+      <ul>
+        <li><strong>40% reduction</strong> in ad-hoc data requests within 30 days</li>
+        <li>Saved <strong>~50 hours/month</strong> of analyst time for strategic work</li>
+        <li><strong>85% accuracy</strong> on automated query types (behavioral analytics, conversion metrics)</li>
+        <li><strong>ROI positive</strong> from week 2 of deployment</li>
+      </ul>
+    </li>
+    <li><strong>Technical Stack:</strong> LangGraph, Azure OpenAI, Streamlit, SQLAlchemy, Python</li>
+    <li><strong>Timeline:</strong> 5 days POC development, 1 month pilot validation</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>🎯 The Problem: Drowning in Data Requests</h2>
+
+<p>Our web analytics team received <strong>30-50 ad-hoc data requests weekly</strong> from product managers, marketers, and executives. Most were variations of the same questions:</p>
+
+<ul>
+  <li>"What's our conversion rate for feature X?"</li>
+  <li>"Which pages have the highest bounce rate?"</li>
+  <li>"What's the trend of user engagement over the past quarter?"</li>
+</ul>
+
+<p>Analysts spent <strong>60% of their time</strong> writing SQL queries and formatting results instead of generating insights. Stakeholders waited 2-3 days for answers to simple questions.</p>
+
+<h3>Why This Matters</h3>
+
+<p>The cost wasn't just time—it was opportunity cost. While analysts manually queried data, they couldn't:</p>
+
+<ul>
+  <li>Identify growth opportunities</li>
+  <li>Build predictive models</li>
+  <li>Design experiments</li>
+  <li>Create strategic recommendations</li>
+</ul>
+
+<hr>
+
+<h2>💡 The Approach: POC First, Perfect Later</h2>
+
+<p>Instead of building a comprehensive self-service analytics platform (6+ months), I chose a targeted proof-of-concept to validate demand and learn fast.</p>
+
+<h3>Why a POC?</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+  <thead>
+    <tr style="background: rgba(0, 102, 204, 0.1);">
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: left;">Decision</th>
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: left;">Rationale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>Validate demand</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">Test if automation truly reduces requests before large investment</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>Learn failure modes</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">Discover edge cases in controlled environment</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>Build trust</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">Quick wins with stakeholders before expanding scope</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>Constrained domain</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">Google Analytics only—stable schema, predictable queries</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>🏗️ Technical Architecture: The State Graph Workflow</h2>
+
+<p>The workflow represents a deliberate design philosophy: <strong>explicit control flow over black-box automation</strong>.</p>
+
+<img src="/assets/portfolio-img/data-agent/state-graph.png" alt="LangGraph State Machine" style="width: 100%; margin: 2rem 0; border: 1px solid #ddd; border-radius: 8px; padding: 1rem; background: #f9f9f9;">
+
+<h3>Why This Flow?</h3>
+
+<p>The graph structure addresses three critical requirements:</p>
+
+<h4>1. Viability: Not Every Question is a Data Question</h4>
+
+<p>Early testing revealed users asked off-topic questions like "How do I reset my password?" or "Why is the site slow?"</p>
+
+<p><strong>Solution:</strong> The <code>check_relevance</code> node routes non-data questions to <code>generate_funny_response</code> instead of failing ungracefully.</p>
+
+<blockquote style="background: rgba(0, 102, 204, 0.1); padding: 1rem; border-left: 4px solid #0066cc; margin: 2rem 0;">
+  <p><strong>Design Decision:</strong> Separate routing for irrelevant questions prevents wasted API calls and provides better UX than generic error messages.</p>
+</blockquote>
+
+<h4>2. Implementation Feasibility: Error Recovery is Not Optional</h4>
+
+<p>LLMs generate syntactically correct but semantically wrong SQL. The first version crashed on:</p>
+
+<ul>
+  <li>Wrong date formatting (<code>DATE()</code> vs <code>DATETIME()</code>)</li>
+  <li>Non-existent columns (hallucinated field names)</li>
+  <li>Division by zero in aggregations</li>
+</ul>
+
+<p><strong>Solution:</strong> The <code>regenerate_query</code> loop captures errors, passes them back to the LLM with context, and retries up to 3 times.</p>
+
+<p><strong>Key insight:</strong> LLMs can <em>fix their own mistakes</em> if you show them the error. <strong>60% of failed queries succeeded on retry.</strong></p>
+<img src="/assets/portfolio-img/data-agent/error-recovery.png" alt="Error Recovery Process" style="width: 100%; margin: 2rem 0; border: 1px solid #ddd; border-radius: 8px;">
+<p style="text-align: center; color: #666; font-style: italic; margin-top: -1rem; margin-bottom: 2rem;">Figure 2. LangGraph's error recovery workflow in action. When the LLM generates incorrect SQL (wrong column names or date formatting), the agent captures the database error, feeds it back to the LLM with context, and successfully auto-corrects within 3 retry attempts—60% success rate on retry.</p>
+
+<h4>3. Cost Control: Prevent Infinite Loops</h4>
+
+<p>Without iteration limits, a malformed query could retry indefinitely, burning API credits.</p>
+
+<p><strong>Solution:</strong> The <code>check_attempts_router</code> enforces a maximum of 3 retries before routing to <code>end_max_iterations</code>.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+  <div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px;">
+    <h4 style="margin-top: 0;">✅ Success Path</h4>
+    <p style="font-size: 0.9em; margin: 0;">Question → Relevance Check → SQL Generation → Execution → Human-Readable Answer</p>
+  </div>
+  <div style="background: rgba(220, 53, 69, 0.1); padding: 1.5rem; border-radius: 8px;">
+    <h4 style="margin-top: 0;">⚠️ Error Recovery Path</h4>
+    <p style="font-size: 0.9em; margin: 0;">SQL Error → Capture Message → Regenerate with Context → Retry (max 3×) → Escalate if needed</p>
+  </div>
+</div>
+
+<hr>
+
+<h2>💻 Key Technical Decisions (Product Manager Perspective)</h2>
+
+<h3>Decision 1: LangGraph State Machine vs. Simple LLM Chain</h3>
+
+<p>As a PM, I needed <strong>observability</strong> into each workflow step to diagnose failures and measure performance.</p>
+
+<pre style="background: #f5f5f5; border: 1px solid #ddd; padding: 1rem; border-radius: 4px; overflow-x: auto;">
+<code style="color: #333;">from langgraph.graph import StateGraph, END
+from state.agent_state import AgentState
+
+# Define workflow with explicit state transitions
+workflow = StateGraph(AgentState)
+
+# Add nodes (tasks)
+workflow.add_node("check_relevance", check_relevance)
+workflow.add_node("convert_to_sql", convert_nl_to_sql)
+workflow.add_node("execute_sql", execute_sql)
+workflow.add_node("regenerate_query", regenerate_query)
+
+# Add conditional routing (decision points)
+workflow.add_conditional_edges("check_relevance", relevance_router, {
+    "convert_to_sql": "convert_to_sql",
+    "generate_funny_response": "generate_funny_response"
+})
+
+workflow.add_conditional_edges("execute_sql", execute_sql_router, {
+    "generate_human_readable_answer": "generate_human_readable_answer",
+    "regenerate_query": "regenerate_query"
+})
+
+# Compile and deploy
+app = workflow.compile()</code>
+</pre>
+
+<h4>Why This Matters (PM View)</h4>
+
+<ul>
+  <li><strong>Debuggability:</strong> I can see exactly where failures occur (relevance check? SQL generation? execution?)</li>
+  <li><strong>Metrics:</strong> Track retry rates, error types, and success paths for continuous improvement</li>
+  <li><strong>Flexibility:</strong> Easy to add new nodes (e.g., caching, query optimization) without rewriting the entire flow</li>
+</ul>
+
+<h3>Decision 2: Azure OpenAI for Enterprise Compliance</h3>
+
+<p>Security and compliance were non-negotiable for handling proprietary business data.</p>
+
+<pre style="background: #f5f5f5; border: 1px solid #ddd; padding: 1rem; border-radius: 4px; overflow-x: auto;">
+<code style="color: #333;">import os
+from dotenv import load_dotenv
+from openai import AzureOpenAI
+
+# Azure OpenAI setup with enterprise controls
+client = AzureOpenAI(
+    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    api_version="2024-02-15-preview",
+    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT")
+)
+
+def convert_nl_to_sql(state: AgentState) -> AgentState:
+    """Convert natural language question to SQL query"""
+    prompt = f"""Given this database schema:
+{state['schema']}
+
+Convert this question to SQL:
+{state['question']}
+
+Rules:
+- Use DATE() for date comparisons
+- Include query explanation as comment
+- Limit results to 1000 rows max
+"""
+    
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.1  # Low temp for deterministic SQL
+    )
+    
+    state["sql_query"] = response.choices[0].message.content
+    return state</code>
+</pre>
+
+<h4>Why This Matters (Business Perspective)</h4>
+
+<table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+  <thead>
+    <tr style="background: rgba(0, 102, 204, 0.1);">
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: left;">Requirement</th>
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: left;">Azure OpenAI Solution</th>
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: left;">Alternative Risk</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>Data privacy</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">No model training on our queries</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">Direct OpenAI trains on enterprise data</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>Compliance</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">EU data residency, GDPR compliant</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">6+ months compliance review for other providers</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>Cost</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">~20% premium, but approved vendor</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">Cheaper options delay project by months</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Trade-off accepted:</strong> Azure OpenAI costs ~$45/month vs. $35 for direct OpenAI, but compliance overhead of using non-approved providers would have delayed deployment by 4-6 months.</p>
+
+<hr>
+
+<h2>📊 Results: One Month Pilot Validation</h2>
+<img src="/assets/portfolio-img/data-agent/dashboard.png" alt="Error Recovery Process" style="width: 100%; margin: 2rem 0; border: 1px solid #ddd; border-radius: 8px;">
+
+
+<h3>Query Coverage: 40% Automation Rate</h3>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+  <div>
+    <h4>✅ Handled Query Types (40%)</h4>
+    <ul style="font-size: 0.9em;">
+      <li><strong>Conversion funnels:</strong> "What's our signup-to-purchase rate?"</li>
+      <li><strong>Behavioral analytics:</strong> "Which pages have highest engagement?"</li>
+      <li><strong>Trend analysis:</strong> "How has bounce rate changed over time?"</li>
+      <li><strong>Segmentation:</strong> "Compare mobile vs. desktop users"</li>
+    </ul>
+  </div>
+  <div>
+    <h4>❌ Not Handled (60%)</h4>
+    <ul style="font-size: 0.9em;">
+      <li>Complex multi-table joins with business logic</li>
+      <li>Queries requiring data outside GA warehouse</li>
+      <li>Questions needing interpretation or judgment</li>
+      <li>Ad-hoc data collection or instrumentation requests</li>
+    </ul>
+  </div>
+</div>
+
+<h3>Time & Cost Impact</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+  <thead>
+    <tr style="background: rgba(0, 102, 204, 0.1);">
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: left;">Metric</th>
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center;">Manual Process</th>
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center;">Agent Automation</th>
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center;">Improvement</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>Time per query</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center;">45 minutes</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center;">2 minutes</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center; color: #28a745; font-weight: bold;">96% faster</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>Queries handled (month 1)</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center;">—</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center;">127 queries</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center;">—</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>Hours saved</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center;">—</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center;">~50 hours/month</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center; color: #28a745; font-weight: bold;">$2,500 value</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>Accuracy rate</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center;">100% (manual)</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center;">85% correct</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: center; color: #ffc107;">12% need review</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>ROI Breakdown</h3>
+
+<div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+  <h4 style="margin-top: 0;">Development Investment</h4>
+  <ul style="margin-bottom: 0;">
+    <li>3 days POC build + 2 days refinement = <strong>~40 hours</strong></li>
+  </ul>
+</div>
+
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+  <h4 style="margin-top: 0;">Monthly Operational Cost</h4>
+  <ul style="margin-bottom: 0;">
+    <li>Azure OpenAI API: <strong>$45</strong> (GPT-4, ~127 queries × 3 calls avg)</li>
+    <li>Streamlit hosting: <strong>$0</strong> (internal server)</li>
+    <li>Maintenance: <strong>~2 hours/month</strong> (prompt tuning, schema updates)</li>
+  </ul>
+</div>
+
+<div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-left: 4px solid #28a745; margin: 2rem 0;">
+  <p style="font-size: 1.2em; margin: 0;"><strong>Monthly Value:</strong> 50 hours saved × $50/hour = <strong>$2,500</strong></p>
+  <p style="font-size: 1.2em; margin: 0.5rem 0 0 0;"><strong>Payback Period:</strong> <span style="color: #28a745; font-weight: bold;">&lt;1 week</span></p>
+</div>
+
+<hr>
+
+<h2>🎓 Key Learnings: AI is Good at Nodes, Humans Design Workflows</h2>
+
+<h3>1. Constrained Domains are AI's Sweet Spot</h3>
+
+<p>The agent works because Google Analytics data is:</p>
+
+<ul>
+  <li><strong>Structured:</strong> Consistent schema across tables</li>
+  <li><strong>Documented:</strong> Clear field definitions and relationships</li>
+  <li><strong>Stable:</strong> Schema changes are infrequent and announced</li>
+  <li><strong>Predictable:</strong> Query patterns follow known business questions</li>
+</ul>
+
+<blockquote style="background: rgba(0, 102, 204, 0.1); padding: 1rem; border-left: 4px solid #0066cc; margin: 2rem 0;">
+  <p><strong>Insight:</strong> Expanding to other data sources requires similar constraints. Ad-hoc, poorly documented databases would tank accuracy.</p>
+</blockquote>
+
+<h3>2. Transparency Builds Trust</h3>
+
+<p>Showing the <strong>generated SQL query</strong> (not just results) lets analysts:</p>
+
+<ul>
+  <li>Verify correctness before trusting the output</li>
+  <li>Learn query patterns for their own work</li>
+  <li>Provide feedback to improve prompt engineering</li>
+</ul>
+
+<p>Black-box "magic" would have faced resistance. Transparency turned skeptics into champions.</p>
+
+<h3>3. Error Handling is the Product</h3>
+
+<p>Most development time (60%) went to edge cases:</p>
+
+<ul>
+  <li>Ambiguous questions ("What's performance?" → page load time? revenue?)</li>
+  <li>Malformed SQL (wrong quotes, missing parentheses)</li>
+  <li>Unexpected data types (comparing strings to dates)</li>
+  <li>Timeout handling for expensive queries</li>
+</ul>
+
+<p>The "happy path" was 20% of the work. Production-ready means handling failure gracefully.</p>
+
+<h3>4. Humans Still Design the Workflow</h3>
+
+<p>LLMs excel at <strong>individual tasks</strong> (SQL generation, formatting results), but <strong>cannot design the workflow</strong>:</p>
+
+<ul>
+  <li>When to retry vs. escalate to human?</li>
+  <li>How many retries before admitting failure?</li>
+  <li>What error context to provide for regeneration?</li>
+  <li>How to balance cost vs. accuracy?</li>
+</ul>
+
+<p>The state graph represents <strong>human expertise</strong> about how data questions should be processed. AI fills in the nodes; I designed the edges.</p>
+
+<hr>
+
+<h2>🚀 What's Next: Scaling Beyond POC</h2>
+
+<h3>Immediate (Month 2-3)</h3>
+
+<ul>
+  <li>Expand to <strong>conversion data warehouse</strong> (add e-commerce funnel queries)</li>
+  <li>Add <strong>query history</strong> for pattern analysis and caching opportunities</li>
+  <li>Implement <strong>feedback loop</strong> (thumbs up/down on results) for continuous improvement</li>
+</ul>
+
+<h3>Medium-term (Q2 2026)</h3>
+
+<ul>
+  <li><strong>Multi-data-source queries:</strong> Join GA behavioral data + CRM customer data</li>
+  <li><strong>Scheduled reports:</strong> "Send me weekly engagement metrics every Monday"</li>
+  <li><strong>Slack integration:</strong> Ask questions directly in-channel without opening Streamlit</li>
+</ul>
+
+<h3>Long-term Considerations</h3>
+
+<ul>
+  <li><strong>Fine-tuning:</strong> Train a custom model on our query patterns (if volume justifies cost ~$1000+)</li>
+  <li><strong>Caching layer:</strong> Store results for repeated questions (reduce API costs by ~30%)</li>
+  <li><strong>Access control:</strong> Role-based permissions (not all users should query all data)</li>
+</ul>
+
+<hr>
+
+<h2>🛠️ Skills Demonstrated</h2>
+
+<ul>
+  <li><strong>Product Strategy:</strong> POC-first approach to validate demand before large investment</li>
+  <li><strong>Technical Leadership:</strong> Designed LangGraph workflow balancing complexity vs. maintainability</li>
+  <li><strong>Stakeholder Management:</strong> Built trust through transparency (showing SQL, not hiding it)</li>
+  <li><strong>Data Platform Architecture:</strong> Integration with Azure OpenAI, SQLAlchemy, GA4 data warehouse</li>
+  <li><strong>ROI Analysis:</strong> Measured time savings, cost efficiency, and payback period</li>
+  <li><strong>Iterative Development:</strong> Scoped to 40% of requests, not chasing 100% perfection</li>
+</ul>
+
+<hr>
+
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+  <h3>🤙🏻 Let's Connect</h3>
+  <p>📧 <a href="mailto:thanhphong.trang@gmail.com">thanhphong.trang@gmail.com</a><br>
+  💼 <a href="https://www.linkedin.com/in/phongtrangtt/">LinkedIn Profile</a></p>
+  <p><strong>Available for:</strong> Product Manager, Data Platform, AI/ML Product roles<br>
+  <strong>Location:</strong> Gothenburg, Sweden</p>
+</div>
+
+<hr>
+
+<h2>📂 Portfolio Artifacts</h2>
+
+<h3>Code Repository Structure</h3>
+
+<pre style="background: #f5f5f5; border: 1px solid #ddd; padding: 1rem; border-radius: 4px;">
+<code style="color: #333;">/data-analyst-agent
+│
+├── graph/
+│   └── main_workflow.py          # LangGraph state machine definition
+│
+├── routers/
+│   └── main_routers.py           # Conditional routing logic
+│
+├── state/
+│   └── agent_state.py            # State schema for workflow
+│
+├── tools/
+│   ├── agent_tools.py            # Core functions (SQL gen, execution)
+│   ├── sub_tools.py              # Utility functions
+│   ├── schema_tools.py           # Database introspection
+│   └── chart_tools.py            # Visualization generation
+│
+├── database_query_agent_ui.py    # Streamlit UI
+├── requirements.txt              # Dependencies
+└── .env.example                  # Configuration template</code>
+</pre>
+
+<p style="margin-top: 2rem;"><strong>View full code repository:</strong><br>
+<a href="https://github.com/thanhphongtrang/data-analyst-agent" style="font-size: 1.1em; font-weight: 600;">GitHub: thanhphongtrang/data-analyst-agent</a></p>
+
+<style>
+  /* Light mode default styles */
+  h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #0066cc;
+    padding-bottom: 10px;
+    margin-top: 40px;
+  }
+  
+  h2 {
+    color: #34495e;
+    margin-top: 30px;
+  }
+  
+  h3 {
+    color: #555;
+    margin-top: 20px;
+  }
+  
+  h4 {
+    color: #666;
+  }
+  
+  pre {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  
+  code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Dark mode adaptations - only styles content elements, not page background */
+  @media (prefers-color-scheme: dark) {
+    h1, h2, h3, h4 {
+      color: #ffffff;
+    }
+    
+    h1 {
+      border-bottom-color: #4d94ff;
+    }
+    
+    pre {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    code {
+      color: #e0e0e0;
+    }
+    
+    table th {
+      background: rgba(0, 102, 204, 0.2) !important;
+    }
+    
+    table td, table th {
+      border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    blockquote {
+      background: rgba(0, 102, 204, 0.15) !important;
+      border-left-color: #4d94ff !important;
+    }
+    
+    a {
+      color: #4d94ff;
+    }
+  }
+</style>
+</table>
+</table>
+</table>
+</table>
