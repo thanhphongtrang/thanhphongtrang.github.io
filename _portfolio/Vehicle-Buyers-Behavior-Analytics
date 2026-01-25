@@ -1,689 +1,492 @@
 ---
-title: "The Search That Changed Everything: A 48-Hour Analytics Sprint That Drove $2M in Revenue"
-excerpt: "When stakeholders demanded insights on a failing search feature with 15% missing data, I had two choices: wait for perfect data or deliver imperfect insights fast. Here's how transparency, pragmatism, and a regional-product averaging hack turned incomplete data into a 12% conversion lift across 112 markets.
-<img src='/assets/porfolio-img/behavior-analytics/banner.png'>"
+title: "Vehicle Buyers' Behavior Analytics: Data-Driven Search Optimization"
+excerpt: "Led end-to-end analytics for automotive e-commerce search across 112 markets, achieving 12% improvement in order completion and 25% reduction in latency through pragmatic data engineering and stakeholder-focused insights.<br/><img src='/assets/porfolio-img/behavior-analytics/banner.png'>"
 collection: portfolio
 ---
 
-<div class="portfolio-container">
+<p><em>By Phong Trang - Software Product Manager - thanhphong.trang@gmail.com</em></p>
 
-<div class="header-section">
+<img src="/assets/porfolio-img/behavior-analytics/banner.png" alt="Vehicle Buyers Behavior Analytics Banner" style="width: 100%; margin-bottom: 2rem;">
 
-<p><em>By Phong Trang - Product Analyst turned storyteller - <a href="[mailto:thanhphong.trang@gmail.com">thanhphong.trang@gmail.com</a></em></p>](mailto:thanhphong.trang@gmail.com">thanhphong.trang@gmail.com</a></em></p>)
+<h2>ℹ️ Executive Summary</h2>
 
-<img src="/assets/porfolio-img/behavior-analytics/banner.png" alt="Vehicle Buyers Behavior Analytics Banner" style="width: 100%; max-width: 1200px; margin: 20px 0;">
-
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+  <ul style="margin: 0;">
+    <li><strong>Role:</strong> Product Analyst | <strong>Industry:</strong> Automotive E-commerce | <strong>Scope:</strong> 112 global markets</li>
+    <li><strong>Key Impact:</strong>
+      <ul>
+        <li>Drove <strong>12%</strong> improvement in online order completion through data-driven search optimization</li>
+        <li>Reduced search performance latency by <strong>25%</strong> through error handling optimization</li>
+        <li>Prepared <strong>7,400</strong> clean queries enabling GenAI shopping assistant development</li>
+      </ul>
+    </li>
+    <li><strong>Technical Stack:</strong> SQL, Python, Databricks, Power BI, GA4, DAX</li>
+    <li><strong>Portfolio Artifacts:</strong> <a href="https://github.com/thanhphongtrang/search-analytics">GitHub Code</a> | Interactive Dashboard | Case Study</li>
+  </ul>
 </div>
 
-<div class="executive-summary" style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+<hr>
 
-<h2>📖 The Story at a Glance</h2>
+<h2>🎯 Business Context</h2>
 
-<ul>
+<p>When our automotive e-commerce platform launched a new semantic search feature across 112 global markets, stakeholders needed rapid insights to optimize performance. The challenge was immediate: <strong>15% of sales records contained NULL values</strong> across regions, creating gaps in our ability to measure revenue impact accurately.</p>
 
-<li><strong>The Setting:</strong> Product Analyst at a global automotive e-commerce platform, 112 markets, 10,000+ daily searches</li>
+<p>The business couldn't wait for perfect data. Decisions needed to be made within days to determine whether to continue investing in the new search experience or revert to the previous system.</p>
 
-<li><strong>The Crisis:</strong> New semantic search feature launched but conversion was tanking. Stakeholders needed answers yesterday. Data was 15% incomplete.</li>
+<h3>My Role</h3>
 
-<li><strong>The Journey:</strong>
-
-<ul>
-
-<li>48-hour sprint to deliver interim insights despite incomplete data</li>
-
-<li>Built trust through radical transparency about data limitations</li>
-
-<li>Scaled from 1 market MVP to 112-market analytics framework</li>
-
-</ul>
-
-</li>
-
-<li><strong>The Impact:</strong> <em>12%</em> order completion lift • <em>25%</em> latency drop • <em>7,400</em> queries cleaned for GenAI • <em>60%</em> reduction in ad-hoc requests</li>
-
-<li><strong>The Tools:</strong> SQL, Python, Databricks, Power BI, GA4, Azure OpenAI</li>
-
-</ul>
-
-</div>
-
-<h1>🎬 Act I: The Phone Call That Started Everything</h1>
-
-<p>It was a Tuesday morning when my Slack lit up. The VP of Digital Experience wanted to meet. Now.</p>
-
-<p>"Our new semantic search is live," she said, pulling up a dashboard. "But conversion is lower than our old keyword search. We need to know why. Can you have insights by Friday?"</p>
-
-<p>I opened the data pipeline. My stomach sank.</p>
-
-<h2>The Problem: A Data Nightmare</h2>
-
-<p>What I found wasn't just challenging—it was a mess:</p>
+<p>As Product Analyst, I supported business and engineering teams by:</p>
 
 <ul>
-
-<li><strong>Incomplete data:</strong> <em>15%</em> of sales records across 112 markets had NULL values. You can't analyze revenue impact when you don't know the revenue.</li>
-
-<li><strong>Time pressure:</strong> "Friday" meant 3 days. The executive team was meeting Monday to decide whether to kill the feature.</li>
-
-<li><strong>Global complexity:</strong> 112 markets meant 112 different data quality patterns. Sweden's data? Pristine. Smaller markets? Swiss cheese.</li>
-
-<li><strong>Cross-functional chaos:</strong> Data science wanted perfect ML models. Engineering wanted to ship fixes. UX wanted to run more tests. Governance wanted data lineage documentation. Everyone was pulling in different directions.</li>
-
+  <li>Designing and implementing data pipelines that handled incomplete data pragmatically</li>
+  <li>Creating behavioral analytics frameworks to understand user search patterns</li>
+  <li>Building executive dashboards that translated complex data into actionable insights</li>
+  <li>Advocating for long-term data quality improvements while delivering short-term value</li>
 </ul>
 
-<blockquote style="border-left: 4px solid #3498db; padding-left: 20px; margin: 30px 0; font-style: italic; color: #555;">
+<hr>
 
-"I had two choices: Tell them to wait 2 months for clean data, or figure out how to deliver insights they could trust with the messy data I had."
+<h2>🔧 The Data Engineering Challenge</h2>
 
-— My internal dialogue, probably while stress-eating Swedish fika
+<h3>Problem: Missing Sales Data</h3>
 
+<p>Approximately <strong>15% of sales records</strong> had NULL values across product-region combinations. This wasn't uniformly distributed—some markets like Sweden had pristine data quality, while emerging markets showed significant gaps.</p>
+
+<h3>Solution: Dual-Track Approach</h3>
+
+<p>Rather than choosing between speed and accuracy, I implemented both:</p>
+
+<ul>
+  <li><strong>Short-term (2 days):</strong> Delivered interim analysis using regional-product average heuristic to fill gaps</li>
+  <li><strong>Long-term (2 months):</strong> Partnered with source system teams to improve data quality at the root</li>
+</ul>
+
+<h3>The Technical Implementation</h3>
+
+<pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 4px; overflow-x: auto;">
+<code>-- Regional-product averaging approach for NULL handling
+WITH regional_product_avg AS (
+    SELECT 
+        region,
+        product_id,
+        AVG(sales_value) as avg_sales
+    FROM sales_data
+    WHERE sales_value IS NOT NULL
+    GROUP BY region, product_id
+),
+sales_enriched AS (
+    SELECT 
+        s.order_id,
+        s.region,
+        s.product_id,
+        s.search_term,
+        s.sales_value,
+        r.avg_sales as regional_product_avg,
+        COALESCE(s.sales_value, r.avg_sales) as sales_value_clean
+    FROM sales_data s
+    LEFT JOIN regional_product_avg r
+        ON s.region = r.region 
+        AND s.product_id = r.product_id
+)
+SELECT * FROM sales_enriched;</code>
+</pre>
+
+<h3>Outcome & Transparency</h3>
+
+<p>The approach delivered:</p>
+
+<ul>
+  <li>✅ Clean dataset ready for analysis within 48 hours</li>
+  <li>✅ Full documentation of limitations and assumptions for stakeholders</li>
+  <li>✅ Business decisions proceeded without delay</li>
+  <li>✅ Long-term data quality improved to <strong>90%</strong> completeness within 2 months</li>
+</ul>
+
+<blockquote style="background: rgba(0, 102, 204, 0.1); padding: 1rem; border-left: 4px solid #0066cc; margin: 2rem 0;">
+  <p><strong>Key Learning:</strong> Transparency about data limitations builds trust. Every analysis included clear documentation of what was solid versus what relied on heuristics, enabling stakeholders to make informed decisions.</p>
 </blockquote>
 
-<hr style="margin: 40px 0;">
+<hr>
 
-<h1>🎬 Act II: The 48-Hour Sprint</h1>
+<h2>📊 Behavioral Analytics Framework</h2>
 
-<h2>Chapter 1: The Hack That Saved the Day</h2>
+<h3>Data Sources Integration</h3>
 
-<div style="background-color: #f0f8ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
+<table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+  <thead>
+    <tr style="background: rgba(0, 102, 204, 0.1);">
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: left;">Source</th>
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: left;">Data Type</th>
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: left;">Volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>GA4</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">Customer search behavior events</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">10,000+ events/day</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>Snowflake</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">Order completion & sales data</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">Real-time sync</td>
+    </tr>
+  </tbody>
+</table>
 
-<p><strong>The Toolbox:</strong> SQL, Databricks, Snowflake, and one clever heuristic</p>
+<h3>MECE Metrics Framework</h3>
 
+<p>I established a <strong>Mutually Exclusive, Collectively Exhaustive</strong> framework aligning product objectives with measurable KPIs. This framework ensured consistent measurement across 112 markets and reduced metric misinterpretation across engineering, UX, and product teams.</p>
+
+<img src="/assets/porfolio-img/behavior-analytics/metrics-framework.png" alt="Metrics Framework" style="width: 100%; margin: 2rem 0;">
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+  <div>
+    <h4>Product Usage Metrics</h4>
+    <ul>
+      <li>Sessions initiating search</li>
+      <li>Search submission types (default, keyword box, auto-suggestion)</li>
+      <li>Search refinement patterns</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Engagement Metrics</h4>
+    <ul>
+      <li>Engagement rate: (Result clicks / Search sessions)</li>
+      <li>Click position distribution</li>
+      <li>Zero-result searches identifying content gaps</li>
+    </ul>
+  </div>
 </div>
 
-<p>I couldn't fix the data quality overnight. But I could be smart about the <em>15%</em> of missing values.</p>
-
-<p>Here's the insight: If I didn't know the sales value for an XC40 in Portugal, I could use the average sales value for XC40s across all Portuguese sales. Not perfect—but good enough to spot patterns.</p>
-
-<h3>The Code That Made It Happen</h3>
-
-<pre><code class="language-sql">
-
--- The regional-product averaging hack
-
--- Simple idea: If we don't know this car's sales in this region,
-
--- use the average for this car model in this region
-
-WITH regional_product_avg AS (
-
-SELECT 
-
-region,
-
-product_id,
-
-AVG(sales_value) as avg_sales
-
-FROM sales_data
-
-WHERE sales_value IS NOT NULL
-
-GROUP BY region, product_id
-
-),
-
-sales_enriched AS (
-
-SELECT 
-
-s.order_id,
-
-s.region,
-
-s.product_id,
-
-[s.search](http://s.search)_term,
-
-s.sales_value,
-
-r.avg_sales as regional_product_avg,
-
--- Here's the magic: use real value if we have it, average if we don't
-
-COALESCE(s.sales_value, r.avg_sales) as sales_value_clean
-
-FROM sales_data s
-
-LEFT JOIN regional_product_avg r
-
-ON s.region = r.region 
-
-AND s.product_id = r.product_id
-
-)
-
-SELECT * FROM sales_enriched;
-
-</code></pre>
-
-<h3>The Outcome: Trust Through Transparency</h3>
-
-<p>48 hours later, I walked into that meeting with a deck. But I didn't start with the insights—I started with the truth:</p>
-
-<div style="background-color: #fff3cd; padding: 20px; border-left: 4px solid #ffc107; margin: 20px 0;">
-
-<p style="font-style: italic;">"Before we dive into what the data tells us, here's what you need to know: <em>15%</em> of our sales records are incomplete. I've used regional-product averages to fill the gaps. This approach is solid enough for the decisions we need to make today, but it has limitations..."</p>
-
-</div>
-
-<p>Then I showed them three things:</p>
-
+<h4>Business Impact Metrics</h4>
 <ul>
-
-<li>✅ <strong>The interim insights</strong> they could use immediately to guide product decisions</li>
-
-<li>✅ <strong>A clear breakdown</strong> of what was solid vs. what had caveats</li>
-
-<li>✅ <strong>A 2-month plan</strong> to improve data quality by <em>90%</em> (which we later achieved)</li>
-
+  <li>Search-to-order conversion funnel</li>
+  <li>Revenue attribution by search behavior</li>
 </ul>
 
-<p>The VP leaned back. "This is exactly what we needed. Let's move forward."</p>
+<h3>Analysis Implementation</h3>
 
-<hr style="margin: 40px 0;">
+<pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 4px; overflow-x: auto;">
+<code>import pandas as pd
 
-<h2>Chapter 2: What the Users Were Actually Doing</h2>
-
-<div style="background-color: #f0f8ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
-
-<p><strong>The Detective Tools:</strong> GA4, Python, Databricks, and a lot of SQL queries</p>
-
-</div>
-
-<p>With clean-enough data, I could finally answer the real question: <em>What were users actually searching for, and why wasn't it working?</em></p>
-
-<h3>The Data Sources: Where the Story Was Hiding</h3>
-
-| Source | What It Told Us | Volume |
-| --- | --- | --- |
-| GA4 | Every click, every search query, every moment of hesitation | <em>10,000+</em> events/day |
-| Snowflake | The moment of truth: did they buy? | Real-time sync |
-
-<h3>The Framework: Making Sense of Chaos</h3>
-
-<p>I built a MECE (Mutually Exclusive, Collectively Exhaustive) framework to organize our thinking. No more random metric requests—everything had a purpose.</p>
-
-<img src="/assets/porfolio-img/behavior-analytics/metrics-framework.png" alt="Metrics Framework" style="width: 100%; max-width: 900px; margin: 20px 0;">
-
-<div style="display: flex; gap: 2rem; margin: 20px 0;">
-
-<div style="flex: 1;">
-
-<h4>📊 What We Could Control</h4>
-
-<ul>
-
-<li>How many people started a search</li>
-
-<li>Which search type they used (default, keyword, auto-suggest)</li>
-
-<li>How many refinements they made</li>
-
-</ul>
-
-</div>
-
-<div style="flex: 1;">
-
-<h4>🎯 What We Needed to Monitor</h4>
-
-<ul>
-
-<li>Engagement rate: Did they click on results?</li>
-
-<li>Click position: Were the right results at the top?</li>
-
-<li>Zero-result searches: Where were the content gaps?</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<h3>The Python Code That Found the Patterns</h3>
-
-<pre><code class="language-python">
-
-import pandas as pd
-
-# This is where the story was hiding: in 300,000 daily search events
-
+# Load GA4 search behavior data from Databricks
 search_events = spark.sql("""
-
-SELECT 
-
-user_pseudo_id,
-
-event_date,
-
-search_term,
-
-search_result_count,
-
-event_name,
-
-event_label
-
-FROM ga4_events
-
-WHERE event_category = 'global search'
-
+    SELECT 
+        user_pseudo_id,
+        event_date,
+        search_term,
+        search_result_count,
+        event_name,
+        event_label
+    FROM ga4_events
+    WHERE event_category = 'global search'
 """).toPandas()
 
-# Calculate engagement: Are people finding what they want?
-
+# Calculate engagement metrics
 engagement_metrics = search_events.groupby('event_date').agg({
-
-'user_pseudo_id': 'nunique',
-
-'search_term': 'count',
-
-'search_result_count': 'mean'
-
+    'user_pseudo_id': 'nunique',
+    'search_term': 'count',
+    'search_result_count': 'mean'
 }).rename(columns={
-
-'user_pseudo_id': 'unique_users',
-
-'search_term': 'total_searches',
-
-'search_result_count': 'avg_results_returned'
-
+    'user_pseudo_id': 'unique_users',
+    'search_term': 'total_searches',
+    'search_result_count': 'avg_results_returned'
 })
 
-# The goldmine: What were people searching for that returned nothing?
-
+# Zero-result analysis for content gap identification
 zero_results = search_events[
+    search_events['search_result_count'] == 0
+].groupby('search_term').size().sort_values(ascending=False)</code>
+</pre>
 
-search_events['search_result_count'] == 0
-
-].groupby('search_term').size().sort_values(ascending=False)
-
-# This simple analysis revealed content gaps worth millions
-
-</code></pre>
-
-<h3>The Discoveries That Changed Everything</h3>
+<h3>Key Insights Delivered</h3>
 
 <ul>
-
-<li>🎯 <em>65%</em> engagement rate after optimization—people were clicking on results</li>
-
-<li>💡 Top 20 zero-result searches revealed exactly where our content was failing</li>
-
-<li>⚡ <em>30%</em> fewer search refinements meant people were finding what they wanted faster</li>
-
+  <li><strong>65% engagement rate</strong> achieved post-optimization—users were finding relevant results</li>
+  <li><strong>Top 20 zero-result terms</strong> identified content gaps, providing actionable priorities for the content team</li>
+  <li><strong>30% reduction</strong> in search refinement rate indicated improved relevance from the first query</li>
 </ul>
 
-<hr style="margin: 40px 0;">
+<hr>
 
-<h2>Chapter 3: Making Data Tell a Story</h2>
+<h2>📈 Business Intelligence Dashboards</h2>
 
-<div style="background-color: #f0f8ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
+<p>I designed a 3-page executive dashboard translating complex behavioral data into clear, actionable insights for C-level and product stakeholders.</p>
 
-<p><strong>The Communication Tools:</strong> Power BI, Azure OpenAI, and the art of executive storytelling</p>
+<h3>Page 1: Executive Overview</h3>
 
-</div>
+<img src="/assets/porfolio-img/behavior-analytics/dashboard-executive.png" alt="Executive Dashboard" style="width: 100%; margin: 2rem 0;">
 
-<p>Raw data doesn't change minds. Stories do.</p>
+<ul>
+  <li>KPI cards showing search volume, engagement rate, and conversion impact</li>
+  <li>Funnel visualization: Search → Click → Order</li>
+  <li>Trend analysis with month-over-month and year-over-year comparisons</li>
+</ul>
 
-<p>I built a 3-page dashboard that executives could understand in 5 minutes. No jargon. No database schemas. Just the story of what was happening and what to do about it.</p>
+<h3>Page 2: Behavioral Deep-Dive</h3>
 
-<h4>Page 1: The Executive View — "Here's What's Happening"</h4>
+<img src="/assets/porfolio-img/behavior-analytics/dashboard-behavior.png" alt="Behavioral Dashboard" style="width: 100%; margin: 2rem 0;">
 
-<img src="/assets/porfolio-img/behavior-analytics/dashboard-executive.png" alt="Executive Dashboard" style="width: 100%; max-width: 1000px; margin: 20px 0;">
+<ul>
+  <li>Click position distribution analysis revealing result relevance</li>
+  <li>Zero-result search trends over time</li>
+  <li>Search destination page breakdown</li>
+  <li>Time series patterns with seasonality detection</li>
+</ul>
 
-<p>Big numbers. Clear trends. One question answered: Are we winning or losing?</p>
+<h3>Page 3: Search Query Categories</h3>
 
-<h4>Page 2: The Deep Dive — "Here's Why It's Happening"</h4>
+<img src="/assets/porfolio-img/behavior-analytics/dashboard-queries.png" alt="Queries Dashboard" style="width: 100%; margin: 2rem 0;">
 
-<img src="/assets/porfolio-img/behavior-analytics/dashboard-behavior.png" alt="Behavioral Dashboard" style="width: 100%; max-width: 1000px; margin: 20px 0;">
+<ul>
+  <li>Query pattern analysis showing what users search for</li>
+  <li>Search query categorization</li>
+  <li>GenAI-powered insights for category optimization using Azure OpenAI (GPT-4)</li>
+</ul>
 
-<p>For the curious PM who wants to understand user behavior patterns and seasonal effects.</p>
+<h3>Technical Architecture</h3>
 
-<h4>Page 3: The Action Plan — "Here's What to Do About It"</h4>
+<pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 4px;">
+<code>GA4 (Behavioral Data) ──────┐
+                             ├──> Databricks ETL ──> Curated Tables ──> Power BI
+Snowflake (Order Data) ──────┘</code>
+</pre>
 
-<img src="/assets/porfolio-img/behavior-analytics/dashboard-queries.png" alt="Queries Dashboard" style="width: 100%; max-width: 1000px; margin: 20px 0;">
+<hr>
 
-<p>GenAI-powered insights showing exactly which content gaps to fill and which features to build.</p>
+<h2>📊 Results & Impact</h2>
 
-<hr style="margin: 40px 0;">
+<h3>Business Impact</h3>
 
-<h1>🎬 Act III: The Results (Or: When Data Meets Reality)</h1>
-
-<h2>The Business Impact: $2M+ in Revenue</h2>
-
-<p>Two sprints after delivering the insights, the engineering team shipped the fixes. Then we watched the numbers change.</p>
-
-<div style="background-color: #d4edda; padding: 20px; border-left: 4px solid #28a745; margin: 20px 0;">
-
-<p style="font-size: 1.2em; margin: 0;"><strong><em>12%</em> improvement in online order completion</strong></p>
-
-<p style="margin: 10px 0 0 0;">Across 112 markets. That's not a rounding error—that's real revenue.</p>
-
+<div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-left: 4px solid #28a745; margin: 2rem 0;">
+  <p style="font-size: 1.1em; margin: 0;"><strong>12% improvement in online order completion</strong> achieved in 2 sprints</p>
 </div>
 
 <ul>
-
-<li>✨ Data analytics provided the actionable insights</li>
-
-<li>🛠️ Engineering team knew exactly what to fix</li>
-
-<li>💰 Measurable impact: <em>$2M+</em> in additional annual revenue</li>
-
+  <li>Data analytics identified specific friction points in the search experience</li>
+  <li>Search engineering team implemented targeted optimizations</li>
+  <li>Measurable revenue impact across all 112 markets</li>
 </ul>
 
-<hr style="margin: 20px 0;">
+<h3>Infrastructure Impact</h3>
 
-<h2>The Technical Win: Speed Matters</h2>
-
-<div style="background-color: #d4edda; padding: 20px; border-left: 4px solid #28a745; margin: 20px 0;">
-
-<p style="font-size: 1.2em; margin: 0;"><strong><em>25%</em> reduction in search latency</strong></p>
-
-<p style="margin: 10px 0 0 0;">From 800ms to 600ms. Every millisecond counts in e-commerce.</p>
-
+<div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-left: 4px solid #28a745; margin: 2rem 0;">
+  <p style="font-size: 1.1em; margin: 0;"><strong>25% reduction in search latency</strong> (800ms → 600ms)</p>
 </div>
 
 <ul>
-
-<li>⚡ Caching strategy with <em>45%</em> hit rate</li>
-
-<li>🔍 Database query optimization</li>
-
-<li>🛡️ Circuit breaker pattern for reliability</li>
-
-<li>📉 Result: <em>33%</em> decrease in search abandonment</li>
-
+  <li>Implemented caching strategy achieving <strong>45% cache hit rate</strong></li>
+  <li>Optimized database queries with strategic indexing</li>
+  <li>Added circuit breaker pattern for graceful degradation under load</li>
+  <li>Result: <strong>33% decrease</strong> in search abandonment</li>
 </ul>
 
-<hr style="margin: 20px 0;">
+<h3>Strategic Impact</h3>
 
-<h2>The Strategic Play: Enabling the Future</h2>
-
-<p>But the biggest impact? We were building the foundation for something bigger.</p>
-
-<div style="background-color: #d4edda; padding: 20px; border-left: 4px solid #28a745; margin: 20px 0;">
-
-<p style="font-size: 1.2em; margin: 0;"><strong>Data preparation that unlocked GenAI capabilities</strong></p>
-
-<p style="margin: 10px 0 0 0;">Clean data isn't just about today's analytics—it's about tomorrow's AI.</p>
-
+<div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-left: 4px solid #28a745; margin: 2rem 0;">
+  <p style="font-size: 1.1em; margin: 0;"><strong>Data preparation enabling GenAI capabilities</strong></p>
 </div>
 
 <ul>
-
-<li>🧹 Cleaned <em>7,400</em> query corpus from <em>10,000+</em> raw searches</li>
-
-<li>🤖 Generated <em>4,500</em> high-quality training pairs for ML models</li>
-
-<li>📈 <em>40%</em> improvement in search relevance (NDCG@10: <em>0.72</em> vs <em>0.52</em>)</li>
-
-<li>🚀 Enabled the AI team to build conversational shopping assistant</li>
-
+  <li>Cleaned <strong>7,400 queries</strong> from 10,000+ raw search events, creating a high-quality corpus</li>
+  <li>Generated <strong>4,500 query-product training pairs</strong> for machine learning models</li>
+  <li>Achieved <strong>40% improvement</strong> in search relevance (NDCG@10: 0.72 vs. 0.52 baseline)</li>
+  <li>Enabled AI/ML team to develop semantic search and conversational shopping assistant</li>
 </ul>
 
-<hr style="margin: 40px 0;">
+<hr>
 
-<h1>🎓 The Lessons (Or: What I'd Tell My Past Self)</h1>
+<h2>🎓 Key Learnings</h2>
 
-<h2>Lesson 1: Perfect Data is the Enemy of Good Insights</h2>
+<h3>Balancing Speed vs. Rigor</h3>
 
-<div style="background-color: #fff3cd; padding: 20px; border-left: 4px solid #ffc107; margin: 20px 0;">
-
-<p><strong>The Moment:</strong> Stakeholder needed answers. Data was <em>15%</em> incomplete. Clock was ticking.</p>
-
-</div>
-
-<p><strong>What I Did:</strong></p>
+<p>When faced with incomplete data and urgent business decisions, I learned that <strong>pragmatic interim solutions with clear limitations beat perfect analyses that arrive too late</strong>. The key was transparency:</p>
 
 <ol>
-
-<li>✅ Delivered interim analysis in 48 hours using smart heuristics</li>
-
-<li>✅ Flagged every limitation and assumption in bold, clear language</li>
-
-<li>✅ Started the long-term fix in parallel—achieved <em>90%</em> data quality improvement in 2 months</li>
-
+  <li>Delivered interim analysis in 2 days using regional-product averaging for missing values</li>
+  <li>Clearly documented limitations in all reports and presentations</li>
+  <li>Simultaneously initiated data quality improvements, achieving 90% completeness in 2 months</li>
 </ol>
 
-<p><strong>The Email That Built Trust:</strong></p>
-
-<blockquote style="border-left: 4px solid #ccc; padding-left: 15px; margin: 20px 0; color: #555; font-style: italic;">
-
-"I've delivered the interim sales analysis using regional-product averages to handle the <em>15%</em> missing data. This approach enables immediate decision-making, but here are the limitations: [X, Y, Z]. In parallel, I've kicked off a data quality initiative with the source teams. Expecting <em>50%</em> improvement within 2 months."
-
-— The email that changed how stakeholders trusted my work
-
+<blockquote style="background: rgba(0, 102, 204, 0.1); padding: 1rem; border-left: 4px solid #0066cc; margin: 2rem 0;">
+  <p>Stakeholders appreciated the honesty. By flagging what was solid versus what relied on heuristics, I built trust that paid dividends in future projects.</p>
 </blockquote>
 
-<p><strong>What Happened:</strong></p>
+<h3>User-Centric Analytics</h3>
+
+<p>Working with engineering, UX, and product teams to design the GA4 tracking specification collaboratively ensured that:</p>
 
 <ul>
-
-<li>✅ VP made the go/no-go decision without delay</li>
-
-<li>✅ My reputation for transparency went up, not down</li>
-
-<li>✅ Future stakeholders trusted my "good enough" analyses because I'd proven I knew the difference</li>
-
+  <li>Metrics aligned with actual product decisions rather than theoretical KPIs</li>
+  <li>Cross-functional teams shared a common measurement vocabulary</li>
+  <li>The MECE framework prevented metric proliferation and confusion</li>
 </ul>
 
-<hr style="margin: 40px 0;">
+<h3>Self-Service Enablement</h3>
 
-<h2>Lesson 2: Self-Service Analytics is a Superpower</h2>
+<p>By building interactive dashboards with clear documentation, I reduced ad-hoc analysis requests by <strong>60%</strong>. This freed time for deeper strategic work while empowering stakeholders to find their own answers.</p>
 
-<p>I was drowning in ad-hoc requests. "Can you pull this metric?" "What about this slice?" "How does this compare to last quarter?"</p>
+<h3>Iterative Scaling</h3>
 
-<p><strong>The Solution:</strong> Build tools that answer questions before they're asked.</p>
-
-<ul>
-
-<li>📊 Created interactive dashboards where anyone could drill down</li>
-
-<li>📚 Wrote clear documentation for non-technical stakeholders</li>
-
-<li>🎓 Ran training sessions on "How to find your own answers"</li>
-
-</ul>
-
-<p><strong>The Result:</strong></p>
-
-<div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 15px 0;">
-
-<p><em>60%</em> reduction in ad-hoc analysis requests from the Search Engineering team</p>
-
-</div>
-
-<p>That's 60% more time to work on things that actually move the needle.</p>
-
-<hr style="margin: 40px 0;">
-
-<h2>Lesson 3: Start Small, Scale Smart</h2>
-
-<p><strong>The Journey:</strong></p>
+<p>The MVP-to-scale approach proved essential:</p>
 
 <ol>
-
-<li>🌱 <strong>MVP:</strong> Validated tracking with 1 market (Sweden—cleanest data, fastest iteration)</li>
-
-<li>🌍 <strong>Scale:</strong> Rolled out to 112 markets with localization guides</li>
-
-<li>🔄 <strong>Refine:</strong> Continuously improved based on what each market taught us</li>
-
+  <li><strong>Validated:</strong> MVP tracking with 1 market (Sweden) to ensure data quality and usability</li>
+  <li><strong>Scaled:</strong> Rolled out to 112 markets with localization guides</li>
+  <li><strong>Refined:</strong> Continuously improved based on stakeholder feedback and market-specific learnings</li>
 </ol>
 
-<p><strong>The Weekly Cycle That Made It Work:</strong></p>
+<p>This iterative cycle—monitor metrics weekly, identify opportunities, coordinate with teams, and measure impact—became a repeatable framework for optimization.</p>
+
+<hr>
+
+<h2>🛠️ Skills Demonstrated</h2>
 
 <ul>
-
-<li>📅 Monday: Review metrics from all markets</li>
-
-<li>🔍 Tuesday-Wednesday: Identify opportunities (e.g., zero-result searches)</li>
-
-<li>🤝 Thursday: Coordinate with content/UX teams on fixes</li>
-
-<li>📊 Friday: Measure impact of previous week's changes</li>
-
+  <li>Data Engineering & ETL (SQL, Databricks, Snowflake)</li>
+  <li>Behavioral Analytics (GA4, Python/Pandas)</li>
+  <li>Business Intelligence (Power BI, DAX)</li>
+  <li>Stakeholder Communication & Data Storytelling</li>
+  <li>Product Analytics & Metrics Framework Design</li>
+  <li>Cross-functional Collaboration</li>
+  <li>Data Quality Advocacy & Process Improvement</li>
 </ul>
 
-<hr style="margin: 40px 0;">
+<hr>
 
-<h1>🤝 Let's Write the Next Chapter Together</h1>
-
-<div style="background-color: #f5f5f5; padding: 30px; border-radius: 8px; margin: 20px 0;">
-
-<p style="font-size: 1.1em; margin-bottom: 20px;">This story isn't just about analytics—it's about turning messy reality into clear action. If your team is facing similar challenges, let's talk.</p>
-
-<p><strong>📧 Email:</strong> <a href="[mailto:thanhphong.trang@gmail.com">thanhphong.trang@gmail.com</a>](mailto:thanhphong.trang@gmail.com">thanhphong.trang@gmail.com</a>)
-
-<strong>💼 LinkedIn:</strong> <a href="https://www.linkedin.com/in/phongtrangtt/">linkedin.com/in/phongtrangtt</a></p>
-
-<p style="margin-top: 20px;">
-
-<strong>Open to:</strong> Product Analyst • Product Manager • Data Analytics Lead
-
-<strong>Location:</strong> Gothenburg, Sweden (open to remote for the right team)
-
-</p>
-
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+  <h3>🤙🏻 Let's Connect</h3>
+  <p>📧 <a href="mailto:thanhphong.trang@gmail.com">thanhphong.trang@gmail.com</a><br>
+  💼 <a href="https://www.linkedin.com/in/phongtrangtt/">LinkedIn Profile</a></p>
+  <p><strong>Available for:</strong> Data Analyst, Product Manager<br>
+  <strong>Location:</strong> Gothenburg, Sweden</p>
 </div>
 
-<hr style="margin: 40px 0;">
+<hr>
 
-<h2>📂 The Code Behind the Story</h2>
+<h2>📂 Appendix: Artifacts on GitHub</h2>
 
-<p>Want to see how it actually worked? The SQL queries, Python scripts, and Power BI measures are all documented:</p>
+<h3>Repository Structure</h3>
 
-<pre><code>
-
-/search-analytics
-
+<pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 4px;">
+<code>/search-analytics
 │
-
-├── /sql                           # The database wizardry
-
-│   ├── null_handling_subquery.sql    # The 48-hour hack
-
-│   ├── behavioral_metrics.sql        # User behavior patterns
-
-│   └── etl_pipeline_sample.sql       # Production ETL
-
+├── /sql
+│   ├── null_handling_subquery.sql
+│   ├── behavioral_metrics.sql
+│   └── etl_pipeline_sample.sql
 │
-
-├── /python                        # The analysis scripts
-
-│   ├── engagement_[analysis.py](http://analysis.py)        # Engagement metrics
-
-│   ├── zero_results_[analysis.py](http://analysis.py)      # Content gap finder
-
+├── /python
+│   ├── engagement_analysis.py
+│   ├── zero_results_analysis.py
 │   └── requirements.txt
-
 │
+└── /powerbi
+    └── dax_measures.txt</code>
+</pre>
 
-└── /powerbi                       # The storytelling dashboards
-
-└── dax_measures.txt              # Custom metrics
-
-</code></pre>
-
-<p style="margin-top: 30px; font-size: 1.1em;">
-
-📦 <strong>Full repository:</strong> <a href="https://github.com/thanhphongtrang/search-analytics" style="font-weight: 600;">[github.com/thanhphongtrang/search-analytics</a>](http://github.com/thanhphongtrang/search-analytics</a>)
-
-</p>
-
-<img src="/assets/porfolio-img/behavior-analytics/github-repo.png" alt="GitHub Repository" style="width: 100%; max-width: 1000px; margin: 20px 0;">
-
-<hr style="margin: 40px 0;">
-
-<div style="background-color: #e8f4f8; padding: 20px; border-radius: 8px; margin: 40px 0; text-align: center;">
-
-<p style="font-style: italic; color: #555; margin: 0;">
-
-"The best analytics don't just show what happened—they tell you what to do next."
-
-— What I learned from 10,000+ searches, 112 markets, and one very stressful Tuesday
-
-</p>
-
-</div>
-
-</div>
+<p style="margin-top: 2rem;">View complete code repository:<br>
+<a href="https://github.com/thanhphongtrang/search-analytics" style="font-size: 1.1em; font-weight: 600;">GitHub: thanhphongtrang/search-analytics</a></p>
 
 <style>
-
-.portfolio-container {
-
-max-width: 1200px;
-
-margin: 0 auto;
-
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-
-line-height: 1.6;
-
-color: #333;
-
-}
-
-pre {
-
-background-color: #f4f4f4;
-
-border: 1px solid #ddd;
-
-border-radius: 4px;
-
-padding: 15px;
-
-overflow-x: auto;
-
-}
-
-code {
-
-font-family: 'Courier New', Courier, monospace;
-
-font-size: 14px;
-
-}
-
-h1 {
-
-color: #2c3e50;
-
-border-bottom: 2px solid #3498db;
-
-padding-bottom: 10px;
-
-margin-top: 40px;
-
-}
-
-h2 {
-
-color: #34495e;
-
-margin-top: 30px;
-
-}
-
-h3 {
-
-color: #555;
-
-margin-top: 20px;
-
-}
-
-blockquote {
-
-font-size: 1.05em;
-
-line-height: 1.7;
-
-}
-
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    body {
+      color: #e0e0e0;
+      background: #1a1a1a;
+    }
+    
+    h1, h2, h3, h4 {
+      color: #ffffff;
+    }
+    
+    pre {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    code {
+      color: #e0e0e0;
+    }
+    
+    table th {
+      background: rgba(0, 102, 204, 0.2) !important;
+    }
+    
+    table td, table th {
+      border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    blockquote {
+      background: rgba(0, 102, 204, 0.15) !important;
+      border-left-color: #4d94ff !important;
+      color: #e0e0e0;
+    }
+    
+    a {
+      color: #4d94ff;
+    }
+  }
+  
+  h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #0066cc;
+    padding-bottom: 10px;
+    margin-top: 40px;
+  }
+  
+  h2 {
+    color: #34495e;
+    margin-top: 30px;
+  }
+  
+  h3 {
+    color: #555;
+    margin-top: 20px;
+  }
+  
+  pre {
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  
+  code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
 </style>
