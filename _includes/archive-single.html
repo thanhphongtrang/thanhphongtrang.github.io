@@ -1,4 +1,3 @@
-@@ -1,7 +1,7 @@
 {% include base_path %}
 
 {% if post.header.teaser %}
@@ -7,7 +6,9 @@
   {% assign teaser = site.teaser %}
 {% endif %}
 
-@@ -12,72 +12,76 @@
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
   {% assign title = post.title %}
 {% endif %}
 
@@ -25,17 +26,11 @@
       </div>
     {% endif %}
 
-
-
-
-
-
     <h2 class="archive__item-title" itemprop="headline">
       {% if post.link %}
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
       {% else %}
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-
       {% endif %}
     </h2>
     
@@ -56,10 +51,7 @@
     {% elsif post.excerpt and site.read_more == 'enabled' %}
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
-
-
     
-
     {% if post.citation and post.paperurl and post.slidesurl and post.bibtexurl %}
       <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
     {% elsif post.citation and post.paperurl and post.slidesurl %}
@@ -89,3 +81,4 @@
     {% endif %}
 
   </article>
+</div>
