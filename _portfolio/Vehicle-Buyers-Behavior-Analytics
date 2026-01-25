@@ -390,53 +390,7 @@ Snowflake (Order Data) ──────┘</code>
 <a href="https://github.com/thanhphongtrang/search-analytics" style="font-size: 1.1em; font-weight: 600;">GitHub: thanhphongtrang/search-analytics</a></p>
 
 <style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    body {
-      color: #e0e0e0;
-      background: #1a1a1a;
-    }
-    
-    h1, h2, h3, h4 {
-      color: #ffffff;
-    }
-    
-    pre {
-      background: rgba(255, 255, 255, 0.05) !important;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    code {
-      color: #e0e0e0;
-    }
-    
-    table th {
-      background: rgba(0, 102, 204, 0.2) !important;
-    }
-    
-    table td, table th {
-      border-color: rgba(255, 255, 255, 0.1) !important;
-    }
-    
-    blockquote {
-      background: rgba(0, 102, 204, 0.15) !important;
-      border-left-color: #4d94ff !important;
-      color: #e0e0e0;
-    }
-    
-    a {
-      color: #4d94ff;
-    }
-  }
-  
+  /* Light mode default styles */
   h1 {
     color: #2c3e50;
     border-bottom: 2px solid #0066cc;
@@ -488,5 +442,42 @@ Snowflake (Order Data) ──────┘</code>
   
   a:hover {
     text-decoration: underline;
+  }
+  
+  /* Dark mode adaptations - only styles content elements, not page background */
+  @media (prefers-color-scheme: dark) {
+    h1, h2, h3, h4 {
+      color: #ffffff;
+    }
+    
+    h1 {
+      border-bottom-color: #4d94ff;
+    }
+    
+    pre {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    code {
+      color: #e0e0e0;
+    }
+    
+    table th {
+      background: rgba(0, 102, 204, 0.2) !important;
+    }
+    
+    table td, table th {
+      border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    blockquote {
+      background: rgba(0, 102, 204, 0.15) !important;
+      border-left-color: #4d94ff !important;
+    }
+    
+    a {
+      color: #4d94ff;
+    }
   }
 </style>
