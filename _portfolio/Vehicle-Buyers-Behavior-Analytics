@@ -63,8 +63,8 @@ collection: portfolio
 
 <h3>The Technical Implementation</h3>
 
-<pre style="background: #f5f5f5; border: 1px solid #ddd; padding: 1rem; border-radius: 4px; overflow-x: auto;">
-<code >-- Regional-product averaging approach for NULL handling
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+<code>-- Regional-product averaging approach for NULL handling
 WITH regional_product_avg AS (
     SELECT 
         region,
@@ -89,7 +89,7 @@ sales_enriched AS (
         AND s.product_id = r.product_id
 )
 SELECT * FROM sales_enriched;</code>
-</pre>
+</div>
 
 <h3>Outcome & Transparency</h3>
 
@@ -167,8 +167,7 @@ SELECT * FROM sales_enriched;</code>
 
 <h3>Analysis Implementation</h3>
 
-<pre style="background: #f5f5f5; border: 1px solid #ddd; padding: 1rem; border-radius: 4px; overflow-x: auto;">
-<code>import pandas as pd
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;"><code>import pandas as pd
 
 # Load GA4 search behavior data from Databricks
 search_events = spark.sql("""
@@ -198,7 +197,7 @@ engagement_metrics = search_events.groupby('event_date').agg({
 zero_results = search_events[
     search_events['search_result_count'] == 0
 ].groupby('search_term').size().sort_values(ascending=False)</code>
-</pre>
+</div>
 
 <h3>Key Insights Delivered</h3>
 
@@ -247,11 +246,11 @@ zero_results = search_events[
 
 <h3>Technical Architecture</h3>
 
-<pre style="background: #f5f5f5; border: 1px solid #ddd; padding: 1rem; border-radius: 4px;">
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
 <code >GA4 (Behavioral Data) ──────┐
                              ├──> Databricks ETL ──> Curated Tables ──> Power BI
 Snowflake (Order Data) ──────┘</code>
-</pre>
+</div>
 
 <hr>
 
@@ -369,7 +368,7 @@ Snowflake (Order Data) ──────┘</code>
 
 <h3>Repository Structure</h3>
 
-<pre style="background: #f5f5f5; border: 1px solid #ddd; padding: 1rem; border-radius: 4px;">
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
 <code>/search-analytics
 │
 ├── /sql
@@ -384,7 +383,7 @@ Snowflake (Order Data) ──────┘</code>
 │
 └── /powerbi
     └── dax_measures.txt</code>
-</pre>
+</div>
 
 <p style="margin-top: 2rem;">View complete code repository:<br>
 <a href="https://github.com/thanhphongtrang/search-analytics" style="font-size: 1.1em; font-weight: 600;">GitHub: thanhphongtrang/search-analytics</a></p>
