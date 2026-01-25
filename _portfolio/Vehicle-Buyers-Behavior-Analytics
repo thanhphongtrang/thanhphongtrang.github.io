@@ -1,0 +1,420 @@
+---
+title: "User Journey Mapping: Waiting time is bonding time"
+excerpt: "Led product discovery for Volvo's Order-to-Delivery Experience, transforming an 8-12 month waiting period into a personalized learning journey that reduces agent workload and strengthens brand trust.<br/><img src='/assets/porfolio-img/otd/banner.png'>"
+collection: portfolio
+---
+
+<div class="portfolio-container">
+  <div class="header-section">
+    <p><em>By Phong Trang - Software Product Manager - <a href="mailto:thanhphong.trang@gmail.com">thanhphong.trang@gmail.com</a></em></p>
+    <img src="/assets/porfolio-img/behavior-analytics/banner.png" alt="Vehicle Buyers Behavior Analytics Banner" style="width: 100%; max-width: 1200px; margin: 20px 0;">
+  </div>
+
+  <div class="executive-summary" style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+    <h2>ℹ️ Executive Summary</h2>
+    <ul>
+      <li><strong>Role:</strong> Product Analyst | <strong>Industry:</strong> Automotive E-commerce | <strong>Scope:</strong> 112 global markets</li>
+      <li><strong>Key Impact:</strong>
+        <ul>
+          <li>Drove <em>12%</em> improvement in online order completion through data-driven search optimization</li>
+          <li>Error handling reducing search performance latency by <em>25%</em></li>
+          <li>Preliminary data preparation for a GenAI shopping assistant</li>
+        </ul>
+      </li>
+      <li><strong>Technical Stack:</strong> SQL, Python, Databricks, Power BI, GA4, DAX</li>
+      <li><strong>Portfolio Artifacts:</strong> <a href="https://github.com/thanhphongtrang/search-analytics">GitHub Code</a> | Interactive Dashboard | Case Study</li>
+    </ul>
+  </div>
+
+  <h1>Business Context</h1>
+  
+  <h2>The Challenge</h2>
+  <p>Stakeholders needed rapid insights to optimize a newly launched semantic search feature, but faced:</p>
+  <ul>
+    <li><strong>Incomplete data:</strong> <em>15%</em> of sales records had NULL values across regions</li>
+    <li><strong>Time pressure:</strong> Urgent business decisions couldn't wait for perfect data</li>
+    <li><strong>Global complexity:</strong> 112 markets with varying data quality and behavior patterns</li>
+    <li><strong>Cross-functional alignment:</strong> Multiple teams (data science, engineering, UX, governance) needed coordinated tracking</li>
+  </ul>
+
+  <h2>My Role</h2>
+  <p>Product Analyst supporting the business and engineering team with:</p>
+  <ul>
+    <li>Data pipeline design and implementation</li>
+    <li>Behavioral analytics and insight generation</li>
+    <li>Executive dashboard creation</li>
+    <li>Stakeholder communication and data quality advocacy</li>
+  </ul>
+
+  <hr style="margin: 40px 0;">
+
+  <h1>ETL Process (MECE applied)</h1>
+
+  <h2>1️⃣ Data Engineering & ETL</h2>
+  <div style="background-color: #f0f8ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
+    <p><strong>Tools:</strong> SQL, Databricks, Snowflake</p>
+  </div>
+
+  <h3>Problem: Missing Sales Data</h3>
+  <p>~<em>15%</em> of sales records had NULL values across product-region combinations, blocking analysis.</p>
+
+  <h3>Solution: Dual-Track Approach</h3>
+  <ul>
+    <li><strong>Short-term (2 days):</strong> Interim analysis using regional-product average heuristic</li>
+    <li><strong>Long-term (2 months):</strong> Data quality improvement with source system teams</li>
+  </ul>
+
+  <h3>SQL Implementation</h3>
+  <pre><code class="language-sql">
+-- Sophisticated NULL handling with regional-product averages
+WITH regional_product_avg AS (
+    SELECT 
+        region,
+        product_id,
+        AVG(sales_value) as avg_sales
+    FROM sales_data
+    WHERE sales_value IS NOT NULL
+    GROUP BY region, product_id
+),
+sales_enriched AS (
+    SELECT 
+        s.order_id,
+        s.region,
+        s.product_id,
+        s.search_term,
+        s.sales_value,
+        r.avg_sales as regional_product_avg,
+        COALESCE(s.sales_value, r.avg_sales) as sales_value_clean
+    FROM sales_data s
+    LEFT JOIN regional_product_avg r
+        ON s.region = r.region 
+        AND s.product_id = r.product_id
+)
+SELECT * FROM sales_enriched;
+  </code></pre>
+
+  <h3>Outcome</h3>
+  <ul>
+    <li>✅ Clean dataset with documented limitations</li>
+    <li>✅ Stakeholder transparency maintained</li>
+    <li>✅ Business decisions proceeded without delay</li>
+    <li>✅ Long-term data quality improved <em>90%</em> within 2 months</li>
+  </ul>
+
+  <hr style="margin: 40px 0;">
+
+  <h2>2️⃣ Behavioral Analytics</h2>
+  <div style="background-color: #f0f8ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
+    <p><strong>Tools:</strong> GA4, Python/Pandas, Databricks</p>
+  </div>
+
+  <h3>Data Sources Integration</h3>
+  <table style="width: 100%; border-collapse: collapse; margin: 20px 0;" border="1">
+    <thead>
+      <tr style="background-color: #e8e8e8;">
+        <th style="padding: 10px; text-align: left;">Source</th>
+        <th style="padding: 10px; text-align: left;">Data Type</th>
+        <th style="padding: 10px; text-align: left;">Volume</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px;">GA4</td>
+        <td style="padding: 10px;">Customer search behavior</td>
+        <td style="padding: 10px;"><em>10,000+</em> events/day</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">Snowflake</td>
+        <td style="padding: 10px;">Order completion & sales</td>
+        <td style="padding: 10px;">Real-time sync</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Key Metrics Tracked</h3>
+  <p><u>Methodology</u>: Established a MECE metrics framework aligning product objectives (Scale up usage, Ensure engagement) with measurable KPIs. Defined search interaction types (default search, keyword box, auto-suggestion) with clear tracking specifications. Created comprehensive documentation for cross-functional teams (engineering, UX, product) ensuring consistent measurement across 112 markets and reducing metric misinterpretation.</p>
+
+  <img src="/assets/porfolio-img/behavior-analytics/metrics-framework.png" alt="Metrics Framework" style="width: 100%; max-width: 900px; margin: 20px 0;">
+
+  <div style="display: flex; gap: 2rem; margin: 20px 0;">
+    <div style="flex: 1;">
+      <h4>Product Usage Metrics:</h4>
+      <ul>
+        <li>Sessions initiating search</li>
+        <li>Search submission types (default, keyword box, auto-suggestion)</li>
+        <li>Search refinement patterns</li>
+      </ul>
+    </div>
+    <div style="flex: 1;">
+      <h4>Engagement Metrics:</h4>
+      <ul>
+        <li>Engagement rate: (Result clicks / Search sessions)</li>
+        <li>Click position distribution</li>
+        <li>Zero-result searches (content gaps)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h4>Business Impact Metrics:</h4>
+  <ul>
+    <li>Search-to-order conversion funnel</li>
+    <li>Revenue attribution by search behavior</li>
+  </ul>
+
+  <h3>Analysis Example</h3>
+  <pre><code class="language-python">
+import pandas as pd
+
+# Load GA4 search behavior data from Databricks
+search_events = spark.sql("""
+    SELECT 
+        user_pseudo_id,
+        event_date,
+        search_term,
+        search_result_count,
+        event_name,
+        event_label
+    FROM ga4_events
+    WHERE event_category = 'global search'
+""").toPandas()
+
+# Calculate engagement metrics
+engagement_metrics = search_events.groupby('event_date').agg({
+    'user_pseudo_id': 'nunique',
+    'search_term': 'count',
+    'search_result_count': 'mean'
+}).rename(columns={
+    'user_pseudo_id': 'unique_users',
+    'search_term': 'total_searches',
+    'search_result_count': 'avg_results_returned'
+})
+
+# Zero-result analysis for content gap identification
+zero_results = search_events[
+    search_events['search_result_count'] == 0
+].groupby('search_term').size().sort_values(ascending=False)
+  </code></pre>
+
+  <h3>Key Insights Delivered</h3>
+  <ul>
+    <li><em>65%</em> engagement rate achieved post-optimization</li>
+    <li>Top 20 zero-result terms identified → Content team action items</li>
+    <li><em>30%</em> reduction in search refinement rate (improved relevance)</li>
+  </ul>
+
+  <hr style="margin: 40px 0;">
+
+  <h2>3️⃣ Business Intelligence & Dashboards</h2>
+  <div style="background-color: #f0f8ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
+    <p><strong>Tools:</strong> Power BI, MS Azure OpenAI (GPT-4)</p>
+  </div>
+
+  <h3>Dashboard Architecture</h3>
+  <p>3-page executive dashboard designed for C-level and product stakeholders:</p>
+
+  <h4>Page 1: Executive Overview</h4>
+  <img src="/assets/porfolio-img/behavior-analytics/dashboard-executive.jpg" alt="Executive Dashboard" style="width: 100%; max-width: 1000px; margin: 20px 0;">
+  <ul>
+    <li>KPI cards: Search volume, engagement rate, conversion impact</li>
+    <li>Funnel visualization: Search → Click → Order</li>
+    <li>Trend analysis with MoM/YoY comparisons</li>
+  </ul>
+
+  <h4>Page 2: Behavioral Deep-Dive</h4>
+  <img src="/assets/porfolio-img/behavior-analytics/dashboard-behavior.png" alt="Behavioral Dashboard" style="width: 100%; max-width: 1000px; margin: 20px 0;">
+  <ul>
+    <li>Click position distribution analysis</li>
+    <li>Zero-result search trends</li>
+    <li>Search destination page breakdown</li>
+    <li>Time series with seasonality detection</li>
+  </ul>
+
+  <h4>Page 3: Search Queries Category</h4>
+  <img src="/assets/porfolio-img/behavior-analytics/dashboard-queries.png" alt="Queries Dashboard" style="width: 100%; max-width: 1000px; margin: 20px 0;">
+  <ul>
+    <li>What queries users enter to the search bar</li>
+    <li>Categories of search queries</li>
+    <li>GenAI Insight for search category</li>
+  </ul>
+
+  <hr style="margin: 40px 0;">
+
+  <h2>4️⃣ Data Architecture & Integration</h2>
+
+  <h3>Tech Stack Design</h3>
+  <pre><code>
+GA4 (Behavioral Data) ──────┐
+                             ├──> Databricks ETL ──> Curated Tables ──> Power BI
+Snowflake (Order Data) ──────┘
+  </code></pre>
+
+  <hr style="margin: 40px 0;">
+
+  <h1>📈 Key Results</h1>
+
+  <h2>Business Impact</h2>
+  <p><em>12%</em> improvement in online order completion achieved in 2 sprints</p>
+  <ul>
+    <li>Data analytics provided actionable insights</li>
+    <li>Search engineering team implemented optimization action plans</li>
+    <li>Measurable revenue impact across 112 markets</li>
+  </ul>
+
+  <hr style="margin: 20px 0;">
+
+  <h2>Infrastructure Impact</h2>
+  <p><em>25%</em> reduction in search latency (800ms → 600ms)</p>
+  <ul>
+    <li>Implemented caching strategy (<em>45%</em> cache hit rate)</li>
+    <li>Database query optimization with indexing</li>
+    <li>Circuit breaker pattern for graceful degradation</li>
+    <li>Result: <em>33%</em> decrease in search abandonment</li>
+  </ul>
+
+  <hr style="margin: 20px 0;">
+
+  <h2>Strategy Impact</h2>
+  <p>Data preparation enabling GenAI capabilities</p>
+  <ul>
+    <li>Created <em>7,400</em> clean query corpus from <em>10,000+</em> raw searches</li>
+    <li>Generated <em>4,500</em> high-quality query-product training pairs</li>
+    <li>Achieved <em>40%</em> improvement in search relevance (NDCG@10: <em>0.72</em> vs <em>0.52</em> baseline)</li>
+    <li>Enabled AI/ML team to build semantic search and conversational shopping assistant</li>
+  </ul>
+
+  <hr style="margin: 40px 0;">
+
+  <h1>📖 Key Learnings</h1>
+
+  <h2>⚡ Balancing Speed vs. Rigor</h2>
+  <div style="background-color: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 15px 0;">
+    <p><strong>Situation:</strong> Stakeholder needed sales analysis immediately, but <em>15%</em> of data had NULL values</p>
+  </div>
+
+  <p><strong>My Approach:</strong></p>
+  <ol>
+    <li>Delivered interim analysis using regional-product averages (completed in 2 days)</li>
+    <li>Clearly flagged limitations in all reports and presentations</li>
+    <li>Simultaneously initiated data quality improvement with upstream teams</li>
+  </ol>
+
+  <p>📨 Communication:</p>
+  <blockquote style="border-left: 4px solid #ccc; padding-left: 15px; margin: 20px 0; color: #555;">
+    "I've delivered the interim sales analysis using regional-product averages to fill <em>15%</em> missing data. This heuristic approach enables immediate decision-making, but I've flagged the following limitations: [X, Y, Z]. In parallel, I've initiated a data quality improvement process with the source teams, expecting <em>50%</em> improvement within 2 months."
+  </blockquote>
+
+  <p><strong>Result:</strong></p>
+  <ul>
+    <li>✅ Stakeholder made time-sensitive decision without delay</li>
+    <li>✅ Analytical integrity maintained through transparency</li>
+  </ul>
+
+  <hr style="margin: 40px 0;">
+
+  <h2>🎯 User-Centric Analytics</h2>
+  
+  <h3>Collaborative Framework Design</h3>
+  <p>Worked with engineering, UX, and product teams to design GA4 tracking specification</p>
+  
+  <p><strong>MECE Metrics Framework:</strong></p>
+  <ul>
+    <li><strong>KPIs</strong> (what we control): Product usage, engagement rate</li>
+    <li><strong>Optimization Metrics</strong> (what we monitor): Relevancy, technical performance, user insights</li>
+  </ul>
+
+  <h3>Self-Service Enablement</h3>
+  <ul>
+    <li>Built interactive dashboards with filters and drill-downs</li>
+    <li>Created documentation for non-technical stakeholders</li>
+    <li>Reduced ad-hoc analysis requests by <em>60%</em> from the Search Engineering team</li>
+  </ul>
+
+  <hr style="margin: 40px 0;">
+
+  <h2>🔄 Iterative Improvement</h2>
+  
+  <p><strong>MVP → Scale Approach:</strong></p>
+  <ol>
+    <li><strong>Started:</strong> MVP tracking validated with 1 market</li>
+    <li><strong>Scaled:</strong> Rolled out to 112 markets with localization</li>
+    <li><strong>Refined:</strong> Continuously improved based on stakeholder feedback</li>
+  </ol>
+
+  <p><strong>Data-Driven Optimization Cycle:</strong></p>
+  <ul>
+    <li>Monitor metrics weekly</li>
+    <li>Identify opportunities (e.g., zero-result searches)</li>
+    <li>Coordinate with content/UX teams</li>
+    <li>Measure impact of changes</li>
+  </ul>
+
+  <hr style="margin: 40px 0;">
+
+  <hr style="margin: 40px 0;">
+
+  <h2>Appendix: Artifacts on GitHub</h2>
+  
+  <h3>Repository Structure</h3>
+  <pre><code>
+/search-analytics
+│
+├── /sql
+│   ├── null_handling_subquery.sql
+│   ├── behavioral_metrics.sql
+│   └── etl_pipeline_sample.sql
+│
+├── /python
+│   ├── engagement_analysis.py
+│   ├── zero_results_analysis.py
+│   └── requirements.txt
+│
+└── /powerbi
+    └── dax_measures.txt
+  </code></pre>
+
+  <p style="margin-top: 30px;">View complete code repository on:<br>
+  <a href="https://github.com/thanhphongtrang/search-analytics" style="font-size: 18px; font-weight: 600;">GitHub: thanhphongtrang/search-analytics</a></p>
+
+  <img src="/assets/porfolio-img/behavior-analytics/github-repo.png" alt="GitHub Repository Screenshot" style="width: 100%; max-width: 1000px; margin: 20px 0;">
+
+</div>
+
+<style>
+  .portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    overflow-x: auto;
+  }
+  
+  code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+  }
+  
+  h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-top: 40px;
+  }
+  
+  h2 {
+    color: #34495e;
+    margin-top: 30px;
+  }
+  
+  h3 {
+    color: #555;
+    margin-top: 20px;
+  }
+</style>
