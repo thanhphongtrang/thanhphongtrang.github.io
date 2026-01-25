@@ -1,6 +1,6 @@
 ---
 title: "AI Semantic Search for New Car Sales"
-excerpt: "Led development of an intelligent search system using AI-powered intent recognition, achieving 85% search accuracy and driving 11% higher purchase conversion.<br/><img src='/assets/portfolio-img/ai-search/hero-banner.png'>"
+excerpt: "Led development of an intelligent search system using AI-powered intent recognition, achieving 85% search accuracy and driving 11% higher purchase conversion.<br/><img src='/assets/portfolio-img/ai-search/hero-banner.png' width="50%" height="50%">"
 collection: portfolio
 ---
 
