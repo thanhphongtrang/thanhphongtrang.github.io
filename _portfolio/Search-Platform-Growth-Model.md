@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Search Platform Growth Model and Monetization
+title: "Search Platform Growth Model and Monetization"
+excerpt: "Led development of an intelligent search system using AI-powered intent recognition, achieving 85% search accuracy and driving 11% higher purchase conversion.<br/><img src='/assets/porfolio-img/search-growth/banner.png'>"
+collection: portfolio
 ---
 
 *By Phong Trang - Software Product Manager - [thanhphong.trang@gmail.com](mailto:thanhphong.trang@gmail.com)*
