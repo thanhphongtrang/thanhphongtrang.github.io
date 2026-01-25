@@ -390,23 +390,8 @@ Snowflake (Order Data) ──────┘</code>
 <a href="https://github.com/thanhphongtrang/search-analytics" style="font-size: 1.1em; font-weight: 600;">GitHub: thanhphongtrang/search-analytics</a></p>
 
 <style>
-  /* Light mode default styles */
-  h1 {
-    color: #2c3e50;
-    border-bottom: 2px solid #0066cc;
-    padding-bottom: 10px;
-    margin-top: 40px;
-  }
-  
-  h2 {
-    color: #34495e;
-    margin-top: 30px;
-  }
-  
-  h3 {
-    color: #555;
-    margin-top: 20px;
-  }
+ 
+ 
   
   pre {
     border-radius: 4px;
@@ -414,11 +399,7 @@ Snowflake (Order Data) ──────┘</code>
     overflow-x: auto;
   }
   
-  code {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-  }
-  
+
   img {
     max-width: 100%;
     height: auto;
@@ -435,33 +416,17 @@ Snowflake (Order Data) ──────┘</code>
     text-align: left;
   }
   
-  a {
-    color: #0066cc;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
+
   
   /* Dark mode adaptations - only styles content elements, not page background */
   @media (prefers-color-scheme: dark) {
-    h1, h2, h3, h4 {
-      color: #ffffff;
-    }
-    
-    h1 {
-      border-bottom-color: #4d94ff;
-    }
-    
+
     pre {
       background: rgba(255, 255, 255, 0.05) !important;
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
     
-    code {
-      color: #e0e0e0;
-    }
+
     
     table th {
       background: rgba(0, 102, 204, 0.2) !important;
@@ -476,8 +441,6 @@ Snowflake (Order Data) ──────┘</code>
       border-left-color: #4d94ff !important;
     }
     
-    a {
-      color: #4d94ff;
-    }
+
   }
 </style>
