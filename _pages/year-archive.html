@@ -1,19 +1,200 @@
 ---
 layout: archive
 permalink: /year-archive/
-title: "Blog posts"
+title: "Testimonials"
 author_profile: true
 redirect_from:
   - /wordpress/blog-posts/
 ---
 
-{% include base_path %}
-{% capture written_year %}'None'{% endcapture %}
-{% for post in site.posts %}
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-  {% if year != written_year %}
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
-    {% capture written_year %}{{ year }}{% endcapture %}
-  {% endif %}
-  {% include archive-single.html %}
-{% endfor %}
+<style>
+.testimonial-grid {
+  display: grid;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.testimonial-card {
+  background: rgba(0, 102, 204, 0.05);
+  border-left: 4px solid #0066cc;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #0066cc;
+}
+
+.testimonial-info p {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.testimonial-content {
+  line-height: 1.6;
+  color: #333;
+}
+
+.testimonial-footer {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.testimonial-footer a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.testimonial-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .testimonial-card {
+    background: rgba(0, 102, 204, 0.1);
+  }
+  
+  .testimonial-content {
+    color: #e0e0e0;
+  }
+  
+  .testimonial-info p {
+    color: #999;
+  }
+}
+</style>
+
+<div class="testimonial-grid">
+
+  <!-- 1. Giuseppe Perri -->
+  <div class="testimonial-card">
+    <div class="testimonial-header">
+      <img src="/assets/porfolio-img/testimonials/Giuseppe.jpeg" alt="Giuseppe Perri" class="testimonial-photo">
+      <div class="testimonial-info">
+        <h3>Giuseppe Perri</h3>
+        <p>Design Director | System Thinker | Product Design at Volvo Cars</p>
+      </div>
+    </div>
+    <div class="testimonial-content">
+      <p>I worked with Phong at Volvo Cars, and I could observe the key role he played in some complex, cross-team initiatives. His leadership was essential on the <strong>EU Accessibility Act work</strong>, where he brought together people from multiple functions and markets to ensure <strong>7,000 pages across 27 sites were compliant</strong> with legal directives. He ensured forward motion by planning carefully, staying close to the teams, and keeping everyone in the loop.</p>
+      <p>He also played an important role in shaping our web design system, by <strong>setting clear priorities, defining ways to measure success, and testing ideas to show impact</strong>. Phong navigates uncertainty and ambiguity very well and has a doer/learner attitude that makes him very adaptable to changes in context.</p>
+    </div>
+    <div class="testimonial-footer">
+      <a href="https://www.linkedin.com/in/phongtrangtt/" target="_blank">Read more on LinkedIn →</a>
+    </div>
+  </div>
+
+  <!-- 2. Sunil Sabapathy Subramanian -->
+  <div class="testimonial-card">
+    <div class="testimonial-header">
+        <img src="/assets/porfolio-img/testimonials/Sunil.png" alt="Sunil" class="testimonial-photo">
+      <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #0066cc, #004d99); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">
+      </div>
+      <div class="testimonial-info">
+        <h3>Sunil Sabapathy Subramanian</h3>
+        <p>Product Lead – Web Foundation, Commercial Digital at Volvo Cars</p>
+      </div>
+    </div>
+    <div class="testimonial-content">
+      <p>I'm pleased to recommend Phong Trang for Product Owner/Product Manager roles. Phong was employed by Volvo Cars from August 2022 until November 2025 as Software Product Manager within Web Foundation under my direct management. During his tenure, Phong demonstrated an <strong>exceptional combination of technical fluency, strategic clarity, analytical rigor, and stakeholder leadership</strong>.</p>
+      
+      <p><strong>Technical fluency driving business outcomes:</strong> Phong partnered closely with engineering teams to design and implement an <strong>LLM-powered semantic search solution</strong>, introducing an NDCG-based evaluation framework. This capability now handles <strong>~100,000 searches per month across 100+ market sites</strong> and has been linked to a <strong>~10% higher purchase completion rate</strong> among search users.</p>
+      
+      <p><strong>Data-driven decision making:</strong> Phong integrates large-scale quantitative data with <strong>over 10,000 behavioral and contextual signals</strong>. He conducted user research (n=25) across UK, US, and SE markets, building a detailed user mental model of search that helped create more intuitive experiences. He also led a quasi-experiment within the design system, quantifying <strong>productivity and quality improvements</strong> across contributors.</p>
+      
+      <p><strong>Stakeholder management:</strong> Phong successfully orchestrated collaboration among content, platform, quality, governance, and market teams to achieve <strong>accessibility compliance across 7,000+ pages and 27 markets</strong>. His structured approach enabled executives to make timely and confident decisions.</p>
+      
+      <p><strong>Strategic road-mapping under volatility:</strong> Phong built resilient roadmaps that protected key outcomes while adjusting to changing priorities. His value-versus-effort framework enabled efficient re-prioritization, ensuring highest-impact initiatives remained on track while preserving delivery velocity and team morale.</p>
+    </div>
+    <div class="testimonial-footer">
+      <a href="https://www.linkedin.com/in/phongtrangtt/" target="_blank">Read more on LinkedIn →</a>
+    </div>
+  </div>
+
+  <!-- 3. Lisa Phillips -->
+  <div class="testimonial-card">
+    <div class="testimonial-header">
+      <img src="https://media.licdn.com/dms/image/v2/C5603AQFPPeVscqhA7Q/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1624935995871?e=1770854400&v=beta&t=tO6C5O0w1KtP8BDTJNJqtasbWC-JOdeHchPrsUwnRQ0" alt="Lisa Phillips" class="testimonial-photo">
+      <div class="testimonial-info">
+        <h3>Lisa Phillips</h3>
+        <p>Director, Learning & Development, Learner Experience & Platforms at Volvo Cars</p>
+      </div>
+    </div>
+    <div class="testimonial-content">
+      <p>Phong is a <strong>diligent, creative worker who is highly inquisitive and proactive</strong> in looking into systems and processes to seek opportunities for improvement. If you're developing or changing tools and/or processes, Phong will bring great insight and ideas — presenting them clearly and neatly packaged with suggestions for next steps. He will be an asset to any team looking to drive change.</p>
+    </div>
+    <div class="testimonial-footer">
+      <a href="https://www.linkedin.com/in/phongtrangtt/" target="_blank">Read more on LinkedIn →</a>
+    </div>
+  </div>
+
+  <!-- 4. Jonathan Ljungblad -->
+  <div class="testimonial-card">
+    <div class="testimonial-header">
+      <img src="https://media.licdn.com/dms/image/v2/C4E03AQEcwMupt0P34Q/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1544634565002?e=1770854400&v=beta&t=Ee4AwmNPPZznyFSNZHFtT8ERjBGWW1HQLh53VeDNNYY" alt="Jonathan Ljungblad" class="testimonial-photo">
+      <div class="testimonial-info">
+        <h3>Jonathan Ljungblad</h3>
+        <p>Senior Engineering Manager at Volvo Cars</p>
+      </div>
+    </div>
+    <div class="testimonial-content">
+      <p>I've worked with Phong on several projects at Volvo Cars. From the start, he impressed me with his <strong>ambition, hard work, and ability to quickly get up to speed in new areas</strong>. He doesn't wait for instructions — he takes initiative and leads by being proactive and driven. During his time with us, he <strong>played a key role in several initiatives, delivering value to both stakeholders and the business</strong>, while also driving improvements for the team.</p>
+    </div>
+    <div class="testimonial-footer">
+      <a href="https://www.linkedin.com/in/phongtrangtt/" target="_blank">Read more on LinkedIn →</a>
+    </div>
+  </div>
+
+  <!-- 5. Jacob Rask -->
+  <div class="testimonial-card">
+    <div class="testimonial-header">
+      <img src="https://media.licdn.com/dms/image/v2/C4E03AQHtwSdCAWIM6Q/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1610297533140?e=1770854400&v=beta&t=Fgg80ZPlxcPZbXcU4d5gF9i8O5_NLfCHi7-PqxbtQA4" alt="Jacob Rask" class="testimonial-photo">
+      <div class="testimonial-info">
+        <h3>Jacob Rask</h3>
+        <p>Senior Staff Engineer, Web Platform at Volvo Cars</p>
+      </div>
+    </div>
+    <div class="testimonial-content">
+      <p>Phong joined one of the teams I work with as a Product Owner and <strong>introduced several improvements that were appreciated by the whole team</strong>. Gathering useful metrics in a platform team is notoriously difficult, but Phong brought new perspectives and approaches that <strong>helped the team gain clarity and accountability</strong>. Phong is one of the fastest learners I've had the pleasure of working with, quickly becoming highly skilled in entirely new areas.</p>
+    </div>
+    <div class="testimonial-footer">
+      <a href="https://www.linkedin.com/in/phongtrangtt/" target="_blank">Read more on LinkedIn →</a>
+    </div>
+  </div>
+
+  <!-- 6. Marisa Ponti -->
+  <div class="testimonial-card">
+    <div class="testimonial-header">
+      <img src="https://media.licdn.com/dms/image/v2/C4D03AQHCJmaAuogchA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1596036709927?e=1770854400&v=beta&t=vjKiBkPaSCcNKsy1lxcqY3Q8-oFaqZdI0MssxqVYrV8" alt="Marisa Ponti" class="testimonial-photo">
+      <div class="testimonial-info">
+        <h3>Marisa Ponti</h3>
+        <p>Academic & Senior Thematic Expert | Researcher bridging Science, Technology & Policy</p>
+      </div>
+    </div>
+    <div class="testimonial-content">
+      <p>I supervised Phong's master's thesis, and during that time, I was consistently impressed by his <strong>intellectual curiosity, analytical skills, and dedication</strong>. He demonstrated a remarkable ability to synthesize the literature and exhibited strong problem-solving skills. Phong is both insightful and innovative. He is also an excellent speaker who can effectively engage his audience. I am confident that Phong possesses the key qualities needed for success in any position, including <strong>intellectual capacity, a strong work ethic, and excellent communication skills</strong>.</p>
+    </div>
+    <div class="testimonial-footer">
+      <a href="https://www.linkedin.com/in/phongtrangtt/" target="_blank">Read more on LinkedIn →</a>
+    </div>
+  </div>
+
+</div>
