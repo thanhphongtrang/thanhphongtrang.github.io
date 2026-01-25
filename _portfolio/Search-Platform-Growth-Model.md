@@ -33,19 +33,16 @@ Goal: The Search team — a small virtual squad (1 BE, 1 FE, 1 Designer, 1 PM) �
 
 ## 🧩 Data
 
+
+<!-- Control width and maintain aspect ratio -->
+<img src="/assets/porfolio-img/search-growth/Data.png" alt="Data Visualization" style="width: 50%; max-width: 300px;">
+
+
 <div style="display: flex; gap: 2rem; align-items: start;">
 <div style="flex: 1;">
 
 - Website analytics showed ~10,000 daily searches, but conversion from Search to configuration was only 5.8%.
 - On average, customers needed 5–14 clicks and several page reloads to find a matching car from stock.
-
-</div>
-<div style="flex: 1;">
-
-![Data Visualization](/assets/porfolio-img/search-growth/Data.png)
-
-</div>
-</div>
 
 Search Behavior Breakdown - Analysis of 2024 search logs revealed where users' attention went:
 
