@@ -1,12 +1,12 @@
 ---
 title: "Data Analyst Agent: Reducing Ad-hoc Requests by 40% with LangGraph"
-excerpt: "Built an intelligent SQL query agent that automated 40% of repetitive data requests, saving 50 hours/month for the analytics team through pragmatic AI workflow design.<br/><img src='/assets/portfolio-img/data-agent/banner.png'>"
+excerpt: "Built an intelligent SQL query agent that automated 40% of repetitive data requests, saving 50 hours/month for the analytics team through pragmatic AI workflow design.<br/><img src='/assets/porfolio-img/data-agent/banner.png'>"
 collection: portfolio
 ---
 
 <p><em>By Phong Trang - Data Platform Product Manager - thanhphong.trang@gmail.com</em></p>
 
-<img src="/assets/portfolio-img/data-agent/banner.png" alt="Data Analyst Agent Banner" style="width: 100%; margin-bottom: 2rem;">
+<img src="/assets/porfolio-img/data-agent/banner.png" alt="Data Analyst Agent Banner" style="width: 100%; margin-bottom: 2rem;">
 
 <h2>ℹ️ Executive Summary</h2>
 
@@ -92,7 +92,7 @@ collection: portfolio
 
 <p>The workflow represents a deliberate design philosophy: <strong>explicit control flow over black-box automation</strong>.</p>
 
-<img src="/assets/portfolio-img/data-agent/state-graph.png" alt="LangGraph State Machine" style="width: 100%; margin: 2rem 0; border: 1px solid #ddd; border-radius: 8px; padding: 1rem; background: #f9f9f9;">
+<img src="/assets/porfolio-img/data-agent/state-graph.png" alt="LangGraph State Machine" style="width: 100%; margin: 2rem 0; border: 1px solid #ddd; border-radius: 8px; padding: 1rem; background: #f9f9f9;">
 
 <h3>Why This Flow?</h3>
 
@@ -121,8 +121,8 @@ collection: portfolio
 <p><strong>Solution:</strong> The <code>regenerate_query</code> loop captures errors, passes them back to the LLM with context, and retries up to 3 times.</p>
 
 <p><strong>Key insight:</strong> LLMs can <em>fix their own mistakes</em> if you show them the error. <strong>60% of failed queries succeeded on retry.</strong></p>
-<img src="/assets/portfolio-img/data-agent/error-recovery.png" alt="Error Recovery Process" style="width: 100%; margin: 2rem 0; border: 1px solid #ddd; border-radius: 8px;">
-<p style="text-align: center; color: #666; font-style: italic; margin-top: -1rem; margin-bottom: 2rem;">Figure 2. LangGraph's error recovery workflow in action. When the LLM generates incorrect SQL (wrong column names or date formatting), the agent captures the database error, feeds it back to the LLM with context, and successfully auto-corrects within 3 retry attempts—60% success rate on retry.</p>
+<img src="/assets/porfolio-img/data-agent/error-recovery.png" alt="Error Recovery Process" style="width: 100%; margin: 2rem 0; border: 1px solid #ddd; border-radius: 8px;">
+<p style="text-align: center; font-size: 10px; font-style: italic; margin-top: -1rem; margin-bottom: 2rem;">LangGraph's error recovery workflow in action. When the LLM generates incorrect SQL (wrong column names or date formatting), the agent captures the database error, feeds it back to the LLM with context, and successfully auto-corrects within 3 retry attempts—60% success rate on retry.</p>
 
 <h4>3. Cost Control: Prevent Infinite Loops</h4>
 
@@ -259,7 +259,7 @@ Rules:
 <hr>
 
 <h2>📊 Results: One Month Pilot Validation</h2>
-<img src="/assets/portfolio-img/data-agent/dashboard.png" alt="Error Recovery Process" style="width: 100%; margin: 2rem 0; border: 1px solid #ddd; border-radius: 8px;">
+<img src="/assets/porfolio-img/data-agent/dashboard.png" alt="Error Recovery Process" style="width: 100%; margin: 2rem 0; border: 1px solid #ddd; border-radius: 8px;">
 
 
 <h3>Query Coverage: 40% Automation Rate</h3>
