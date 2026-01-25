@@ -242,4 +242,45 @@
       }
     }
   }
+
+   /* Make the entire archive item card clickable */
+.archive__item-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.archive__item-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure title stays styled as a link */
+.archive__item-link .archive__item-title {
+  color: $link-color; /* Use your theme's link color */
+}
+
+.archive__item-link:hover .archive__item-title {
+  text-decoration: underline;
+}
+
+/* Control image size in excerpts */
+.archive__item-excerpt img {
+  max-width: 400px;
+  max-height: 250px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .archive__item-excerpt img {
+    max-width: 100%;
+    max-height: 200px;
+  }
+}
 }
