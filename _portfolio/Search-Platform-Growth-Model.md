@@ -188,17 +188,4 @@ For Exploratory Searchers, we expanded the Search UI to display dynamic inventor
 - A small, empowered virtual team can deliver measurable business impact by focusing on leverage points — in this case, Search.
 - Prompt Engineering is key to making lightweight AI solutions work effectively.
 
----
 
-## Image Placeholders Reference
-
-Update these image paths in your repository:
-
-1. `banner.png` - Hero/banner image for the project
-2. `Data.png` - Data visualization showing search metrics
-3. `inventory-teaser1.png` - First inventory teaser screenshot
-4. `inventory-teaser2.png` - Second inventory teaser screenshot
-5. `free-text-search.png` - Free text search interface screenshot
-6. `product-architecture.png` - Technical architecture diagram
-
-All images should be placed in: `assets/porfolio-img/search-growth/`
