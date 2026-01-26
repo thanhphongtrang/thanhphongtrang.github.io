@@ -21,9 +21,11 @@ I love translating analytics into stories that drive clarity, inspire action, an
 
 Explore my work and projects:
 
-- [**Product Portfolio**](/portfolio/) - Featured projects and case studies
-- [**Other Example Work on Notion**](https://phong-trang.notion.site/Hi-I-m-Phong-Software-Product-Manager-20403e893f1f80c6b63bd5bf7767c54d) 
-
+- [**Data Analyst Agent**](/portfolio/data-analyst-agent/) - AI Agent Saving 50 Hours/Month with Sub-Week Payback Period
+- [**Automotive Ecommerce Growth Model**](/portfolio/Search-Platform-Growth-Model/) - Monetizing Search-to-purchase on volvocars.com, 21% Uplift in conversion 
+- [**AI Semantic Search for New Car Sales**](/portfolio/AI%20Semantic%20Search/) - 85% Search Accuracy and 11% Ecommerce Conversion Lift
+- [**User Journey Mapping: Waiting time is bonding times**](/portfolio/User-journey-Mapping/) - User Journey Mapping to build brand loyalty while reducing Agent's workload
+- [**Vehicle Buyers' Behavior Analytics: Data-Driven Search Optimization**](/portfolio/Vehicle-Buyers-Behavior-Analytics/) - Anlytics in SQL/Python to Optimize E-commerce Scalability
 
 
 ## Work Experience
