@@ -1,10 +1,10 @@
 ---
 title: "EU Accessibility Act Compliance: Managing Risk and Building Capability"
-excerpt: "Led 27-market accessibility compliance program, preventing potential legal exposure while establishing sustainable governance framework across 20 front-end teams. <br/><img src='/assets/portfolio-img/eaa/hero-banner.png'>"
+excerpt: "Led 27-market accessibility compliance program, preventing potential legal exposure while establishing sustainable governance framework across 20 front-end teams. <br/><img src='/assets/porfolio-img/eaa/hero-banner.png'>"
 collection: portfolio
 ---
 *By Phong Trang - Software Product Manager - *[*thanhphong.trang@gmail.com*](mailto:thanhphong.trang@gmail.com)
-![Dashboard](/assets/portfolio-img/eaa/hero-banner.png)
+![Dashboard](/assets/porfolio-img/eaa/hero-banner.png)
 ## Overview
 When the EU Accessibility Act deadline approached in 2025, Volvo Cars faced a straightforward challenge: ensure volvocars.com meets regulatory requirements across 27 EEA markets before June 28, 2025. As Program Manager for the EU Accessibility Compliance initiative, I coordinated 20 front-end teams to resolve over 14,000 accessibility violations across 7,000+ pages.
 The work wasn't particularly dramatic. It required structured governance, clear ownership, and pragmatic solutions to scale remediation across a complex organization. We achieved full compliance ahead of schedule and built a framework to maintain it going forward.
@@ -59,14 +59,14 @@ To accelerate the GenAI governance approval, I coordinated with adjacent teams f
 By presenting a unified case and sharing architecture, we collectively raised visibility within the AI governance board. The combined business case—three teams solving similar problems with a shared technical approach—moved faster through approval than individual requests would have.
 Once approved, the technical implementation followed a risk-mitigated approach:
 **Architecture:**
-![Dashboard](/assets/portfolio-img/eaa/architecture.png)
+![Dashboard](/assets/porfolio-img/eaa/architecture.png)
 - Azure OpenAI API for alt-text and ARIA label generation
 - Content Safety API for automated moderation filtering
 - Statistical sampling (1,000-2,000 outputs) manually reviewed by Content Management teams
 - Market-specific editor validation before publishing
 **Safety Guardrails:**
 The API automatically flagged any content exceeding safety thresholds:
-<pre>
+`<pre>
   <code>
 "prompt_filter_results": {
   "sexual": {"severity": "safe", "filtered": false},
@@ -75,13 +75,13 @@ The API automatically flagged any content exceeding safety thresholds:
   "self_harm": {"severity": "safe", "filtered": false},
   "profanity": {"detected": false, "filtered": false}
 }</code>
-</pre>
+</pre>`
 This wasn't about deploying cutting-edge AI. It was about using available technology with clear constraints to solve a specific scaling problem. The validation process ensured outputs met EU Accessibility Act standards before going live.
-![label](/assets/portfolio-img/eaa/aria-label.png)
+![label](/assets/porfolio-img/eaa/aria-label.png)
 ### Building for Sustainability
 Fixing 14,000 violations addressed the immediate deadline. The more important objective was preventing future violations from accumulating.
 We integrated accessibility checks into the standard development pipeline by coordinating with the Quality & Release Engineering (QRE) team. I developed dashboard requirements and mockups, which the QRE team implemented as an executive dashboard tracking compliance in real-time.
-![label](/assets/portfolio-img/eaa/dashboard-dev.png)
+![label](/assets/porfolio-img/eaa/dashboard-dev.png)
 
 Beyond tooling, we established a **Community of Practice** with 20 trained accessibility advocates across teams, a `#digital-accessibility` Slack channel for peer support, and a central knowledge library for accessibility guidelines.
 This moved accessibility from a one-time project to an ongoing organizational capability.
@@ -104,8 +104,8 @@ This moved accessibility from a one-time project to an ongoing organizational ca
 - Integrated QRE dashboard for continuous compliance tracking
 - Sustainable governance framework embedded in delivery process
 <div style="display: flex; gap: 20px;">
-  <img src="/assets/portfolio-img/eaa/accessibility-lib-1.png" alt="lib1" style="width: 50%;">
-  <img src="/assets/portfolio-img/eaa/accessibility-lib-2.png" alt="lib2" style="width: 50%;">
+  <img src="/assets/porfolio-img/eaa/accessibility-lib-1.png" alt="lib1" style="width: 50%;">
+  <img src="/assets/porfolio-img/eaa/accessibility-lib-2.png" alt="lib2" style="width: 50%;">
 </div>
 ---
 ## Program Management Approach
