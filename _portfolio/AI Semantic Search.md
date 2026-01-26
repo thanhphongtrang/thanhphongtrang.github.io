@@ -12,6 +12,17 @@ collection: portfolio
 
 **The Impact:** Achieved 85% search accuracy (NDCG score), increasing 19% to Car Listing Pages, and make search user 11% more likely to complete a car purchase.
 
+**Technical Stack:**
+
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Cohere](https://img.shields.io/badge/Cohere-39594D?style=flat&logo=cohere&logoColor=white)
+![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?style=flat&logo=elasticsearch&logoColor=white)
+![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=flat&logo=graphql&logoColor=white)
+![Vector Search](https://img.shields.io/badge/Vector_Search-FF6B6B?style=flat&logo=semantic-web&logoColor=white)
+![Google Analytics](https://img.shields.io/badge/Google_Analytics-E37400?style=flat&logo=google-analytics&logoColor=white)
+![LLM](https://img.shields.io/badge/LLM-000000?style=flat&logo=ai&logoColor=white)
+
 **Key Metrics:**
 - **85% NDCG** search accuracy score
 - **+19% traffic** to Car Listing Pages from search
