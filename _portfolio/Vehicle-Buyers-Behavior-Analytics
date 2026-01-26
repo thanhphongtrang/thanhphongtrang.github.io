@@ -20,7 +20,14 @@ collection: portfolio
         <li>Prepared <strong>7,400</strong> clean queries enabling GenAI shopping assistant development</li>
       </ul>
     </li>
-    <li><strong>Technical Stack:</strong> SQL, Python, Databricks, Power BI, GA4, DAX</li>
+    <li><strong>Technical Stack:</strong> 
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=flat&logo=mysql&logoColor=white" alt="SQL">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Databricks-FF3621?style=flat&logo=databricks&logoColor=white" alt="Databricks">
+  <img src="https://img.shields.io/badge/Power_BI-F2C811?style=flat&logo=power-bi&logoColor=black" alt="Power BI">
+  <img src="https://img.shields.io/badge/Google_Analytics-E37400?style=flat&logo=google-analytics&logoColor=white" alt="GA4">
+  <img src="https://img.shields.io/badge/DAX-F2C811?style=flat&logo=power-bi&logoColor=black" alt="DAX">
+</li>
     <li><strong>Portfolio Artifacts:</strong> <a href="https://github.com/thanhphongtrang/search-analytics">GitHub Code</a> | Interactive Dashboard | Case Study</li>
   </ul>
 </div>
