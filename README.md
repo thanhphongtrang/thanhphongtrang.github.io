@@ -4,6 +4,8 @@ Personal portfolio website showcasing product management and data analytics work
 
 🌐 **Live Site:** [thanhphongtrang.github.io](https://thanhphongtrang.github.io)
 
+  <img src="/images/Screenshot-jan-2026.png" alt="Screenshot view 1" style="width: 50%;">
+
 ## Site Architecture
 
 This site is built with:
