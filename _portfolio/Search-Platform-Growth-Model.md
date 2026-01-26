@@ -18,8 +18,8 @@ Unlike in mainstream e-commerce, where users could instantly search and filter l
 - Syncing real-time inventory with digital experiences required cross-system orchestration, regional APIs, and data compliance handling — all of which made Search hard to modernize.
 
 Against this backdrop, our challenge wasn't just UX optimization — it was about modernizing the role of Search within an industry still catching up to digital commerce standards.
-**Technical Stack:**
 
+**Technical Stack:**
 ![Azure OpenAI](https://img.shields.io/badge/Azure_OpenAI-412991?style=flat&logo=openai&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![Proxy](https://img.shields.io/badge/Proxy_Layer-00599C?style=flat&logo=nginx&logoColor=white)
