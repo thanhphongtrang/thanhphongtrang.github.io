@@ -1,16 +1,16 @@
 ---
 title: "Internal-Facing GenAI Chatbot for Customer Care"
-excerpt: "Led product development of an AI-powered chatbot empowering Volvo Cars customer care agents with instant access to accurate, multi-market knowledge, achieving 35% automation and 94% agent satisfaction.<br/><img src='/assets/portfolio-img/chatbot/hero-banner.png'>"
+excerpt: "Led product development of an AI-powered chatbot empowering Volvo Cars customer care agents with instant access to accurate, multi-market knowledge, achieving 35% automation and 94% agent satisfaction.<br/><img src='/assets/porfolio-img/chatbot/hero-banner.png'>"
 collection: portfolio
 ---
 
-*By Phong Trang - Associate Product Manager - thanhphong.trang@gmail.com*
+*By Phong Trang - Product Manager - thanhphong.trang@gmail.com*
 
 ![Chatbot Hero Banner](/assets/porfolio-img/chatbot/hero-banner.png)
 
 ## Overview
 
-As Associate Product Manager working with the customer care team, I led the product development of an AI-powered virtual agent designed to empower Volvo Cars customer care agents with instant access to accurate, multi-market knowledge.
+As a Web Platform Product Manager working with the customer care team, I led the product development of an AI-powered virtual agent designed to empower Volvo Cars customer care agents with instant access to accurate, multi-market knowledge.
 
 **The Challenge:** Customer care agents across 12+ markets struggled with fragmented information sources, outdated content, and time-consuming manual searches, leading to inconsistent customer experiences and extended handling times.
 
@@ -27,28 +27,17 @@ As Associate Product Manager working with the customer care team, I led the prod
 
 ## Tech Stack
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 2rem 0;">
-  <div>
-    <h3>Core Technologies</h3>
-    <ul>
-      <li><strong>LLM Orchestration:</strong> <a href="https://www.langchain.com">Langchain</a></li>
-      <li><strong>Vector Database:</strong> <a href="https://www.trychroma.com">ChromaDB</a> (open source)</li>
-      <li><strong>UI & Application:</strong> <a href="https://streamlit.io">Streamlit</a> with native chatbot support</li>
-      <li><strong>Deployment:</strong> Azure Container Apps</li>
-      <li><strong>Monitoring:</strong> Langfuse for observability</li>
-    </ul>
-  </div>
-  <div>
-    <h3>AI Models</h3>
-    <ul>
-      <li><strong>Primary LLM:</strong> OpenAI GPT-4o (rephrase/routing, standard queries)</li>
-      <li><strong>Comparison Logic:</strong> OpenAI GPT-4o-mini</li>
-      <li><strong>Reranking:</strong> Cohere reranking model</li>
-      <li><strong>Embeddings:</strong> OpenAI text-embedding-3-large</li>
-      <li><strong>Output:</strong> Structured output with validation</li>
-    </ul>
-  </div>
-</div>
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat&logo=langchain&logoColor=white" alt="LangChain">
+<img src="https://img.shields.io/badge/LangGraph-FF6B6B?style=flat&logo=langchain&logoColor=white" alt="LangGraph">
+<img src="https://img.shields.io/badge/Azure_OpenAI-412991?style=flat&logo=openai&logoColor=white" alt="Azure OpenAI">
+<img src="https://img.shields.io/badge/GPT--4o-74AA9C?style=flat&logo=openai&logoColor=white" alt="GPT-4o">
+<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white" alt="Streamlit">
+<img src="https://img.shields.io/badge/ChromaDB-FF6584?style=flat&logo=databricks&logoColor=white" alt="ChromaDB">
+<img src="https://img.shields.io/badge/Cohere-39594D?style=flat&logo=ai&logoColor=white" alt="Cohere">
+<img src="https://img.shields.io/badge/Langfuse-000000?style=flat&logo=lightning&logoColor=white" alt="Langfuse">
+<img src="https://img.shields.io/badge/Azure_Container_Apps-0078D4?style=flat&logo=microsoftazure&logoColor=white" alt="Azure Container Apps">
+<img src="https://img.shields.io/badge/OpenAI_Embeddings-10A37F?style=flat&logo=openai&logoColor=white" alt="OpenAI Embeddings">
 
 ---
 
@@ -56,7 +45,7 @@ As Associate Product Manager working with the customer care team, I led the prod
 
 ### Current Challenges
 
-![Agent Workflow Pain Points](/assets/portfolio-img/chatbot/pain-points.png)
+![Agent Workflow Pain Points](/assets/porfolio-img/chatbot/problem statements.webp)
 
 **Existing Agent Workflow Pain Points:**
 
@@ -76,10 +65,10 @@ As Associate Product Manager working with the customer care team, I led the prod
 
 > **💡 DIBB Framework Alignment**
 >
-> - **Data:** Top 20 intents account for ~65% of volume; 40% of contacts after-hours; high average handle time on order-status and account questions
-> - **Insight:** Most top intents follow structured flows with clear outcomes; knowledge is scattered; escalations lack context
-> - **Belief:** Automating top intents and grounding responses in existing knowledge will lift ARR and CSAT while reducing costs
-> - **Bet:** Build a guardrailed, grounded chatbot with seamless handoff in 3–4 weeks to realize immediate savings and learn quickly
+> - Data: Top 20 intents account for ~65% of volume; 40% of contacts after-hours; high average handle time on order-status and account questions
+> - Insight: Most top intents follow structured flows with clear outcomes; knowledge is scattered; escalations lack context
+> - Belief: Automating top intents and grounding responses in existing knowledge will lift ARR and CSAT while reducing costs
+> - Bet: Build a guardrailed, grounded chatbot with seamless handoff in 3–4 weeks to realize immediate savings and learn quickly
 
 ---
 
@@ -95,7 +84,7 @@ As Associate Product Manager working with the customer care team, I led the prod
   </div>
   <div>
     <p><strong>📤 Workshop Outcome:</strong></p>
-    <img src="/assets/portfolio-img/chatbot/user-stories-map.png" alt="User Stories Mapping" style="width: 100%;">
+    <img src="/assets/porfolio-img/chatbot/workshop-user-stories.webp" alt="User Stories Mapping" style="width: 100%;">
   </div>
 </div>
 
@@ -109,7 +98,7 @@ As Associate Product Manager working with the customer care team, I led the prod
   </div>
   <div>
     <p><strong>📤 Workshop Outcome:</strong></p>
-    <img src="/assets/portfolio-img/chatbot/feature-map.png" alt="Core Feature Mapping" style="width: 100%;">
+    <img src="/assets/porfolio-img/chatbot/workshop-core-feature.webp" alt="Core Feature Mapping" style="width: 100%;">
   </div>
 </div>
 
@@ -123,16 +112,16 @@ As Associate Product Manager working with the customer care team, I led the prod
 
 **📤 Workshop Outcome:**
 
-![User Experience Journey](/assets/portfolio-img/chatbot/ux-journey-1.png)
+![User Experience Journey](/assets/porfolio-img/chatbot/ux-journey-1.png)
 
-![Conversation Flow Design](/assets/portfolio-img/chatbot/ux-journey-2.png)
+![Conversation Flow Design](/assets/porfolio-img/chatbot/ux-journey-2.png)
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 2rem 0;">
   <div>
-    <img src="/assets/portfolio-img/chatbot/flow-detail-1.png" alt="Flow Details 1" style="width: 100%;">
+    <img src="/assets/porfolio-img/chatbot/flow-detail-1.png" alt="Flow Details 1" style="width: 100%;">
   </div>
   <div>
-    <img src="/assets/portfolio-img/chatbot/flow-detail-2.png" alt="Flow Details 2" style="width: 100%;">
+    <img src="/assets/porfolio-img/chatbot/flow-detail-2.png" alt="Flow Details 2" style="width: 100%;">
   </div>
 </div>
 
@@ -189,7 +178,7 @@ To validate concepts before full development, I used **Lovable** - an AI-powered
   </div>
   <div>
     <p><strong>Quick Interactive Prototype (3 Intents):</strong></p>
-    <img src="/assets/portfolio-img/chatbot/lovable-prototype.png" alt="Lovable Prototype" style="width: 100%;">
+    <img src="/assets/porfolio-img/chatbot/lovable-prototype.png" alt="Lovable Prototype" style="width: 100%;">
   </div>
 </div>
 
