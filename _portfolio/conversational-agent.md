@@ -38,7 +38,7 @@ As a Web Platform Product Manager working with the customer care team, I led the
 
 ### Current Challenges
 
-![Agent Workflow Pain Points](/assets/porfolio-img/chatbot/problem-statements.webp)
+![Agent Workflow Pain Points](/assets/porfolio-img/chatbot/problem-statement.webp)
 
 **Existing Agent Workflow Pain Points:**
 
