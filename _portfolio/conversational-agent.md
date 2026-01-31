@@ -3,7 +3,9 @@ title: "Internal-Facing GenAI Chatbot for Customer Care"
 excerpt: "Led product development of an AI-powered chatbot empowering Volvo Cars customer care agents with instant access to accurate, multi-market knowledge, achieving 35% automation and 94% agent satisfaction.<br/><img src='/assets/porfolio-img/chatbot/hero-banner.png'>"
 collection: portfolio
 ---
+## TL;DR
 
+Built an internal GenAI chatbot for customer care agents at Volvo Cars, transforming an 8-12 month vehicle delivery wait into a personalized learning experience. As Associate Product Manager, led ideation workshops, defined success metrics, and delivered an MVP using LangChain, Azure OpenAI, and RAG architecture. The solution achieved 94% agent satisfaction, 35% increase in product ARR, and saved 2,500+ hours annually across 30 agents in 6 markets.
 *By Phong Trang - Product Manager - thanhphong.trang@gmail.com*
 
 ![Chatbot Hero Banner](/assets/porfolio-img/chatbot/hero-banner.png)
