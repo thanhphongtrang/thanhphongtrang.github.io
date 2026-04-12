@@ -159,7 +159,7 @@ Quality, reliability, and safety gates required before scaling.
 
 In the first validation phase (few user tests + early alpha telemetry), I used a gated decision mechanism to avoid “glowing feedback” masking reliability or safety issues. The rule was: **we only proceed when user value is real *and* technical risk is bounded**.
 
-### Decision mechanism (gated)
+### Decision gates
 **Gate 1 — Tech safety and reliability (must pass)**
 - **PII Leakage Incidents:** must remain **0 critical**
 - **Hallucination Rate:** must be at or below the audit threshold (target ≤ **2%** of audited conversations)
