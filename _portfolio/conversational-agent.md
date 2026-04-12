@@ -113,7 +113,7 @@ As a Web Platform Product Manager working with the customer care team, I led the
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 2rem 0;">
   <div>
-    <img src="/assets/porfolio-img/chatbot/agent-hand-off.png" alt="Flow Details 1" style="width: 100%;">
+    <img src="/assets/porfolio-img/chatbot/agent-hand-off.webp" alt="Flow Details 1" style="width: 100%;">
   </div>
   <div>
     <img src="/assets/porfolio-img/chatbot/edge-case.webp" alt="Flow Details 2" style="width: 100%;">
