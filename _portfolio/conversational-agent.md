@@ -122,35 +122,69 @@ As a Web Platform Product Manager working with the customer care team, I led the
 
 ---
 
-## Success Metrics Definition
+## Success Metrics Definition (Re-org into Business / User / Tech)
 
-### 🧩 Product Performance Metrics (Core KPIs)
-
-| Metric | Target | Why It Matters |
-|--------|--------|----------------|
-| ARR (Automated Resolution Rate) | ≥ **35%** within 90 days | Core measure of automation efficiency; indicates % of issues resolved without human intervention |
-| Bot CSAT | ≥ **4.5/5** or ≥ **75% positive** thumbs-up ratio | Ensures automation doesn't come at the cost of experience |
-| Escalation Accuracy | ≥ **90%** for low-confidence or user-requested cases | Validates quality of routing logic; minimizes unnecessary handoffs |
-| Bot Response Time | Median ≤ **1s**, P95 ≤ **2s** | Maintains conversational flow and perceived responsiveness |
-| Cost per Contact Reduction | ↓ **20–30%** vs baseline | Demonstrates business efficiency gains and ROI from automation |
-
-### 💬 User-Centric Metrics
+### 💼 Business Value (Viability)
+Operational and economic outcomes that justify scaling.
 
 | Metric | Target | Why It Matters |
 |--------|--------|----------------|
-| First Contact Resolution (FCR) uplift | +**10pp** on bot-eligible intents | Reflects effectiveness and completeness of bot interactions |
-| After-Hours CSAT | ≥ **4.6/5** | Captures value during periods of limited agent availability |
-| Feedback Participation Rate | ≥ **25%** of conversations | Ensures sufficient user feedback for continuous improvement |
+| **ARR (Automated Resolution Rate)** | ≥ **35%** within 90 days | Core measure of automation efficiency; indicates % of issues resolved without human intervention |
+| **Cost per Contact Reduction** | ↓ **20–30%** vs baseline | Demonstrates business efficiency gains and ROI from automation |
+| **First Contact Resolution (FCR) uplift** | +**10pp** on bot-eligible intents | Operational effectiveness; indicates more issues resolved without reopen/escalation |
+| **Average Handle Time (AHT) reduction** | ↓ **20–30%** vs baseline | Efficiency gain; reduces cost-to-serve while improving throughput |
 
-### ⚙️ Technical & Safety Metrics
+### 💬 User Value (Usefulness)
+Signals that the tool is actually helping agents do their job (not just “liked”).
 
 | Metric | Target | Why It Matters |
 |--------|--------|----------------|
-| Uptime | ≥ **99.9%** business hours; ≥ **99.5%** overall | Ensures reliability and user trust |
-| Hallucination Rate | ≤ **2%** of audited conversations | Measures factual accuracy and knowledge grounding quality |
-| PII Leakage Incidents | **0 critical**; mitigation ≤ **24h** for high severity | Protects customer privacy and compliance |
+| **Bot CSAT** | ≥ **4.5 / 5** or ≥ **75% positive** thumbs-up ratio | Ensures automation doesn’t come at the cost of experience |
+| **After-Hours CSAT** | ≥ **4.6 / 5** | Captures value during periods of limited agent availability |
+| **Feedback Participation Rate** | ≥ **25%** of conversations | Ensures sufficient feedback for iteration and continuous improvement |
+
+### ⚙️ Tech (Usability + Feasibility)
+Quality, reliability, and safety gates required before scaling.
+
+| Metric | Target | Why It Matters |
+|--------|--------|----------------|
+| **Escalation Accuracy** | ≥ **90%** for low-confidence or user-requested cases | Ensures safe routing and minimizes unnecessary handoffs |
+| **Bot Response Time** | Median ≤ **1s**, P95 ≤ **2s** | Maintains conversational flow and perceived responsiveness |
+| **Uptime** | ≥ **99.9%** business hours; ≥ **99.5%** overall | Ensures reliability and user trust |
+| **Hallucination Rate** | ≤ **2%** of audited conversations | Measures factual accuracy and grounding quality |
+| **PII Leakage Incidents** | **0 critical**; mitigation ≤ **24h** for high severity | Protects privacy and compliance |
 
 ---
+## Proceed / Pivot / Pause Verdict (Early Testing → Go-ahead Mechanism)
+
+In the first validation phase (few user tests + early alpha telemetry), I used a gated decision mechanism to avoid “glowing feedback” masking reliability or safety issues. The rule was: **we only proceed when user value is real *and* technical risk is bounded**.
+
+### Decision mechanism (gated)
+**Gate 1 — Tech safety and reliability (must pass)**
+- **PII Leakage Incidents:** must remain **0 critical**
+- **Hallucination Rate:** must be at or below the audit threshold (target ≤ **2%** of audited conversations)
+- **Escalation Accuracy:** must meet the safety bar (target ≥ **90%**)
+- **Uptime/Latency:** must be stable enough for daily use (targets: uptime ≥ **99.9%** business hours; response time median ≤ **1s**, P95 ≤ **2s**)
+
+If Gate 1 fails, we **Pause** (data/model hardening and guardrails), regardless of positive sentiment.
+
+**Gate 2 — User value (must show signal beyond “I like it”)**
+- Bot CSAT stays at target (≥ **4.5/5** or ≥ **75% positive**)
+- Feedback participation is sufficient to learn (≥ **25%** of conversations)
+- Early qualitative evidence shows the bot reduces search friction and improves agent confidence *without* increasing escalations due to low trust
+
+If Gate 2 fails but users still show a clear pain point, we **Pivot** (adjust scope, flows, or content strategy) rather than scale.
+
+**Gate 3 — Business viability (directionally positive)**
+- ARR tracks toward the target (≥ **35%** within 90 days)
+- Ops outcomes trend in the right direction (FCR +10pp, AHT ↓ 20–30%, cost/contact ↓ 20–30% vs baseline)
+
+If Gate 3 is not directionally positive but Gates 1–2 pass, we **Proceed narrowly** (tighten scope to the intents where viability is strongest), rather than broad rollout.
+
+### Verdict definitions (concise)
+- **Proceed:** Gate 1 passes + Gate 2 passes, and Gate 3 is at least directionally positive (or can be made positive by narrowing to top intents).
+- **Pivot:** Gate 1 passes, but Gate 2 or Gate 3 fails due to concept/UX/content mismatch → adjust scope, flows, or knowledge strategy; re-test in a new 1–2 week loop.
+- **Pause:** Gate 1 fails (safety/reliability) or the data/model cannot support trustworthy answers → invest in grounding, evaluation, and guardrails before expanding capability.
 
 ## Rapid Prototyping with AI
 
