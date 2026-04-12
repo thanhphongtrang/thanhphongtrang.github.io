@@ -122,7 +122,7 @@ As a Web Platform Product Manager working with the customer care team, I led the
 
 ---
 
-## Success Metrics Definition (Re-org into Business / User / Tech)
+## Success Metrics Definition
 
 ### 💼 Business Value (Viability)
 Operational and economic outcomes that justify scaling.
@@ -155,7 +155,7 @@ Quality, reliability, and safety gates required before scaling.
 | **PII Leakage Incidents** | **0 critical**; mitigation ≤ **24h** for high severity | Protects privacy and compliance |
 
 ---
-## Proceed / Pivot / Pause Verdict (Early Testing → Go-ahead Mechanism)
+## Proceed / Pivot / Pause Verdict
 
 In the first validation phase (few user tests + early alpha telemetry), I used a gated decision mechanism to avoid “glowing feedback” masking reliability or safety issues. The rule was: **we only proceed when user value is real *and* technical risk is bounded**.
 
@@ -168,20 +168,20 @@ In the first validation phase (few user tests + early alpha telemetry), I used a
 
 If Gate 1 fails, we **Pause** (data/model hardening and guardrails), regardless of positive sentiment.
 
-**Gate 2 — User value (must show signal beyond “I like it”)**
+**Gate 2 — User value**
 - Bot CSAT stays at target (≥ **4.5/5** or ≥ **75% positive**)
 - Feedback participation is sufficient to learn (≥ **25%** of conversations)
 - Early qualitative evidence shows the bot reduces search friction and improves agent confidence *without* increasing escalations due to low trust
 
 If Gate 2 fails but users still show a clear pain point, we **Pivot** (adjust scope, flows, or content strategy) rather than scale.
 
-**Gate 3 — Business viability (directionally positive)**
+**Gate 3 — Business viability**
 - ARR tracks toward the target (≥ **35%** within 90 days)
 - Ops outcomes trend in the right direction (FCR +10pp, AHT ↓ 20–30%, cost/contact ↓ 20–30% vs baseline)
 
 If Gate 3 is not directionally positive but Gates 1–2 pass, we **Proceed narrowly** (tighten scope to the intents where viability is strongest), rather than broad rollout.
 
-### Verdict definitions (concise)
+### Verdict definitions
 - **Proceed:** Gate 1 passes + Gate 2 passes, and Gate 3 is at least directionally positive (or can be made positive by narrowing to top intents).
 - **Pivot:** Gate 1 passes, but Gate 2 or Gate 3 fails due to concept/UX/content mismatch → adjust scope, flows, or knowledge strategy; re-test in a new 1–2 week loop.
 - **Pause:** Gate 1 fails (safety/reliability) or the data/model cannot support trustworthy answers → invest in grounding, evaluation, and guardrails before expanding capability.
