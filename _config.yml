@@ -62,3 +62,11 @@ exclude:
   - LICENSE
   - .jekyll-cache
   - node_modules
+  # Energy Coach case-study diagrams (assets/portfolio-img/energy-coach/):
+  # drafted, unpublished, staying private until Phong signs off on the
+  # Notion draft. Jekyll copies any non-underscore path by default, so
+  # "committed but unlinked" still meant "live at a guessable URL" until
+  # this line was added. Files stay in the repo for whenever sign-off
+  # happens; this just stops them from being served. Remove this line
+  # only when he approves publishing the case study.
+  - assets/portfolio-img/energy-coach
