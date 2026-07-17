@@ -1,0 +1,24 @@
+{%- comment -%}
+  The research-instrument block, shared by research.md and tools.md.
+  Content lives in _data/work.yml (instrument:); this is markup only.
+  Pass show_stack=true to render the tech-stack line (tools page does).
+{%- endcomment -%}
+{%- assign i = site.data.work.instrument %}
+### {{ i.title }}<span class="status-tag">{{ i.status }}</span>
+
+{{ i.summary }}
+
+{{ i.detail }}
+
+<div class="shot-placeholder">
+  <p><strong>Screenshot placeholder</strong><br>
+  An interface capture goes here once the instrument reaches a presentable state.</p>
+</div>
+
+{% if include.show_stack -%}
+<p class="stack">{{ i.stack }}</p>
+
+{% endif -%}
+{{ i.note }}
+
+*{{ i.repo_note }}*

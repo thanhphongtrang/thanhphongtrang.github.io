@@ -34,22 +34,7 @@ person exercise, hedge, or quietly hand over.
 
 ## The instrument
 
-{% assign i = site.data.work.instrument %}
-
-### {{ i.title }}<span class="status-tag">{{ i.status }}</span>
-
-{{ i.summary }}
-
-{{ i.detail }}
-
-<div class="shot-placeholder">
-  <p><strong>Screenshot placeholder</strong><br>
-  An interface capture goes here once the instrument reaches a presentable state.</p>
-</div>
-
-{{ i.note }}
-
-*{{ i.repo_note }}*
+{% include instrument.html %}
 
 ## Why it matters beyond the seminar room
 

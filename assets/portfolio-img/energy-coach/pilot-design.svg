@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="pdT pdD" font-family="system-ui,-apple-system,'Segoe UI',sans-serif">
+<title id="pdT">Pilot measurement design</title>
+<desc id="pdD">Eligible households are stratified into six segments with equalized quotas, then randomized within each stratum into a test arm that gets the coach and a control arm that does not. The pilot is read with difference-in-differences, test versus control and before versus after, producing a defensible accuracy and engagement claim. Engagement is measured as active days per user per week from real activity, not self-report.</desc>
+<style>
+.bg{fill:#fafbf9}
+.card{fill:#ffffff;stroke:#e1e6e0;stroke-width:1}
+.accentfill{fill:#e7f1ea;stroke:#146840;stroke-width:1.5}
+.out{fill:#ffffff;stroke:#146840;stroke-width:1.5}
+.seg{fill:#e7f1ea;stroke:#146840;stroke-width:0.75}
+.title{fill:#1b1d1b;font-family:Georgia,serif}
+.t{fill:#1b1d1b}
+.muted{fill:#545b54}
+.accent{fill:#146840;font-weight:600}
+.arrow{stroke:#545b54;stroke-width:1.5;fill:none}
+.ah{fill:#545b54}
+@media (prefers-color-scheme:dark){
+.bg{fill:#171a18}
+.card{fill:#1f241f;stroke:#303830}
+.accentfill{fill:#1f2b22;stroke:#7fcf9f}
+.out{fill:#1f241f;stroke:#7fcf9f}
+.seg{fill:#1f2b22;stroke:#7fcf9f}
+.title,.t{fill:#e9ece8}
+.muted{fill:#a6aea5}
+.accent{fill:#7fcf9f}
+.arrow{stroke:#a6aea5}
+.ah{fill:#a6aea5}
+}
+</style>
+<defs><marker id="ah2" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path class="ah" d="M0,0 L9,4.5 L0,9 z"/></marker></defs>
+<rect class="bg" x="0" y="0" width="900" height="430" rx="10"/>
+<text class="title" x="24" y="38" font-size="21">Measuring the pilot so the claims hold up</text>
+<text class="muted" x="24" y="60" font-size="13">Randomized, controlled, and read with difference-in-differences.</text>
+
+<rect class="card" x="24" y="150" width="132" height="86" rx="8"/>
+<text class="t" x="40" y="188" font-size="13.5">Eligible</text>
+<text class="t" x="40" y="208" font-size="13.5">households</text>
+
+<rect class="card" x="188" y="104" width="168" height="188" rx="8"/>
+<text class="accent" x="204" y="130" font-size="13.5">6 household segments</text>
+<rect class="seg" x="204" y="144" width="136" height="15" rx="3"/>
+<rect class="seg" x="204" y="165" width="136" height="15" rx="3"/>
+<rect class="seg" x="204" y="186" width="136" height="15" rx="3"/>
+<rect class="seg" x="204" y="207" width="136" height="15" rx="3"/>
+<rect class="seg" x="204" y="228" width="136" height="15" rx="3"/>
+<rect class="seg" x="204" y="249" width="136" height="15" rx="3"/>
+<text class="muted" x="204" y="283" font-size="11">equalized quotas per segment</text>
+
+<rect class="accentfill" x="388" y="120" width="164" height="62" rx="8"/>
+<text class="accent" x="404" y="146" font-size="13.5">Test arm</text>
+<text class="muted" x="404" y="167" font-size="12">gets the coach</text>
+
+<rect class="card" x="388" y="212" width="164" height="62" rx="8"/>
+<text class="t" x="404" y="238" font-size="13.5">Control arm</text>
+<text class="muted" x="404" y="259" font-size="12">no coach</text>
+
+<text class="muted" x="388" y="300" font-size="11">randomized within each stratum, arms of equal size</text>
+
+<rect class="out" x="584" y="150" width="150" height="120" rx="8"/>
+<text class="accent" x="600" y="176" font-size="13.5">Difference-</text>
+<text class="accent" x="600" y="194" font-size="13.5">in-differences</text>
+<text class="muted" x="600" y="220" font-size="12">test vs control,</text>
+<text class="muted" x="600" y="238" font-size="12">before vs after</text>
+
+<rect class="card" x="762" y="150" width="118" height="120" rx="8"/>
+<text class="t" x="778" y="188" font-size="13">Defensible</text>
+<text class="t" x="778" y="206" font-size="13">accuracy &amp;</text>
+<text class="t" x="778" y="224" font-size="13">engagement</text>
+<text class="t" x="778" y="242" font-size="13">claim</text>
+
+<text class="muted" x="24" y="406" font-size="11.5">Engagement = active days per user per week, from real activity, not self-report.</text>
+
+<line class="arrow" x1="156" y1="193" x2="182" y2="196" marker-end="url(#ah2)"/>
+<line class="arrow" x1="356" y1="170" x2="382" y2="151" marker-end="url(#ah2)"/>
+<line class="arrow" x1="356" y1="226" x2="382" y2="243" marker-end="url(#ah2)"/>
+<line class="arrow" x1="552" y1="151" x2="578" y2="188" marker-end="url(#ah2)"/>
+<line class="arrow" x1="552" y1="243" x2="578" y2="222" marker-end="url(#ah2)"/>
+<line class="arrow" x1="734" y1="210" x2="756" y2="210" marker-end="url(#ah2)"/>
+</svg>

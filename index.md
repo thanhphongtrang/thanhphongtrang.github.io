@@ -14,9 +14,43 @@ hide_title: true
   <div>
     <h1 class="hero-name">{{ site.author.name }}</h1>
     <p class="identity">I research how teachers keep professional judgment when AI joins the work. <em>And I build the tools to study it.</em></p>
+    <p class="stack">Python · LangGraph · Databricks · Codex · ATLAS.ti</p>
     <p class="affil">Doctoral researcher, University of Gothenburg (IPKL) · GRAITE · {{ site.author.location }}</p>
   </div>
 </div>
+
+<ol class="glance" aria-label="Trajectory at a glance">
+  <li>
+    <span class="flag flag-vn" aria-hidden="true"></span><span class="g-city">Ho Chi Minh City</span>
+    <span class="g-org">University of Education</span>
+    <span class="g-what">Language teacher, then analytics</span>
+    <span class="g-when">2013–2020</span>
+  </li>
+  <li>
+    <span class="flag flag-se" aria-hidden="true"></span><span class="g-city">Gothenburg</span>
+    <span class="g-org">University of Gothenburg</span>
+    <span class="g-what">M.Sc., SISGP-funded (0.5 MSEK)</span>
+    <span class="g-when">2020–2022</span>
+  </li>
+  <li>
+    <span class="flag flag-us" aria-hidden="true"></span><span class="g-city">New Jersey</span>
+    <span class="g-org">Volvo Cars USA</span>
+    <span class="g-what">Commercial learning &amp; learning analytics</span>
+    <span class="g-when">2022–2023</span>
+  </li>
+  <li>
+    <span class="flag flag-se" aria-hidden="true"></span><span class="g-city">Gothenburg</span>
+    <span class="g-org"><a href="/tools/">Volvo Cars AB</a></span>
+    <span class="g-what">GenAI product management</span>
+    <span class="g-when">2023–2026</span>
+  </li>
+  <li>
+    <span class="flag flag-se" aria-hidden="true"></span><span class="g-city">Gothenburg</span>
+    <span class="g-org"><a href="/research/">University of Gothenburg</a></span>
+    <span class="g-what">GRAITE doctorate: back to where it began</span>
+    <span class="g-when">Aug 2026 →</span>
+  </li>
+</ol>
 
 I started out teaching languages in Ho Chi Minh City, designing curricula and
 watching closely what genuinely helped people learn. That curiosity pulled me into
@@ -35,13 +69,15 @@ with generative AI.
 
 <ul class="news">
 {%- assign items = site.data.news | sort: "sort" | reverse -%}
-{%- for item in items %}
+{%- for item in items limit: 3 %}
   <li>
     <span class="when">{{ item.date }}</span>
     <p class="what">{{ item.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
   </li>
 {%- endfor %}
 </ul>
+
+<p class="pub-links"><a href="/news/">All news →</a></p>
 
 ## Contact
 

@@ -25,7 +25,7 @@ room, and a decision to make about what deserved my students' time.
 
 ## Analytics community of practice
 
-**Volvo Cars** · Gothenburg · 2022–2026
+**Volvo Cars** · Gothenburg · 2023–2026
 
 Co-founded and ran an internal community of practice, coaching cross-functional
 teams in data-driven methods. Teaching adults who never signed up for a course,

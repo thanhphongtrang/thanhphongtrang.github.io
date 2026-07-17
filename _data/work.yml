@@ -76,7 +76,8 @@ applied:
 recent:
   years: "2026"
   summary: >-
-    More recently, at Eliq, I have worked on AI for sense-making of green-energy
-    data in the energy transition: the problem of letting someone ask a plain
-    question about their own energy and get a straight answer back, instead of a
-    page of search results.
+    More recently, at Eliq, my work has centred on trust in what a generative AI
+    system tells people about their own energy: how you check that a model's
+    answer is grounded and true before someone acts on it, and how you keep human
+    judgment in the loop when the machine does the explaining. It is the same
+    question my doctorate asks, met in a consumer product rather than a classroom.

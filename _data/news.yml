@@ -1,5 +1,6 @@
 # The news feed. Newest first, but ordering is done by `sort`, so just add
-# your new item anywhere and it lands in the right place.
+# your new item anywhere and it lands in the right place. The home page
+# shows the 3 most recent; the full list renders at /news/.
 #
 #   - date: "Aug 2026"    <- free text label, shown as-is
 #     sort: 2026-08-01    <- real date, used for ordering. ALWAYS set this.

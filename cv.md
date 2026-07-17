@@ -30,17 +30,23 @@ In GRAITE, Sweden's national graduate school for AI in Teacher Education
 (VR-funded, nine universities). Researching how teacher educators enact
 professional judgment and agency when co-creating with generative AI.
 
-### Product manager, data platform
-**Volvo Cars** · Gothenburg · 2022–2026
+### Product manager, GenAI
+**Volvo Cars AB** · Gothenburg · 2023–2026
 
-Led AI-powered semantic search and analytics platforms serving 100+ markets.
-Built AI that assists human decisions: buyer search, customer care, analyst
-workflows. Ran product discovery on behavioural analytics and experiments; drove
-roughly 10% uplift in online sales conversion; cut cloud costs by about 80% and
-query latency by 25%. Programme-managed European Accessibility Act compliance
-across 27 markets. Co-founded the analytics community of practice. In 2024 ran an
-internal study on epistemic ownership in AI-assisted coding (traces plus survey,
-n=127).
+Led GenAI product work serving 100+ markets. Built AI that assists human
+decisions: buyer search, customer care, analyst workflows. Ran product discovery
+on behavioural analytics and experiments; drove roughly 10% uplift in online
+sales conversion; cut cloud costs by about 80% and query latency by 25%.
+Programme-managed European Accessibility Act compliance across 27 markets.
+Co-founded the analytics community of practice. In 2024 ran an internal study on
+epistemic ownership in AI-assisted coding (traces plus survey, n=127).
+
+### Commercial learning & learning analytics project manager
+**Volvo Cars USA** · New Jersey · 2022–2023
+
+Commercial learning and learning analytics: the education thread and the data
+thread running through one job, three years before the doctorate made that
+pairing a research question.
 
 ### Earlier positions in analytics and data
 

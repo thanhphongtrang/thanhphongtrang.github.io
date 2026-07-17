@@ -4,7 +4,7 @@
     <a class="brand" href="/">{{ site.author.name }}</a>
     <nav aria-label="Main">
       <ul>
-        {%- assign nav = "/research/,Research|/publications/,Publications|/tools/,Tools|/teaching/,Teaching|/cv/,CV" | split: "|" -%}
+        {%- assign nav = "/research/,Research|/publications/,Publications|/news/,News|/tools/,Tools|/teaching/,Teaching|/cv/,CV" | split: "|" -%}
         {%- for item in nav -%}
           {%- assign parts = item | split: "," -%}
           {%- assign href = parts[0] -%}

@@ -225,6 +225,137 @@ blockquote {
   .hero img { width: 6.5rem; height: 6.5rem; }
 }
 
+/* --- Home: glance strip ---------------------------------------------------
+   The trajectory in one line: country, org, publication, and the loop
+   closing (teacher -> builder -> back to education). Pure CSS, no images:
+   flags are drawn with gradients and a unicode star so they render the
+   same on every platform (emoji flags fall back to letter codes on
+   Windows). Decorative only, hence aria-hidden on the chips. */
+
+.glance {
+  list-style: none;
+  margin: 0 0 3rem;
+  padding: 1.35rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0 0.9rem;
+}
+.glance li {
+  position: relative;
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+/* Each node draws its own segment of the line, so the strip survives any
+   column count without a separately positioned rule. */
+.glance li::before {
+  content: "";
+  position: absolute;
+  top: -0.89rem;
+  left: 0;
+  right: -0.9rem;   /* bridge the grid gap to the next node */
+  height: 2px;
+  background: var(--rule);
+}
+.glance li:last-child::before { right: 0; }
+.glance li::after {
+  content: "";
+  position: absolute;
+  top: -1.2rem;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+}
+/* The final node is the open end: outlined, not filled. */
+.glance li:last-child::after {
+  background: var(--bg);
+  border-color: var(--accent);
+}
+/* Node anatomy: flag + city (quiet eyebrow line), org (the bold anchor;
+   read down the column and the repetition of "University of Gothenburg"
+   draws the loop closing), then role, then dates. */
+.g-org, .g-what, .g-when { display: block; }
+.g-city { color: var(--muted); margin-left: 0.3rem; }
+.g-org { font-weight: 600; margin-top: 0.25rem; }
+.g-what { color: var(--muted); }
+.g-when {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  margin-top: 0.15rem;
+}
+
+.flag {
+  display: inline-block;
+  width: 1.3rem;
+  height: 0.9rem;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.25);
+  position: relative;
+  vertical-align: baseline;
+}
+.flag-vn { background: #da251d; }
+.flag-vn::after {
+  content: "\2605";
+  color: #ffcd00;
+  font-size: 0.62rem;
+  line-height: 1;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flag-se {
+  background-color: #0059a3;
+  background-image:
+    linear-gradient(to bottom, transparent 40%, #fecb00 40%, #fecb00 62%, transparent 62%),
+    linear-gradient(to right, transparent 28%, #fecb00 28%, #fecb00 44%, transparent 44%);
+}
+.flag-us {
+  /* Seven stripes, not thirteen: at 20x14px, thirteen blur into moire. */
+  background: repeating-linear-gradient(to bottom,
+    #b22234 0 14.28%, #f4f5f0 14.28% 28.57%);
+}
+.flag-us::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 55%;
+  background-color: #3c3b6e;
+  background-image: radial-gradient(#f4f5f0 18%, transparent 24%);
+  background-size: 3px 3px;
+  border-top-left-radius: 2px;
+}
+
+@media (max-width: 40rem) {
+  .glance {
+    grid-template-columns: 1fr;
+    padding: 0 0 0 1.35rem;
+    gap: 0;
+  }
+  .glance li { padding-block: 0.45rem; }
+  .glance li::before {
+    top: 0;
+    bottom: 0;
+    left: -1.05rem;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+  .glance li:first-child::before { top: 0.75rem; }
+  .glance li:last-child::before { height: 0.75rem; bottom: auto; }
+  .glance li::after {
+    top: 0.75rem;
+    left: -1.35rem;
+  }
+}
+
 /* --- News ---------------------------------------------------------------- */
 
 .news { list-style: none; padding: 0; margin: 0; }

@@ -11,24 +11,7 @@ is the reason the research can ask what it asks.
 
 ## The research instrument
 
-{% assign i = site.data.work.instrument %}
-
-### {{ i.title }}<span class="status-tag">{{ i.status }}</span>
-
-{{ i.summary }}
-
-{{ i.detail }}
-
-<div class="shot-placeholder">
-  <p><strong>Screenshot placeholder</strong><br>
-  An interface capture goes here once the instrument reaches a presentable state.</p>
-</div>
-
-<p class="stack">{{ i.stack }}</p>
-
-{{ i.note }}
-
-*{{ i.repo_note }}*
+{% include instrument.html show_stack=true %}
 
 ## AI inside human decisions
 

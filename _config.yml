@@ -57,6 +57,8 @@ exclude:
   - Gemfile.lock
   - vendor
   - README.md
+  - AGENTS.md
+  - CLAUDE.md
   - LICENSE
   - .jekyll-cache
   - node_modules
