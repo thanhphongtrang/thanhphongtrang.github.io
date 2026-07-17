@@ -1,0 +1,423 @@
+/* =========================================================================
+   Phong Trang — personal site
+   Hand-written. No framework, no JS, no webfont downloads.
+   ========================================================================= */
+
+:root {
+  --bg:      #fafbf9;
+  --surface: #f1f4f0;
+  --text:    #1b1d1b;
+  --muted:   #545b54;
+  --rule:    #e1e6e0;
+  --accent:  #146840;
+  --accent-bg: #e7f1ea;
+
+  --serif: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", Charter, serif;
+  --sans:  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono:  ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --wrap: 46rem;
+  --step: 1.6rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:      #171a18;
+    --surface: #1f241f;
+    --text:    #e9ece8;
+    --muted:   #a6aea5;
+    --rule:    #303830;
+    --accent:  #7fcf9f;
+    --accent-bg: #1f2b22;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* --- Links --------------------------------------------------------------- */
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.6rem 1rem;
+  z-index: 10;
+  text-decoration: none;
+}
+.skip-link:focus { left: 0; }
+
+/* --- Header -------------------------------------------------------------- */
+
+.site-head {
+  border-bottom: 1px solid var(--rule);
+  padding-block: 1.1rem;
+  margin-bottom: 3rem;
+}
+.site-head .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.brand {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.brand:hover { color: var(--accent); }
+
+/* Row gap is deliberately tighter than the column gap: when the nav wraps on a
+   narrow screen, a symmetric gap strands the last item under a large void. */
+.site-head nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-head nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.94rem;
+}
+.site-head nav a:hover { color: var(--accent); }
+.site-head nav a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+/* --- Typography ---------------------------------------------------------- */
+
+.prose { padding-bottom: 4rem; }
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); margin: 0 0 0.5rem; }
+h2 {
+  font-size: 1.4rem;
+  margin: 3rem 0 1rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+}
+h3 { font-size: 1.12rem; margin: 2rem 0 0.4rem; }
+
+.page-head { margin-bottom: 2.5rem; }
+.page-head h1 { margin-bottom: 0.6rem; }
+
+.standfirst {
+  font-size: 1.12rem;
+  color: var(--muted);
+  margin: 0;
+  max-width: 34rem;
+  text-wrap: pretty;
+}
+
+p { margin: 0 0 1.15rem; text-wrap: pretty; }
+strong { font-weight: 640; }
+
+ul, ol { padding-left: 1.25rem; }
+li { margin-bottom: 0.4rem; }
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--surface);
+  padding: 0.12em 0.36em;
+  border-radius: 3px;
+}
+
+img { max-width: 100%; height: auto; }
+
+blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--rule);
+  color: var(--muted);
+}
+
+/* --- Home: hero ---------------------------------------------------------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+.hero img {
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--surface);
+}
+.hero-name {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 5vw, 2.3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+  line-height: 1.1;
+}
+.identity {
+  font-family: var(--serif);
+  font-size: 1.22rem;
+  line-height: 1.45;
+  color: var(--text);
+  margin: 0 0 0.9rem;
+  text-wrap: pretty;
+}
+.identity em { color: var(--accent); font-style: normal; }
+.affil {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+@media (max-width: 34rem) {
+  .hero { grid-template-columns: 1fr; gap: 1.25rem; }
+  .hero img { width: 6.5rem; height: 6.5rem; }
+}
+
+/* --- News ---------------------------------------------------------------- */
+
+.news { list-style: none; padding: 0; margin: 0; }
+.news li {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+.news li:last-child { border-bottom: 0; }
+.news .when {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.16rem;
+  white-space: nowrap;
+}
+.news .what { margin: 0; }
+
+@media (max-width: 34rem) {
+  .news li { grid-template-columns: 1fr; gap: 0.15rem; }
+  .news .when { font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+}
+
+/* --- Cards / work -------------------------------------------------------- */
+
+.card {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1.4rem 1.5rem;
+  margin-bottom: 1.25rem;
+  background: var(--surface);
+}
+.card h3 { margin-top: 0; }
+.card > :last-child { margin-bottom: 0; }
+
+.card-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 0.8rem;
+}
+
+.thread {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border-radius: 999px;
+  padding: 0.12rem 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.outcomes { list-style: none; padding: 0; margin: 0.8rem 0; }
+.outcomes li {
+  padding-left: 1.1rem;
+  position: relative;
+  font-size: 0.95rem;
+  margin-bottom: 0.28rem;
+}
+.outcomes li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.stack {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0.8rem 0 0;
+}
+
+.status-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  padding: 0.08rem 0.42rem;
+  vertical-align: 0.18em;
+  margin-left: 0.5rem;
+}
+
+/* --- Instrument screenshot placeholder ----------------------------------- */
+
+.shot-placeholder {
+  border: 1px dashed var(--rule);
+  border-radius: 8px;
+  background: var(--bg);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+}
+
+/* --- Publications -------------------------------------------------------- */
+
+.pubs { list-style: none; padding: 0; margin: 0; }
+.pubs > li {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+.pubs > li:last-child { border-bottom: 0; }
+.pub-title { font-weight: 600; margin: 0 0 0.3rem; }
+.pub-authors, .pub-venue { margin: 0 0 0.25rem; font-size: 0.95rem; }
+.pub-venue { color: var(--muted); font-style: italic; }
+.pub-note { font-size: 0.92rem; color: var(--muted); margin: 0.45rem 0 0; }
+.pub-links { font-size: 0.88rem; margin: 0.45rem 0 0; }
+.pub-links a + a { margin-left: 0.85rem; }
+
+.todo-flag {
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-radius: 3px;
+  padding: 0.05em 0.35em;
+  font-size: 0.85em;
+  font-family: var(--mono);
+}
+
+/* --- Provenance / breadcrumb (portfolio archive) ------------------------- */
+
+.crumb { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.5rem; }
+.crumb span { margin: 0 0.35rem; }
+
+.provenance {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-bg);
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1.1rem;
+  margin: 0 0 2.5rem;
+  font-size: 0.92rem;
+}
+.provenance p { margin: 0; }
+
+/* Old portfolio bodies carry inline styles and shields.io badges.
+   Keep them contained rather than fighting them. */
+.portfolio-item img[src*="shields.io"] { display: inline-block; margin: 0 2px 2px 0; }
+.portfolio-item table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.portfolio-item th, .portfolio-item td {
+  border: 1px solid var(--rule); padding: 0.45rem 0.6rem; text-align: left;
+}
+.portfolio-item div[style*="background"] { border-radius: 8px; }
+
+/* --- Empty section ------------------------------------------------------- */
+
+.empty {
+  color: var(--muted);
+  font-style: italic;
+  border: 1px dashed var(--rule);
+  border-radius: 6px;
+  padding: 1.2rem 1.4rem;
+}
+.empty p { margin: 0; }
+
+/* --- Footer -------------------------------------------------------------- */
+
+.site-foot {
+  border-top: 1px solid var(--rule);
+  padding-block: 2rem 3rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+.foot-links li { margin: 0; }
+.colophon { color: var(--muted); margin: 0; font-size: 0.85rem; }
+
+/* --- Motion / print ------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@media print {
+  .site-head nav, .site-foot, .skip-link, .provenance { display: none; }
+  body { background: #fff; color: #000; }
+  a { color: #000; }
+}

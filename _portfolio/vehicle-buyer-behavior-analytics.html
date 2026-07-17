@@ -1,0 +1,453 @@
+---
+title: "Vehicle Buyers' Behavior Analytics: Data-Driven Search Optimization"
+excerpt: "Led end-to-end analytics for automotive e-commerce search across 112 markets, achieving 12% improvement in order completion and 25% reduction in latency through pragmatic data engineering and stakeholder-focused insights.<br/><img src='/assets/portfolio-img/behavior-analytics/banner.png'>"
+collection: portfolio
+---
+
+<p><em>By Phong Trang - Software Product Manager - thanhphong.trang@gmail.com</em></p>
+
+<img src="/assets/portfolio-img/behavior-analytics/banner.png" alt="Vehicle Buyers Behavior Analytics Banner" style="width: 100%; margin-bottom: 2rem;">
+
+<h2>ℹ️ Executive Summary</h2>
+
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+  <ul style="margin: 0;">
+    <li><strong>Role:</strong> Product Analyst | <strong>Industry:</strong> Automotive E-commerce | <strong>Scope:</strong> 112 global markets</li>
+    <li><strong>Key Impact:</strong>
+      <ul>
+        <li>Drove <strong>12%</strong> improvement in online order completion through data-driven search optimization</li>
+        <li>Reduced search performance latency by <strong>25%</strong> through error handling optimization</li>
+        <li>Prepared <strong>7,400</strong> clean queries enabling GenAI shopping assistant development</li>
+      </ul>
+    </li>
+    <li><strong>Technical Stack:</strong> 
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=flat&logo=mysql&logoColor=white" alt="SQL">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Databricks-FF3621?style=flat&logo=databricks&logoColor=white" alt="Databricks">
+  <img src="https://img.shields.io/badge/Power_BI-F2C811?style=flat&logo=power-bi&logoColor=black" alt="Power BI">
+  <img src="https://img.shields.io/badge/Google_Analytics-E37400?style=flat&logo=google-analytics&logoColor=white" alt="GA4">
+  <img src="https://img.shields.io/badge/DAX-F2C811?style=flat&logo=power-bi&logoColor=black" alt="DAX">
+</li>
+    <li><strong>Portfolio Artifacts:</strong> <a href="https://github.com/thanhphongtrang/search-analytics">GitHub Code</a> | Interactive Dashboard | Case Study</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>🎯 Business Context</h2>
+
+<p>When our automotive e-commerce platform launched a new semantic search feature across 112 global markets, stakeholders needed rapid insights to optimize performance. The challenge was immediate: <strong>15% of sales records contained NULL values</strong> across regions, creating gaps in our ability to measure revenue impact accurately.</p>
+
+<p>The business couldn't wait for perfect data. Decisions needed to be made within days to determine whether to continue investing in the new search experience or revert to the previous system.</p>
+
+<h3>My Role</h3>
+
+<p>As Product Analyst, I supported business and engineering teams by:</p>
+
+<ul>
+  <li>Designing and implementing data pipelines that handled incomplete data pragmatically</li>
+  <li>Creating behavioral analytics frameworks to understand user search patterns</li>
+  <li>Building executive dashboards that translated complex data into actionable insights</li>
+  <li>Advocating for long-term data quality improvements while delivering short-term value</li>
+</ul>
+
+<hr>
+
+<h2>🔧 The Data Engineering Challenge</h2>
+
+<h3>Problem: Missing Sales Data</h3>
+
+<p>Approximately <strong>15% of sales records</strong> had NULL values across product-region combinations. This wasn't uniformly distributed—some markets like Sweden had pristine data quality, while emerging markets showed significant gaps.</p>
+
+<h3>Solution: Dual-Track Approach</h3>
+
+<p>Rather than choosing between speed and accuracy, I implemented both:</p>
+
+<ul>
+  <li><strong>Short-term (2 days):</strong> Delivered interim analysis using regional-product average heuristic to fill gaps</li>
+  <li><strong>Long-term (2 months):</strong> Partnered with source system teams to improve data quality at the root</li>
+</ul>
+
+<h3>The Technical Implementation</h3>
+<pre>
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+<code>-- 
+Regional-product averaging approach for NULL handling
+WITH regional_product_avg AS (
+    SELECT 
+        region,
+        product_id,
+        AVG(sales_value) as avg_sales
+    FROM sales_data
+    WHERE sales_value IS NOT NULL
+    GROUP BY region, product_id
+),
+sales_enriched AS (
+    SELECT 
+        s.order_id,
+        s.region,
+        s.product_id,
+        s.search_term,
+        s.sales_value,
+        r.avg_sales as regional_product_avg,
+        COALESCE(s.sales_value, r.avg_sales) as sales_value_clean
+    FROM sales_data s
+    LEFT JOIN regional_product_avg r
+        ON s.region = r.region 
+        AND s.product_id = r.product_id
+)
+SELECT * FROM sales_enriched;</code>
+</div>
+</pre>
+<h3>Outcome & Transparency</h3>
+
+<p>The approach delivered:</p>
+
+<ul>
+  <li>✅ Clean dataset ready for analysis within 48 hours</li>
+  <li>✅ Full documentation of limitations and assumptions for stakeholders</li>
+  <li>✅ Business decisions proceeded without delay</li>
+  <li>✅ Long-term data quality improved to <strong>90%</strong> completeness within 2 months</li>
+</ul>
+
+<blockquote style="background: rgba(0, 102, 204, 0.1); padding: 1rem; border-left: 4px solid #0066cc; margin: 2rem 0;">
+  <p><strong>Key Learning:</strong> Transparency about data limitations builds trust. Every analysis included clear documentation of what was solid versus what relied on heuristics, enabling stakeholders to make informed decisions.</p>
+</blockquote>
+
+<hr>
+
+<h2>📊 Behavioral Analytics Framework</h2>
+
+<h3>Data Sources Integration</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+  <thead>
+    <tr style="background: rgba(0, 102, 204, 0.1);">
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: left;">Source</th>
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: left;">Data Type</th>
+      <th style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px; text-align: left;">Volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>GA4</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">Customer search behavior events</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">10,000+ events/day</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;"><strong>Snowflake</strong></td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">Order completion & sales data</td>
+      <td style="border: 1px solid rgba(0, 0, 0, 0.1); padding: 12px;">Real-time sync</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>MECE Metrics Framework</h3>
+
+<p>I established a <strong>Mutually Exclusive, Collectively Exhaustive</strong> framework aligning product objectives with measurable KPIs. This framework ensured consistent measurement across 112 markets and reduced metric misinterpretation across engineering, UX, and product teams.</p>
+
+<img src="/assets/portfolio-img/behavior-analytics/metrics-framework.png" alt="Metrics Framework" style="width: 100%; margin: 2rem 0;">
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+  <div>
+    <h4>Product Usage Metrics</h4>
+    <ul>
+      <li>Sessions initiating search</li>
+      <li>Search submission types (default, keyword box, auto-suggestion)</li>
+      <li>Search refinement patterns</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Engagement Metrics</h4>
+    <ul>
+      <li>Engagement rate: (Result clicks / Search sessions)</li>
+      <li>Click position distribution</li>
+      <li>Zero-result searches identifying content gaps</li>
+    </ul>
+  </div>
+</div>
+
+<h4>Business Impact Metrics</h4>
+<ul>
+  <li>Search-to-order conversion funnel</li>
+  <li>Revenue attribution by search behavior</li>
+</ul>
+
+<h3>Analysis Implementation</h3>
+<pre>
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;"><code>import pandas as pd
+
+# Load GA4 search behavior data from Databricks
+search_events = spark.sql("""
+    SELECT 
+        user_pseudo_id,
+        event_date,
+        search_term,
+        search_result_count,
+        event_name,
+        event_label
+    FROM ga4_events
+    WHERE event_category = 'global search'
+""").toPandas()
+
+# Calculate engagement metrics
+engagement_metrics = search_events.groupby('event_date').agg({
+    'user_pseudo_id': 'nunique',
+    'search_term': 'count',
+    'search_result_count': 'mean'
+}).rename(columns={
+    'user_pseudo_id': 'unique_users',
+    'search_term': 'total_searches',
+    'search_result_count': 'avg_results_returned'
+})
+
+# Zero-result analysis for content gap identification
+zero_results = search_events[
+    search_events['search_result_count'] == 0
+].groupby('search_term').size().sort_values(ascending=False)</code>
+</div>
+</pre>
+<h3>Key Insights Delivered</h3>
+
+<ul>
+  <li><strong>65% engagement rate</strong> achieved post-optimization—users were finding relevant results</li>
+  <li><strong>Top 20 zero-result terms</strong> identified content gaps, providing actionable priorities for the content team</li>
+  <li><strong>30% reduction</strong> in search refinement rate indicated improved relevance from the first query</li>
+</ul>
+
+<hr>
+
+<h2>📈 Business Intelligence Dashboards</h2>
+
+<p>I designed a 3-page executive dashboard translating complex behavioral data into clear, actionable insights for C-level and product stakeholders.</p>
+
+<h3>Page 1: Executive Overview</h3>
+
+<img src="/assets/portfolio-img/behavior-analytics/dashboard-executive.jpg" alt="Executive Dashboard" style="width: 100%; margin: 2rem 0;">
+
+<ul>
+  <li>KPI cards showing search volume, engagement rate, and conversion impact</li>
+  <li>Funnel visualization: Search → Click → Order</li>
+  <li>Trend analysis with month-over-month and year-over-year comparisons</li>
+</ul>
+
+<h3>Page 2: Behavioral Deep-Dive</h3>
+
+<img src="/assets/portfolio-img/behavior-analytics/dashboard-behavior.png" alt="Behavioral Dashboard" style="width: 100%; margin: 2rem 0;">
+
+<ul>
+  <li>Click position distribution analysis revealing result relevance</li>
+  <li>Zero-result search trends over time</li>
+  <li>Search destination page breakdown</li>
+  <li>Time series patterns with seasonality detection</li>
+</ul>
+
+<h3>Page 3: Search Query Categories</h3>
+
+<img src="/assets/portfolio-img/behavior-analytics/dashboard-queries.png" alt="Queries Dashboard" style="width: 100%; margin: 2rem 0;">
+
+<ul>
+  <li>Query pattern analysis showing what users search for</li>
+  <li>Search query categorization</li>
+  <li>GenAI-powered insights for category optimization using Azure OpenAI (GPT-4)</li>
+</ul>
+
+<h3>Technical Architecture</h3>
+<pre>
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+<code >GA4 (Behavioral Data) ──────┐
+                             ├──> Databricks ETL ──> Curated Tables ──> Power BI
+Snowflake (Order Data) ──────┘</code>
+</div>
+</pre>
+<hr>
+
+<h2>📊 Results & Impact</h2>
+
+<h3>Business Impact</h3>
+
+<div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-left: 4px solid #28a745; margin: 2rem 0;">
+  <p style="font-size: 1.1em; margin: 0;"><strong>12% improvement in online order completion</strong> achieved in 2 sprints</p>
+</div>
+
+<ul>
+  <li>Data analytics identified specific friction points in the search experience</li>
+  <li>Search engineering team implemented targeted optimizations</li>
+  <li>Measurable revenue impact across all 112 markets</li>
+</ul>
+
+<h3>Infrastructure Impact</h3>
+
+<div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-left: 4px solid #28a745; margin: 2rem 0;">
+  <p style="font-size: 1.1em; margin: 0;"><strong>25% reduction in search latency</strong> (800ms → 600ms)</p>
+</div>
+
+<ul>
+  <li>Implemented caching strategy achieving <strong>45% cache hit rate</strong></li>
+  <li>Optimized database queries with strategic indexing</li>
+  <li>Added circuit breaker pattern for graceful degradation under load</li>
+  <li>Result: <strong>33% decrease</strong> in search abandonment</li>
+</ul>
+
+<h3>Strategic Impact</h3>
+
+<div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-left: 4px solid #28a745; margin: 2rem 0;">
+  <p style="font-size: 1.1em; margin: 0;"><strong>Data preparation enabling GenAI capabilities</strong></p>
+</div>
+
+<ul>
+  <li>Cleaned <strong>7,400 queries</strong> from 10,000+ raw search events, creating a high-quality corpus</li>
+  <li>Generated <strong>4,500 query-product training pairs</strong> for machine learning models</li>
+  <li>Achieved <strong>40% improvement</strong> in search relevance (NDCG@10: 0.72 vs. 0.52 baseline)</li>
+  <li>Enabled AI/ML team to develop semantic search and conversational shopping assistant</li>
+</ul>
+
+<hr>
+
+<h2>🎓 Key Learnings</h2>
+
+<h3>Balancing Speed vs. Rigor</h3>
+
+<p>When faced with incomplete data and urgent business decisions, I learned that <strong>pragmatic interim solutions with clear limitations beat perfect analyses that arrive too late</strong>. The key was transparency:</p>
+
+<ol>
+  <li>Delivered interim analysis in 2 days using regional-product averaging for missing values</li>
+  <li>Clearly documented limitations in all reports and presentations</li>
+  <li>Simultaneously initiated data quality improvements, achieving 90% completeness in 2 months</li>
+</ol>
+
+<blockquote style="background: rgba(0, 102, 204, 0.1); padding: 1rem; border-left: 4px solid #0066cc; margin: 2rem 0;">
+  <p>Stakeholders appreciated the honesty. By flagging what was solid versus what relied on heuristics, I built trust that paid dividends in future projects.</p>
+</blockquote>
+
+<h3>User-Centric Analytics</h3>
+
+<p>Working with engineering, UX, and product teams to design the GA4 tracking specification collaboratively ensured that:</p>
+
+<ul>
+  <li>Metrics aligned with actual product decisions rather than theoretical KPIs</li>
+  <li>Cross-functional teams shared a common measurement vocabulary</li>
+  <li>The MECE framework prevented metric proliferation and confusion</li>
+</ul>
+
+<h3>Self-Service Enablement</h3>
+
+<p>By building interactive dashboards with clear documentation, I reduced ad-hoc analysis requests by <strong>60%</strong>. This freed time for deeper strategic work while empowering stakeholders to find their own answers.</p>
+
+<h3>Iterative Scaling</h3>
+
+<p>The MVP-to-scale approach proved essential:</p>
+
+<ol>
+  <li><strong>Validated:</strong> MVP tracking with 1 market (Sweden) to ensure data quality and usability</li>
+  <li><strong>Scaled:</strong> Rolled out to 112 markets with localization guides</li>
+  <li><strong>Refined:</strong> Continuously improved based on stakeholder feedback and market-specific learnings</li>
+</ol>
+
+<p>This iterative cycle—monitor metrics weekly, identify opportunities, coordinate with teams, and measure impact—became a repeatable framework for optimization.</p>
+
+<hr>
+
+<h2>🛠️ Skills Demonstrated</h2>
+
+<ul>
+  <li>Data Engineering & ETL (SQL, Databricks, Snowflake)</li>
+  <li>Behavioral Analytics (GA4, Python/Pandas)</li>
+  <li>Business Intelligence (Power BI, DAX)</li>
+  <li>Stakeholder Communication & Data Storytelling</li>
+  <li>Product Analytics & Metrics Framework Design</li>
+  <li>Cross-functional Collaboration</li>
+  <li>Data Quality Advocacy & Process Improvement</li>
+</ul>
+
+<hr>
+
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+  <h3>🤙🏻 Let's Connect</h3>
+  <p>📧 <a href="mailto:thanhphong.trang@gmail.com">thanhphong.trang@gmail.com</a><br>
+  💼 <a href="https://www.linkedin.com/in/phongtrangtt/">LinkedIn Profile</a></p>
+  <p><strong>Available for:</strong> Data Analyst, Product Manager<br>
+  <strong>Location:</strong> Gothenburg, Sweden</p>
+</div>
+
+<hr>
+
+<h2>📂 Appendix: Artifacts on GitHub</h2>
+
+<h3>Repository Structure</h3>
+<pre>
+<div style="background: rgba(0, 102, 204, 0.1); padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+<code>/search-analytics
+│
+├── /sql
+│   ├── null_handling_subquery.sql
+│   ├── behavioral_metrics.sql
+│   └── etl_pipeline_sample.sql
+│
+├── /python
+│   ├── engagement_analysis.py
+│   ├── zero_results_analysis.py
+│   └── requirements.txt
+│
+└── /powerbi
+    └── dax_measures.txt</code>
+</div>
+</pre>
+<p style="margin-top: 2rem;">View complete code repository:<br>
+<a href="https://github.com/thanhphongtrang/search-analytics" style="font-size: 1.1em; font-weight: 600;">GitHub: thanhphongtrang/search-analytics</a></p>
+
+<style>
+ 
+ 
+  
+  pre {
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+
+  
+  /* Dark mode adaptations - only styles content elements, not page background */
+  @media (prefers-color-scheme: dark) {
+
+    pre {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+
+    
+    table th {
+      background: rgba(0, 102, 204, 0.2) !important;
+    }
+    
+    table td, table th {
+      border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    blockquote {
+      background: rgba(0, 102, 204, 0.15) !important;
+      border-left-color: #4d94ff !important;
+    }
+    
+
+  }
+</style>

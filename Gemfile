@@ -1,13 +1,11 @@
-source 'https://rubygems.org'
+# Pinned to the `github-pages` gem on purpose.
+#
+# GitHub Pages builds this repo natively using its own pinned Jekyll (3.9.x), not
+# whatever is newest. Depending on `github-pages` means what you build locally is
+# exactly what GitHub deploys. If you ever bump to Jekyll 4 you must also add an
+# Actions workflow to build it, because the native Pages build will not.
 
-group :jekyll_plugins do
-  gem 'jekyll'
-  gem 'jekyll-feed'
-  gem 'jekyll-sitemap'
-  gem 'jekyll-redirect-from'
-  gem 'jemoji'
-  gem 'webrick', '~> 1.8'
-end
+source "https://rubygems.org"
 
-gem 'github-pages'
-gem 'connection_pool', '2.5.0'
+gem "github-pages", group: :jekyll_plugins
+gem "webrick", "~> 1.8"

@@ -1,0 +1,19 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">{{ site.author.name }}</a>
+    <nav aria-label="Main">
+      <ul>
+        {%- assign nav = "/research/,Research|/publications/,Publications|/tools/,Tools|/teaching/,Teaching|/cv/,CV" | split: "|" -%}
+        {%- for item in nav -%}
+          {%- assign parts = item | split: "," -%}
+          {%- assign href = parts[0] -%}
+          {%- assign label = parts[1] -%}
+          <li>
+            <a href="{{ href }}"{% if page.url contains href %} aria-current="page"{% endif %}>{{ label }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </div>
+</header>

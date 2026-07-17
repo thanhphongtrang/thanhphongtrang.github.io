@@ -1,0 +1,50 @@
+# Publications.
+#
+# `authors` is the author string AS PUBLISHED. Deliberate: you cite what is
+# printed on the paper, even where it disagrees with your canonical name.
+# Wrap your own name in **double asterisks** and the template bolds it.
+#
+# Verified 2026-07-16 against the AIS eLibrary and GUPEA's OAI record.
+# Do not edit venue strings from memory; check the source.
+
+peer_reviewed:
+  - title: "Three Faces of Analytics: How Big Data Enables Operative Decisions, Drives Transformative Change, and Builds Adaptive Capability"
+    authors: "**Trang, P.**, Chowdhury, S., Chaudhary, I., & Kaluarachchilage, K. R. R."
+    year: 2026
+    venue: "ECIS 2026 Proceedings 18, European Conference on Information Systems, Milan"
+    note: >-
+      First author. Systematic literature review synthesising 62 peer-reviewed
+      studies (2020–2025) on how descriptive, predictive and prescriptive analytics
+      mediate organisational decision-making. Literature Review track.
+    links:
+      - text: "Paper (AIS eLibrary)"
+        url: "https://aisel.aisnet.org/ecis2026/litrev/litrev/18"
+      - text: "Google Scholar"
+        url: "https://scholar.google.com/citations?user=nRgdLFoAAAAJ"
+
+# Not peer-reviewed, and labelled so on purpose: a master's thesis dressed up as
+# a conference paper is exactly what a reviewer notices, and it costs more
+# credibility than the line is worth.
+other:
+  - title: "From Coder to Curator? AI-Mediated Reasoning and Learning with GitHub Copilot"
+    authors: "**Trang, P.**"
+    year: 2024
+    kind: "Industry research"
+    venue: "Internal research report, Volvo Cars"
+    note: >-
+      Behavioural trace analysis of GitHub activity (interaction patterns, code
+      acceptance rates) combined with survey data (n=127), examining epistemic
+      ownership and cognitive reliance in AI-assisted coding.
+
+  - title: "Chatbot to Support Learning Among Newcomers in Citizen Science: chatbot design guidelines to enhance sustained engagement of newcomers"
+    authors: "**Trang, T. T. P.**"
+    year: 2023
+    kind: "Master's thesis"
+    venue: "University of Gothenburg, Department of Education, Communication and Learning (IPKL)"
+    note: >-
+      Micro-learning nudges delivered through a chatbot interface, designed to cut
+      information overload for newcomers entering a citizen science project. Graded
+      VG; deposited 2023, in the same department I return to for the doctorate.
+    links:
+      - text: "Full text (GUPEA)"
+        url: "https://hdl.handle.net/2077/78913"

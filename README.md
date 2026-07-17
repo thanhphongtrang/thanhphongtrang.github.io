@@ -1,37 +1,47 @@
-# Phong Trang - Product Manager Portfolio
+# thanhphongtrang.github.io
 
-Personal portfolio website showcasing product management and data analytics work in automotive e-commerce, accessibility compliance, and AI-powered solutions.
+Personal site. Jekyll, hand-written theme, no framework, no JS, no trackers.
+GitHub Pages builds it natively on push to `main` — there is no build step you
+have to remember.
 
-🌐 **Live Site:** [thanhphongtrang.github.io](https://thanhphongtrang.github.io)
+## Updating it
 
-  <img src="/images/Screenshot-jan-2026.png" alt="Screenshot view 1" style="width: 50%;">
+Almost everything you'll touch is a YAML file in `_data/`:
 
-## Site Architecture
+| To change | Edit |
+|---|---|
+| News feed | `_data/news.yml` — add an item, always set `sort` |
+| Publications | `_data/publications.yml` |
+| Instrument / industry work | `_data/work.yml` |
+| Profile links | `_data/links.yml` |
 
-This site is built with:
-- **Jekyll** - Static site generator
-- **Minimal Mistakes** theme (customized)
-- **GitHub Pages** - Hosting
-- **Markdown** - Content format
+Prose lives in the page files at the repo root (`index.md`, `research.md`, …).
+Old product case studies live in `_portfolio/`.
 
-## Local Development
-# Clone the repository
+You can edit any of these straight from the GitHub web UI — including on your
+phone — and the site rebuilds itself.
 
-<pre>git clone https://github.com/thanhphongtrang/thanhphongtrang.github.io.git</pre>
-## Portfolio Structure
-<pre>_portfolio/          # Portfolio case studies (markdown)
-_pages/             # Static pages (about, CV, etc.)
-assets/
-└── portfolio-img/ # Project images and screenshots
-_sass/              # Custom SCSS styling
-_config.yml         # Site configuration</pre>
+## Running it locally
 
-## Contact
+Needs Docker (no Ruby install required):
 
-**Email:** thanhphong.trang@gmail.com  
-**LinkedIn:** [linkedin.com/in/phongtrangtt](https://linkedin.com/in/phongtrangtt/)  
-**Location:** Gothenburg, Sweden
+```sh
+docker run --rm -v "$PWD:/srv/jekyll" -p 4000:4000 jekyll/jekyll:4 \
+  sh -c "bundle install && jekyll serve -H 0.0.0.0"
+```
 
-## License
+Then open <http://localhost:4000>.
 
-© 2026 Phong Trang. Portfolio content is proprietary. Site template based on Minimal Mistakes (MIT License).
+To just build: swap `jekyll serve -H 0.0.0.0` for `jekyll build`. Output in `_site/`.
+
+## Structure
+
+```
+_data/          content you edit regularly
+_layouts/       default, page, portfolio
+_includes/      head, nav, footer
+_portfolio/     industry case studies (archive)
+assets/css/     one hand-written stylesheet
+images/         headshot, favicons
+files/          CV PDF
+```

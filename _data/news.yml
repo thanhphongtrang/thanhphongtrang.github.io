@@ -1,0 +1,63 @@
+# The news feed. Newest first, but ordering is done by `sort`, so just add
+# your new item anywhere and it lands in the right place.
+#
+#   - date: "Aug 2026"    <- free text label, shown as-is
+#     sort: 2026-08-01    <- real date, used for ordering. ALWAYS set this.
+#     text: >-
+#       What happened. Markdown works, so [link like this](/research/)
+#       and *italics* are fine.
+#
+# Keep it honest, keep it short. An empty month is not a failure.
+
+- date: "Aug 2026"
+  sort: 2026-08-01
+  # TENSE FLAG: change "Starting" to "Started" once August actually arrives.
+  text: >-
+    Starting my doctorate in [GRAITE](/research/), Sweden's national graduate
+    school for AI in Teacher Education, at the University of Gothenburg (IPKL).
+
+- date: "Jun 2026"
+  sort: 2026-06-15
+  text: >-
+    First-authored *[Three Faces of
+    Analytics](https://aisel.aisnet.org/ecis2026/litrev/litrev/18)* at ECIS 2026 in
+    Milan, with S. Chowdhury, I. Chaudhary and K. R. R. Kaluarachchilage.
+
+- date: "2026"
+  sort: 2026-03-01
+  text: >-
+    [Applied work](/tools/) at Eliq on AI for sense-making of green-energy data in
+    the energy transition.
+
+- date: "2025"
+  sort: 2025-06-28
+  text: >-
+    Led [accessibility compliance](/portfolio/eu-accessibility-act/) for
+    volvocars.com across 27 EEA markets, ahead of the European Accessibility Act
+    deadline.
+
+- date: "2024"
+  sort: 2024-09-01
+  text: >-
+    Ran an internal study at Volvo Cars on epistemic ownership in AI-assisted
+    coding, pairing behavioural traces with a survey (n=127). [The question that
+    became the doctorate](/research/).
+
+- date: "2023"
+  sort: 2023-10-23
+  text: >-
+    M.Sc. thesis *[Chatbot to Support Learning Among Newcomers in Citizen
+    Science](https://hdl.handle.net/2077/78913)* deposited at the University of
+    Gothenburg, in the department I now return to.
+
+- date: "2022"
+  sort: 2022-06-01
+  text: >-
+    M.Sc. in Applied IT and Learning, University of Gothenburg. Thesis graded VG.
+
+- date: "2020"
+  sort: 2020-08-01
+  text: >-
+    Moved to Sweden on the Swedish Institute Global Professionals Scholarship,
+    full funding for the master's in Applied IT and Learning, awarded to roughly
+    1.25% of applicants.

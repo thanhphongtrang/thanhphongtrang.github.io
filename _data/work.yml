@@ -1,0 +1,82 @@
+# Tools & industry work.
+#
+# `instrument` leads the page. It is the research instrument, not industry work,
+# and it is what makes the researcher/builder claim concrete.
+# `applied` is the Volvo-era AI product work: AI assisting human decisions.
+# `recent` is recent applied AI work, deliberately light-touch. See below.
+
+instrument:
+  title: "A trace-capturing co-creation environment"
+  status: "In development"
+  summary: >-
+    The research instrument for my doctorate: a web environment where a teacher
+    educator and a generative AI model co-create teaching material while every move
+    either party makes is recorded. Prompts, suggestions, accepts, rejects, edits,
+    reversions, pauses.
+  detail: >-
+    Most studies of AI in professional work ask people afterwards what happened.
+    Self-report is exactly where judgment goes invisible; you do not remember the
+    suggestion you waved through. Capturing the interaction itself lets me see
+    where a professional overrode the model, where they went along with it, and
+    what they made of what came back, rather than what they later recall doing.
+  stack: "Python · trace logging · TPACK-informed task design"
+  note: >-
+    Built under a research-software discipline: reproducible, accessible, and with
+    the empirical data boundary enforced in code rather than in good intentions.
+  repo_note: "Repository private during instrument development."
+  screenshot: true # placeholder slot until Phong supplies a real capture
+
+applied:
+  - title: "Data Analyst Agent"
+    org: "Volvo Cars"
+    years: "2024–2025"
+    thread: "AI assisting analyst workflows"
+    summary: >-
+      A LangGraph agent that turned recurring ad-hoc data questions into self-serve
+      SQL, so analysts kept the judgment calls and lost the queue.
+    outcomes:
+      - "40% reduction in ad-hoc data requests within 30 days"
+      - "~50 analyst hours returned per month"
+    stack: "LangGraph · Python · SQL · Databricks"
+    url: /portfolio/data-analyst-agent/
+
+  - title: "GenAI Assistant for Customer Care"
+    org: "Volvo Cars"
+    years: "2023–2024"
+    thread: "AI assisting customer care agents"
+    summary: >-
+      A RAG assistant giving care agents across 12+ markets one trustworthy answer
+      instead of six stale intranet pages. Built to support the agent's decision,
+      never to replace the agent.
+    outcomes:
+      - "35% automated resolution rate within 90 days"
+      - "94% agent satisfaction at alpha"
+      - "10pp improvement in first-contact resolution"
+    stack: "LangChain · Azure OpenAI · RAG"
+    url: /portfolio/customer-care-genai-assistant/
+
+  - title: "AI Semantic Search for New Car Sales"
+    org: "Volvo Cars"
+    years: "2023–2025"
+    thread: "AI assisting buyer decisions"
+    summary: >-
+      Intent recognition for natural-language car search, bridging how people
+      describe a car and how the catalogue lists one, across 100+ markets.
+    outcomes:
+      - "85% search accuracy (NDCG)"
+      - "+11% purchase conversion for search users"
+      - "+19% traffic to car listing pages"
+    stack: "Azure OpenAI · Cohere · Elasticsearch · vector search · GraphQL"
+    url: /portfolio/ai-semantic-search/
+
+# Framing rule (Phong's, 2026-07-16): Eliq is named for credibility, but stays
+# woven in as recent applied work. No logo, no employment-timeline block, not
+# called a "project", dates loose. Eliq's CLIENTS are never named here, and
+# nothing unshipped is described.
+recent:
+  years: "2026"
+  summary: >-
+    More recently, at Eliq, I have worked on AI for sense-making of green-energy
+    data in the energy transition: the problem of letting someone ask a plain
+    question about their own energy and get a straight answer back, instead of a
+    page of search results.

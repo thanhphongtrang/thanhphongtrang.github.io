@@ -1,14 +1,14 @@
 ---
 title: "Search Platform Growth Model and Monetization"
-excerpt: "Creating the first Search-to-purchase user journey on Volvo e-commerce channel by syncing real-time inventory with digital experiences.<br/><img src='/assets/porfolio-img/search-growth/banner.png'>"
+excerpt: "Creating the first Search-to-purchase user journey on Volvo e-commerce channel by syncing real-time inventory with digital experiences.<br/><img src='/assets/portfolio-img/search-growth/banner.png'>"
 collection: portfolio
 ---
 
 *By Phong Trang - Software Product Manager - [thanhphong.trang@gmail.com](mailto:thanhphong.trang@gmail.com)*
 
-![Banner Image](/assets/porfolio-img/search-growth/banner.png)
+![Banner Image](/assets/portfolio-img/search-growth/banner.png)
 
-# 🚗 Industry Context (Mid-2024)
+## 🚗 Industry Context (Mid-2024)
 
 At the time, search functionality across most automotive websites was still primitive.
 
@@ -28,7 +28,7 @@ Against this backdrop, our challenge wasn't just UX optimization — it was abou
 ![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=flat&logo=graphql&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)
 
-# Problem Statement
+## Problem Statement
 
 - Volvo Cars faced high inventory costs due to excess vehicle stock tying up capital and resources.
 - Helping consumers quickly find the right car from stock inventory became a critical business priority.
@@ -44,11 +44,8 @@ Goal: The Search team — a small virtual squad (1 BE, 1 FE, 1 Designer, 1 PM) �
 
 
 <!-- Control width and maintain aspect ratio -->
-<img src="/assets/porfolio-img/search-growth/Data.png" alt="Data Visualization" style="width: 50%; max-width: 300px;">
+<img src="/assets/portfolio-img/search-growth/Data.png" alt="Data Visualization" style="width: 50%; max-width: 300px;">
 
-
-<div style="display: flex; gap: 2rem; align-items: start;">
-<div style="flex: 1;">
 
 - Website analytics showed ~10,000 daily searches, but conversion from Search to configuration was only 5.8%.
 - On average, customers needed 5–14 clicks and several page reloads to find a matching car from stock.
@@ -69,8 +66,8 @@ For car-buyers, they mostly leverage Search on dot com for research of official 
 
 They have a keen eye on nuanced information such as spec details (e.g., "XC40 charging time", "EX30 trunk size") or special personal needs (e.g., "car with 360 camera", "XC60 child seat").
 
-<div style="display: flex; gap: 2rem;">
-<div style="flex: 1;">
+<div markdown="1" style="display: flex; gap: 2rem;">
+<div markdown="1" style="flex: 1;">
 
 ### 📷 Searchers are exploratory
 
@@ -78,7 +75,7 @@ They have a keen eye on nuanced information such as spec details (e.g., "XC40 ch
 - Queries like "XC40 winter tires" or "EV charging cost" reveal users envisioning life with the car. They seek reassurance about practicality, costs, or lifestyle fit—moments to educate and build trust.
 
 </div>
-<div style="flex: 1;">
+<div markdown="1" style="flex: 1;">
 
 ### 🎯 Searchers are deterministic
 
@@ -96,9 +93,9 @@ If we enable users to find relevant in-stock cars instantly through a smarter Se
 
 ### Belief 1: Inventory Teasers for the Exploratory Searchers
 
-![Inventory Teaser 1](/assets/porfolio-img/search-growth/inventory-teaser1.png)
+![Inventory Teaser 1](/assets/portfolio-img/search-growth/inventory-teaser1.png)
 
-![Inventory Teaser 2](/assets/porfolio-img/search-growth/inventory-teaser2.png)
+![Inventory Teaser 2](/assets/portfolio-img/search-growth/inventory-teaser2.png)
 
 > 💡 Key Insight:
 > - Exploratory Searchers love ambiguous search strings ("XC90", "SUVs", etc.), Search windows can already dynamically introduce our offers (car shopping, car learning, digital manuals, etc.) to fulfill their curious minds.
@@ -107,23 +104,23 @@ If we enable users to find relevant in-stock cars instantly through a smarter Se
 
 ### Belief 2: Free-text Search for the Deterministic Searchers
 
-![Free Text Search](/assets/porfolio-img/search-growth/free-text-search.png)
+![Free Text Search](/assets/portfolio-img/search-growth/free-text-search.png)
 
 > 💡 Key Insight:
 > - Deterministic Searchers love to be specific, they have done their research well and they want cars that meet their personalized needs.
 > - Adding a Free Text Search bar into Car Listing Page can liberate the users to find all offers in our inventory using natural languages
 
-# Solution Space
+## Solution Space
 
-<div style="display: flex; gap: 2rem; align-items: start;">
-<div style="flex: 1;">
+<div markdown="1" style="display: flex; gap: 2rem; align-items: start;">
+<div markdown="1" style="flex: 1;">
 
 ### 1. Proxy-based Search Form Injection
 
 </div>
-<div style="flex: 1;">
+<div markdown="1" style="flex: 1;">
 
-![Product Architecture](/assets/porfolio-img/search-growth/product-architecture.png)
+![Product Architecture](/assets/portfolio-img/search-growth/product-architecture.png)
 
 </div>
 </div>
