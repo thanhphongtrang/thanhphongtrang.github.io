@@ -6,9 +6,9 @@ standfirst: "How teacher educators hold on to professional judgment and agency w
 description: "Doctoral research on professional judgment, agency and TPACK in teacher educators' co-creation with generative AI, in GRAITE at the University of Gothenburg."
 ---
 
-From August 2026 I am a doctoral researcher (*doktorand*) in education at the
-University of Gothenburg, at the Department of Education, Communication and
-Learning (IPKL). My position belongs to **GRAITE**, Sweden's national graduate
+From August 2026 I am a doctoral researcher (*doktorand*) in GenAI and human-AI
+interaction at the University of Gothenburg, at the Department of Education,
+Communication and Learning (IPKL). My position belongs to **GRAITE**, Sweden's national graduate
 school for AI in Teacher Education: a VR-funded collaboration across nine
 universities.
 

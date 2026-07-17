@@ -19,11 +19,12 @@ instrument:
     suggestion you waved through. Capturing the interaction itself lets me see
     where a professional overrode the model, where they went along with it, and
     what they made of what came back, rather than what they later recall doing.
-  stack: "Python · trace logging · TPACK-informed task design"
+  stack: "TypeScript · Vite · trace logging · TPACK-informed task design"
   note: >-
     Built under a research-software discipline: reproducible, accessible, and with
     the empirical data boundary enforced in code rather than in good intentions.
-  repo_note: "Repository private during instrument development."
+  repo_note: "Phase 0: a synthetic-data demo. No participants, no network calls."
+  repo_url: "https://github.com/thanhphongtrang/graite-instrument"
   screenshot: true # placeholder slot until Phong supplies a real capture
 
 applied:

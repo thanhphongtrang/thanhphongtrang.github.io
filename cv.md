@@ -3,16 +3,16 @@ layout: page
 title: "CV"
 permalink: /cv/
 standfirst: "One trajectory: teaching, then the tools, then back to teaching with the tools."
-description: "Curriculum vitae of Phong Trang, doctoral researcher in education at the University of Gothenburg, formerly product manager at Volvo Cars."
+description: "Curriculum vitae of Phong Trang, doctoral researcher in GenAI and human-AI interaction in teacher education at the University of Gothenburg, formerly product manager at Volvo Cars."
 # Flip to true once files/phong-trang-cv.pdf exists, and the download link appears.
-cv_pdf: false
+cv_pdf: true
 ---
 
 {%- comment -%}
   A download link that 404s is worse than no download link, so this stays plain
   text until the PDF is actually in files/.
 {%- endcomment -%}
-<p class="pub-links">
+<p class="pub-links cv-actions">
 {%- if page.cv_pdf %}
   <a href="/files/phong-trang-cv.pdf">Download CV (PDF)</a>
 {%- else %}
@@ -22,13 +22,20 @@ cv_pdf: false
 
 ## Positions
 
-### Doctoral researcher (*doktorand*) in education
+### Doctoral researcher (*doktorand*), GenAI and human-AI interaction in teacher education
 **University of Gothenburg**, Department of Education, Communication and Learning
 (IPKL) · From August 2026
 
 In GRAITE, Sweden's national graduate school for AI in Teacher Education
 (VR-funded, nine universities). Researching how teacher educators enact
 professional judgment and agency when co-creating with generative AI.
+
+### Co-founder & Chief Product Officer
+**MySwedenLife** · 2026–present
+
+An AI-guided digital onboarding assistant for newcomers to Sweden: verified,
+personalized, step-by-step guidance across the agencies every arrival has to
+navigate. Live for international students; a skilled-worker journey in build.
 
 ### Product manager, GenAI
 **Volvo Cars AB** · Gothenburg · 2023–2026

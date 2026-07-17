@@ -39,11 +39,16 @@ teachers, and the reason I recognised that question when I met it in education.
 
 {{ site.data.work.recent.summary }}
 
-## Also
+## A venture of my own
 
-I co-founded **MySwedenLife**, a side venture helping newcomers navigate settling
-in Sweden. It stays a side venture, but it is the other place I keep my hands in
-building things people rely on.
+I am co-founder and chief product officer of **MySwedenLife**, an AI-guided
+onboarding assistant for people moving to Sweden. More than 116,000 newcomers
+arrive each year and meet the same maze of agencies I once did; the product turns
+that into a personalized, step-by-step path through the essentials, from
+*personnummer* to ID card, BankID and healthcare registration. It is live for
+international students across eleven cities, with a journey for skilled workers in
+build. The instinct is the one that runs through all my work: put AI inside a hard
+human decision, and leave the person in charge of it.
 
 ---
 

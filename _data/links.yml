@@ -16,8 +16,6 @@
   url: "https://www.linkedin.com/in/phongtrangtt/"
   label: "phongtrangtt"
 
-# TODO: Phong to supply ORCID iD, or register one (free, ~2 min) at orcid.org.
-# This is what ties "Trang, T. T. P." (2023) and "Trang, P." (2026) to one person.
 - name: "ORCID"
-  url: ~
-  label: "ORCID iD (coming)"
+  url: "https://orcid.org/0009-0001-4517-5416"
+  label: "0009-0001-4517-5416"

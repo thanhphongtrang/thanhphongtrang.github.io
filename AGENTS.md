@@ -35,7 +35,7 @@ owner's explicit say-so.**
 | `_data/news.yml` | News feed. Ordered by `sort:` date. Home shows the 3 newest; `/news/` shows all. Has a TENSE FLAG comment. |
 | `_data/publications.yml` | Publications, split `peer_reviewed:` / `other:`. Author strings AS PUBLISHED. |
 | `_data/work.yml` | Research instrument + Volvo-era applied work + the Eliq line. |
-| `_data/links.yml` | Footer profile links. `url: ~` hides an item (ORCID is pending). |
+| `_data/links.yml` | Footer profile links. `url: ~` hides an item until filled in. |
 | `_layouts/` | `default` (shell), `page`, `portfolio` (adds provenance note + breadcrumb). |
 | `_includes/` | `head`, `nav`, `footer`, `instrument` (shared research-instrument block). |
 | `index.md` | Home: identity line, glance strip (CSS-only trajectory), bio, 3 newest news items, contact. Nothing else belongs here. |
@@ -69,7 +69,10 @@ back to education for the doctorate. A return, not a pivot.
    marketing copy about them. If asked to add any of that, push back.
 4. **No unpublished research findings.** The instrument is "in development".
    The 2024 Volvo study: describe the method (traces + survey, n=127), never
-   results. The instrument repo is private: describe, never link.
+   results. The instrument repo (`graite-instrument`) went public 2026-07-17,
+   Phase 0, synthetic data only, per its own README ("no participants, no
+   network calls"). Linking is fine now. The no-findings rule still holds:
+   never publish participant data, transcripts, or results from it here.
 5. Nothing about immigration or visa status. No Eliq internal specifics.
 6. **No em-dashes in any new prose.** En-dashes in year ranges (2023–2024)
    are fine. The archived `_portfolio/` case studies are the owner's own
@@ -126,17 +129,26 @@ get mangled.
 
 ## Open TODOs (owner's list, do not act without instruction)
 
-1. ORCID: register, then fill `url:` in `_data/links.yml`.
-2. CV PDF: drop at `files/phong-trang-cv.pdf`, flip `cv_pdf: true` in `cv.md`.
-3. `data-analyst-agent` repo link removed (404); TODO comment left in
+1. `data-analyst-agent` repo link removed (404); TODO comment left in
    `_portfolio/data-analyst-agent.html`. Restore only if repo goes public.
-4. Six orphaned testimonial photos (~928KB) in
+2. Six orphaned testimonial photos (~928KB) in
    `assets/portfolio-img/testimonials/`; undecided.
-5. Instrument screenshot: placeholder slots in `research.md` and `tools.md`
-   (both render from `_includes/instrument.html`).
-6. TENSE FLAG in `_data/news.yml`: "Starting" → "Started" once August 2026
+3. Instrument screenshot: placeholder slots in `research.md` and `tools.md`
+   (both render from `_includes/instrument.html`). The repo is public now
+   (see hard rule 4), so a real capture is easier to get than before.
+4. TENSE FLAG in `_data/news.yml`: "Starting" → "Started" once August 2026
    arrives.
-7. Headshot possibly replaced with one that reads "researcher".
+5. Headshot possibly replaced with one that reads "researcher".
+
+## Resolved (kept for history, do not re-open without instruction)
+
+- ORCID (`0009-0001-4517-5416`) registered and wired into `_data/links.yml`
+  and the JSON-LD `sameAs` in `_includes/head.html`. 2026-07-17.
+- CV PDF at `files/phong-trang-cv.pdf`, generated from the live `/cv/` page
+  via headless Chrome print-to-PDF, `cv_pdf: true` in `cv.md`. Regenerate the
+  same way after any CV content change; there is no build-time automation
+  for it. 2026-07-17.
+- Instrument repo `graite-instrument` went public. 2026-07-17.
 
 ## The PhD vault (separate thing)
 
