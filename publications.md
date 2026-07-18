@@ -2,18 +2,12 @@
 layout: page
 title: "Publications & talks"
 permalink: /publications/
-standfirst: "Peer-reviewed work, plus the research outputs that are not papers."
+standfirst: "Peer-reviewed work and other research output"
 description: "Publications and talks by Phong Trang, including ECIS 2026 and work on chatbots for learning in citizen science."
 ---
 
 {%- assign scholar = site.data.links | where: "name", "Google Scholar" | first -%}
 The complete and current list lives on [Google Scholar]({{ scholar.url }}).
-
-<p class="pub-note" style="margin-bottom:2rem">
-  A note on the name: my master's thesis is indexed as <em>Trang, T. T. P.</em> and
-  my ECIS paper as <em>Trang, P.</em> Both are me; going forward I publish as
-  <strong>{{ site.author.cite_as }}</strong>
-</p>
 
 ## Peer-reviewed
 
