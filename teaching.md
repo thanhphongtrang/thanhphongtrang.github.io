@@ -2,7 +2,7 @@
 layout: page
 title: "Teaching"
 permalink: /teaching/
-standfirst: "Before I studied teachers, I was one."
+standfirst: "Before I studied teachers, I was one. I still am."
 description: "Teaching, mentoring and instructional design: language education in Ho Chi Minh City, analytics coaching at Volvo Cars, mentoring through ADPList."
 ---
 
