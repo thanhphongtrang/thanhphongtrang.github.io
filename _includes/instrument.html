@@ -17,5 +17,13 @@
 {% if include.show_stack -%}
 <p class="stack">{{ i.stack }}</p>
 
+<div class="stack-badges">
+  <img src="/assets/badges/python.svg" alt="Python" title="Python">
+  <img src="/assets/badges/langgraph.svg" alt="LangGraph" title="LangGraph">
+  <img src="/assets/badges/databricks.svg" alt="Databricks" title="Databricks">
+  <img src="/assets/badges/codex.svg" alt="Codex" title="Codex">
+  <img src="/assets/badges/atlasti.svg" alt="ATLAS.ti" title="ATLAS.ti">
+</div>
+
 {% endif -%}
 {{ i.note }}

@@ -435,6 +435,18 @@ blockquote {
   margin: 0.8rem 0 0;
 }
 
+.stack-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0 0;
+}
+
+.stack-badges img {
+  height: 28px;
+  width: auto;
+}
+
 .status-tag {
   display: inline-block;
   font-size: 0.72rem;

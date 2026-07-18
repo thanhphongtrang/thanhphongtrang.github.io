@@ -14,7 +14,6 @@ hide_title: true
   <div>
     <h1 class="hero-name">{{ site.author.name }}</h1>
     <p class="identity">I research how teachers keep professional judgment when AI joins the work. <em>And I build the tools to study it.</em></p>
-    <p class="stack">Python · LangGraph · Databricks · Codex · ATLAS.ti</p>
     <p class="affil">Doctoral researcher, University of Gothenburg (IPKL) · GRAITE · {{ site.author.location }}</p>
   </div>
 </div>
