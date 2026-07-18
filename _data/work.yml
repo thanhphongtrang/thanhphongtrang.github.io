@@ -23,7 +23,6 @@ instrument:
   note: >-
     Built under a research-software discipline: reproducible, accessible, and with
     the empirical data boundary enforced in code rather than in good intentions.
-  repo_note: "Phase 0: a synthetic-data demo. No participants, no network calls."
   repo_url: "https://github.com/thanhphongtrang/graite-instrument"
   screenshot: true # placeholder slot until Phong supplies a real capture
 
