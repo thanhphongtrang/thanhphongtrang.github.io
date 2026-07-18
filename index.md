@@ -52,18 +52,18 @@ hide_title: true
   </li>
 </ol>
 
-I started out teaching languages in Ho Chi Minh City, designing curricula and
-watching closely what genuinely helped people learn. That curiosity pulled me into
-analytics, first for an airline, then a consultancy, and eventually to Sweden,
-where I spent four years at Volvo Cars building AI products that sit inside human
-decisions: how a buyer searches for a car, how a care agent finds the right
-answer, how an analyst reaches one. The longer I shipped that kind of software,
-the louder one question grew. What happens to a professional's own judgment once a
-capable machine joins the work? In 2024 I ran an internal study on exactly that,
-and I could not put it down. From August 2026 I carry the question back to where I
-began: a doctorate at the University of Gothenburg, in [GRAITE](/research/),
-asking how teacher educators hold on to judgment and agency when they co-create
-with generative AI.
+I build and study AI systems that sit inside human decisions. My professional
+focus has run both sides of it.
+
+On the industry side, I have spent four years as an AI product manager at Volvo
+Cars, shipping GenAI decision support for commercial partners and technical
+analysts, then working on trust and evaluation in generative AI, how you know a
+model's answer is good enough to act on.
+
+On the research side, I study human-AI interaction and professional learning.
+From August 2026 I am a doctoral researcher at the University of Gothenburg, in
+[GRAITE](/research/), asking how teacher educators keep judgment and agency when
+they co-create with generative AI.
 
 ## News
 
