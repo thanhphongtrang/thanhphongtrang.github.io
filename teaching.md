@@ -6,7 +6,7 @@ standfirst: "Before I studied teachers, I was one. I still am."
 description: "Teaching, mentoring and instructional design: language education in Ho Chi Minh City, analytics coaching at Volvo Cars, mentoring through ADPList."
 ---
 
-Doctoral teaching at IPKL will appear here as it happens. What is already true:
+Doctoral teaching at IPKL is underway; entries appear here as courses run. What is already true:
 
 ## Language tutor & instructional designer
 
