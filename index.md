@@ -13,8 +13,9 @@ hide_title: true
   <img src="{{ site.author.photo }}" alt="{{ site.author.photo_alt | strip_newlines | strip }}" width="272" height="272">
   <div>
     <h1 class="hero-name">{{ site.author.name }}</h1>
-    <p class="identity">I research how teachers keep professional judgment when AI joins the work. <em>And I build the tools to study it.</em></p>
-    <p class="affil">Doctoral researcher, University of Gothenburg (IPKL) · GRAITE · {{ site.author.location }}</p>
+    <p class="role">AI product manager · Doctoral researcher in human-AI interaction</p>
+    <p class="identity">I research how professionals keep judgment when AI joins the work. And I build the tools to study it.</p>
+    <p class="affil">University of Gothenburg (IPKL) · GRAITE · {{ site.author.location }}</p>
   </div>
 </div>
 

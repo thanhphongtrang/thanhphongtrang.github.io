@@ -205,6 +205,11 @@ blockquote {
   margin: 0 0 0.75rem;
   line-height: 1.1;
 }
+.role {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
 .identity {
   font-family: var(--serif);
   font-size: 1.22rem;
@@ -213,7 +218,6 @@ blockquote {
   margin: 0 0 0.9rem;
   text-wrap: pretty;
 }
-.identity em { color: var(--accent); font-style: normal; }
 .affil {
   font-size: 0.95rem;
   color: var(--muted);
