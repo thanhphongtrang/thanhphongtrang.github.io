@@ -15,7 +15,7 @@ hide_title: true
     <h1 class="hero-name">{{ site.author.name }}</h1>
     <p class="role">AI product manager · Doctoral researcher in human-AI interaction</p>
     <p class="identity">I research how professionals keep judgment when AI joins the work. And I build the tools to study it.</p>
-    <p class="affil">University of Gothenburg (IPKL) · GRAITE · {{ site.author.location }}</p>
+    <p class="affil">University of Gothenburg · GRAITE Graduate School · ex-Volvo Cars</p>
   </div>
 </div>
 
