@@ -66,7 +66,7 @@ pairing a research question.
 ### Teaching
 
 - **Language tutor & instructional designer**, University of Education Language
-  Center · Ho Chi Minh City · 2017–2020. See [Teaching](/teaching/).
+  Center · Ho Chi Minh City · 2017–2020. See [Teaching](/academic/teaching/).
 - **Mentor**, [ADPList](https://adplist.org/mentors/phong-trang-tran-thanh) ·
   ongoing. Early-career product managers and analysts.
 
@@ -79,7 +79,7 @@ Institute scholarship below.
 
 **M.Sc. Information Systems**, Linnaeus University · 2023–2024 (part-time)
 Business analytics, big data analytics capability, AI and organisational trust.
-The line of work behind the [ECIS 2026 paper](/publications/).
+The line of work behind the [ECIS 2026 paper](/academic/publications/).
 
 **B.A. Mandarin Language Education**, Education University, Ho Chi Minh City ·
 2013–2017. Second language acquisition, learning theory, literacy identity.
@@ -109,4 +109,4 @@ Vietnamese (native) · English (C2) · Mandarin (HSK6) · Swedish (B1) · Japane
 
 ## Publications
 
-See [Publications & talks](/publications/).
+See [Publications](/academic/publications/) and [Talks](/academic/talks/).

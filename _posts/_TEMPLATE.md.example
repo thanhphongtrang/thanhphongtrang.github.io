@@ -1,0 +1,8 @@
+---
+# Copy to _posts/YYYY-MM-DD-slug.md. Agents never write or edit post prose.
+title: "Post title"
+standfirst: "One sentence that says what the post is about."
+tags: []
+---
+
+Write the post here.

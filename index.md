@@ -6,7 +6,7 @@ hide_title: true
 
 <!-- markdown="1" is load-bearing: kramdown does not parse markdown inside a
      block-level HTML element without it, and the prose below silently renders
-     as literal "## News" and "[GRAITE](/research/)". -->
+     as literal "## News" and "[GRAITE](/academic/research/)". -->
 <div class="wrap prose" markdown="1">
 
 <div class="hero">
@@ -40,13 +40,13 @@ hide_title: true
   </li>
   <li>
     <span class="flag flag-se" aria-hidden="true"></span><span class="g-city">Gothenburg</span>
-    <span class="g-org"><a href="/tools/">Volvo Cars AB</a></span>
+    <span class="g-org"><a href="/industry/">Volvo Cars AB</a></span>
     <span class="g-what">GenAI product management</span>
     <span class="g-when">2023–2026</span>
   </li>
   <li>
     <span class="flag flag-se" aria-hidden="true"></span><span class="g-city">Gothenburg</span>
-    <span class="g-org"><a href="/research/">University of Gothenburg</a></span>
+    <span class="g-org"><a href="/academic/research/">University of Gothenburg</a></span>
     <span class="g-what">GRAITE doctorate: back to where it began</span>
     <span class="g-when">Aug 2026 →</span>
   </li>
@@ -62,7 +62,7 @@ model's answer is good enough to act on.
 
 On the research side, I study human-AI interaction and professional learning.
 From August 2026 I am a doctoral researcher at the University of Gothenburg, in
-[GRAITE](/research/), asking how teacher educators keep judgment and agency when
+[GRAITE](/academic/research/), asking how teacher educators keep judgment and agency when
 they co-create with generative AI.
 
 ## News

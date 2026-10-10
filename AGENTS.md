@@ -36,18 +36,24 @@ owner's explicit say-so.**
 | `_data/publications.yml` | Publications, split `peer_reviewed:` / `other:`. Author strings AS PUBLISHED. |
 | `_data/work.yml` | Research instrument + Volvo-era applied work + the Eliq line. |
 | `_data/links.yml` | Footer profile links. `url: ~` hides an item until filled in. |
-| `_layouts/` | `default` (shell), `page`, `portfolio` (adds provenance note + breadcrumb). |
-| `_includes/` | `head`, `nav`, `footer`, `instrument` (shared research-instrument block). |
+| `_layouts/` | `default` (shell), `page` (renders `subtabs.html` when front matter has `section:`), `portfolio` (breadcrumb + neutral note), `post` (blog), `redirect` (script-free, for `redirect_from`). |
+| `_data/nav.yml` | The one file driving the top nav, hover menus and section sub-tabs. New sub-page = one line here plus one page file. |
+| `_includes/` | `head`, `nav` (CSS-only hover menu), `subtabs` (section row), `footer`, `instrument` (research-instrument block, used on Artefacts). |
 | `index.md` | Home: identity line, glance strip (CSS-only trajectory), bio, 3 newest news items, contact. Nothing else belongs here. |
-| `research.md` `publications.md` `news.md` `tools.md` `teaching.md` `cv.md` | The pages. |
-| `portfolio.md` + `_portfolio/` | Six archived industry case studies. Provenance, not headline. |
+| `academic/` | Overview, research, publications, teaching, talks, artefacts. Explicit `permalink` and `section: academic` on each. |
+| `industry/` | Overview (holds the Eliq line), case studies, MySwedenLife. `section: industry`. |
+| `blog.md` + `_posts/` | Blog index and posts (`/blog/YYYY/slug/`). `_TEMPLATE.md.example` shows the front matter. |
+| `news.md` `cv.md` | Other pages. News is off the nav; home links to `/news/`. |
+| `_portfolio/` | Industry case studies, listed on `/industry/case-studies/`. URLs stay `/portfolio/<name>/`. |
 | `assets/css/style.css` | The one stylesheet. |
 | `_config.yml` | Note the `defaults:` ordering comment; it is load-bearing. |
 
 ## Identity (the whole point)
 
-One deliberate trajectory, not two careers. Researcher first, builder as the
-differentiator. Identity line, verbatim, never reworded:
+One deliberate trajectory, not two careers. PROPOSED, awaiting owner decision: two
+halves of one bridge between academia and industry. Academic work comes first
+and is the home of the doctorate; industry work is the practice and evidence
+behind it. Identity line, verbatim, never reworded:
 
 > I research how teachers keep professional judgment when AI joins the work.
 > And I build the tools to study it.
@@ -63,7 +69,11 @@ back to education for the doctorate. A return, not a pivot.
    published, never retroactively normalised.
 2. **The 2023 GUPEA item is a master's thesis, not a paper.** It stays under
    "Other research outputs", labelled. Never promote it to peer-reviewed.
-3. **Eliq**: exactly one woven line under "Recently" on the Tools page. No
+3. **Eliq**: exactly one woven line under "Recently" on the Industry work
+   overview (`/industry/`), and nowhere else except the one cleared case study
+   `_portfolio/eliq-genai-coach.md` (owner sign-off; first-person register, no
+   colleague names, no client utility, no product name, no unsourced figures;
+   anything further needs the owner's explicit go-ahead). No
    logo, no employment-timeline block, never a "project", dates loose.
    **Eliq's clients are never named anywhere**, nor their products, nor
    marketing copy about them. If asked to add any of that, push back.
@@ -80,6 +90,12 @@ back to education for the doctorate. A return, not a pivot.
 7. Credentials filter: story-evidence earns a page; generic prestige goes in
    the CV only. SISGP scholarship is surfaced (it explains Sweden). Volvo
    Global Graduate Program is CV-only. PMP is **not** held; do not list it.
+
+## Blog rule
+
+Agents never write or edit post prose in `_posts/`. The em-dash and
+unpublished-findings rules apply to posts. Agents may touch only the blog
+plumbing (layout, index, template).
 
 ## Local build (Windows, this machine)
 
@@ -133,9 +149,8 @@ get mangled.
    `_portfolio/data-analyst-agent.html`. Restore only if repo goes public.
 2. Six orphaned testimonial photos (~928KB) in
    `assets/portfolio-img/testimonials/`; undecided.
-3. Instrument screenshot: placeholder slots in `research.md` and `tools.md`
-   (both render from `_includes/instrument.html`). The repo is public now
-   (see hard rule 4), so a real capture is easier to get than before.
+3. ~~Instrument screenshot~~ done: real capture in `_includes/instrument.html`,
+   shown on the Artefacts page.
 4. TENSE FLAG in `_data/news.yml`: "Starting" → "Started" once August 2026
    arrives.
 5. Headshot possibly replaced with one that reads "researcher".

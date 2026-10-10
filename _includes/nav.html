@@ -4,13 +4,20 @@
     <a class="brand" href="/">{{ site.author.name }}</a>
     <nav aria-label="Main">
       <ul>
-        {%- assign nav = "/research/,Research|/publications/,Publications|/news/,News|/tools/,Tools|/teaching/,Teaching|/cv/,CV" | split: "|" -%}
-        {%- for item in nav -%}
-          {%- assign parts = item | split: "," -%}
-          {%- assign href = parts[0] -%}
-          {%- assign label = parts[1] -%}
-          <li>
-            <a href="{{ href }}"{% if page.url contains href %} aria-current="page"{% endif %}>{{ label }}</a>
+        {%- for item in site.data.nav -%}
+          {%- assign current = false -%}
+          {%- if page.url contains item.url -%}{%- assign current = true -%}{%- endif -%}
+          {%- if item.url == "/industry/" and page.url contains "/portfolio/" -%}{%- assign current = true -%}{%- endif -%}
+          {%- if item.url == "/blog/" and page.url contains "/blog/" -%}{%- assign current = true -%}{%- endif -%}
+          <li{% if item.children %} class="has-menu"{% endif %}>
+            <a href="{{ item.url }}"{% if current %} aria-current="page"{% endif %}>{{ item.title }}{% if item.children %}<span class="chev" aria-hidden="true"></span>{% endif %}</a>
+            {%- if item.children %}
+            <ul class="menu">
+              {%- for c in item.children %}
+              <li><a href="{{ c.url }}"{% if page.url == c.url or page.url contains c.url %} aria-current="page"{% endif %}>{{ c.title }}</a></li>
+              {%- endfor %}
+            </ul>
+            {%- endif %}
           </li>
         {%- endfor -%}
       </ul>

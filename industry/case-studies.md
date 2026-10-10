@@ -1,16 +1,37 @@
 ---
 layout: page
-title: "Portfolio archive"
-permalink: /portfolio/
-standfirst: "Product case studies from my industry years. Kept as provenance, not as headline."
-description: "Archive of product management case studies from Phong Trang's industry years at Volvo Cars."
+title: "Case studies"
+permalink: /industry/case-studies/
+section: industry
+standfirst: "Four years at Volvo Cars, building AI meant to help a person decide rather than to decide for them."
+description: "Product case studies from Phong Trang's years at Volvo Cars."
+redirect_from:
+  - /portfolio/
 ---
 
-These are written in the register of the work they describe: metrics,
-stakeholders, delivery. I keep them because they are the evidence behind the
-builder half of what I do, and because showing the work beats asserting it. The
-three that bear directly on my research are pulled out on
-[Tools & industry work](/tools/).
+A different domain, yet the same question I now ask about teachers, and the reason
+I recognised that question when I met it in education.
+
+## Featured
+
+
+{% for w in site.data.work.applied %}
+<div class="card">
+  <span class="thread">{{ w.thread }}</span>
+  <h3>{{ w.title }}</h3>
+  <p class="card-meta">{{ w.org }} · {{ w.years }}</p>
+  <p>{{ w.summary }}</p>
+  <ul class="outcomes">
+    {%- for o in w.outcomes %}
+    <li>{{ o }}</li>
+    {%- endfor %}
+  </ul>
+  <p class="stack">{{ w.stack }}</p>
+  <p class="pub-links"><a href="{{ w.url }}">Read the case study</a></p>
+</div>
+{% endfor %}
+
+## All case studies
 
 <ul class="pubs">
 {%- assign items = site.portfolio | sort: "title" -%}

@@ -33,6 +33,7 @@ timezone: Europe/Stockholm
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 collections:
   portfolio:
@@ -51,6 +52,12 @@ defaults:
       type: "portfolio"
     values:
       layout: "portfolio"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /blog/:year/:title/
 
 exclude:
   - Gemfile
@@ -60,6 +67,7 @@ exclude:
   - AGENTS.md
   - CLAUDE.md
   - LICENSE
+  - _posts/_TEMPLATE.md.example
   - .jekyll-cache
   - node_modules
   # Energy Coach case-study diagrams (assets/portfolio-img/energy-coach/):

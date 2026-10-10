@@ -1,9 +1,12 @@
 ---
 layout: page
-title: "Publications & talks"
-permalink: /publications/
-standfirst: "Peer-reviewed work and other research output"
-description: "Publications and talks by Phong Trang, including ECIS 2026 and work on chatbots for learning in citizen science."
+title: "Publications"
+permalink: /academic/publications/
+section: academic
+redirect_from:
+  - /publications/
+standfirst: "Peer-reviewed work and other research output."
+description: "Publications by Phong Trang, including ECIS 2026 and work on chatbots for learning in citizen science."
 ---
 
 {%- assign scholar = site.data.links | where: "name", "Google Scholar" | first -%}
@@ -46,28 +49,3 @@ Not peer-reviewed, and marked as such, but part of the same line of questioning.
   </li>
 {%- endfor %}
 </ul>
-
-## Talks
-
-{%- assign talks = site.data.talks | sort: "sort" | reverse -%}
-{%- if talks and talks.size > 0 %}
-<ul class="pubs">
-{%- for t in talks %}
-  <li>
-    <p class="pub-title">{{ t.title }}</p>
-    <p class="pub-authors">{{ t.role }}</p>
-    <p class="pub-venue">{{ t.event }}, {{ t.venue }}, {{ t.date }}</p>
-    {%- if t.note %}<p class="pub-note">{{ t.note }}</p>{% endif -%}
-    {%- if t.links %}
-    <p class="pub-links">
-      {%- for l in t.links %}<a href="{{ l.url }}">{{ l.text }}</a>{% endfor -%}
-    </p>
-    {%- endif %}
-  </li>
-{%- endfor %}
-</ul>
-{%- else %}
-<div class="empty">
-  <p>Nothing here yet. The doctorate starts in August 2026; this section will fill.</p>
-</div>
-{%- endif %}

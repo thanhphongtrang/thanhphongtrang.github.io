@@ -1,7 +1,10 @@
 ---
 layout: page
 title: "Research"
-permalink: /research/
+permalink: /academic/research/
+section: academic
+redirect_from:
+  - /research/
 standfirst: "How teacher educators hold on to professional judgment and agency when they co-create with generative AI, and the instrument I am building to watch it happen."
 description: "Doctoral research on professional judgment, agency and TPACK in teacher educators' co-creation with generative AI, in GRAITE at the University of Gothenburg."
 ---
@@ -32,10 +35,6 @@ Plainly, without the apparatus:
 Beneath all three sits *agency*. Not as a slogan, but as something you can watch a
 person exercise, hedge, or quietly hand over.
 
-## The instrument
-
-{% include instrument.html %}
-
 ## Why it matters beyond the seminar room
 
 Teacher educators train the people who will teach everyone else's children. If
@@ -52,6 +51,7 @@ traces of what people accepted, rejected and edited with survey data (n=127).
 What stayed with me was methodological rather than any particular result.
 **Asking people about their own reliance and observing what they actually do are
 two different measurements**, and the gap between them is where the interesting
-question lives. That is why I build my own instrument instead of borrowing one.
+question lives. That is why I build my own instrument instead of borrowing one (see
+[Artefacts](/academic/artefacts/)).
 Judgment is precisely the thing that goes quiet in self-report; nobody remembers
 the suggestion they let straight through. You have to watch the work.

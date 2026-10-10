@@ -38,8 +38,11 @@ To just build: swap `jekyll serve -H 0.0.0.0` for `jekyll build`. Output in `_si
 
 ```
 _data/          content you edit regularly
-_layouts/       default, page, portfolio
+_layouts/       default, page, portfolio, post, redirect
 _includes/      head, nav, footer
+_posts/         blog posts: new post -> add _posts/YYYY-MM-DD-slug.md
+academic/       academic pages (research, publications, teaching, talks, artefacts)
+industry/       industry pages (case studies, MySwedenLife)
 _portfolio/     industry case studies (archive)
 assets/css/     one hand-written stylesheet
 images/         headshot, favicons

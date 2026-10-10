@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article class="wrap prose">
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="/blog/">&larr; All posts</a>
+  </nav>
+  <header class="page-head">
+    <h1>{{ page.title }}</h1>
+    <p class="when">{{ page.date | date: "%-d %B %Y" }}</p>
+    {%- if page.standfirst %}<p class="standfirst">{{ page.standfirst }}</p>{% endif -%}
+  </header>
+  {{ content }}
+</article>

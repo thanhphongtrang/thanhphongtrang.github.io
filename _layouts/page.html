@@ -8,5 +8,6 @@ layout: default
     {%- if page.standfirst %}<p class="standfirst">{{ page.standfirst }}</p>{% endif -%}
   </header>
   {%- endunless -%}
+  {%- if page.section %}{% include subtabs.html %}{% endif -%}
   {{ content }}
 </article>

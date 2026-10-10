@@ -1,0 +1,10 @@
+{%- assign sec_url = "/" | append: page.section | append: "/" -%}
+{%- assign sec = site.data.nav | where: "url", sec_url | first -%}
+{%- if sec %}
+<nav class="subtabs" aria-label="{{ sec.title }}">
+  <a href="{{ sec.url }}"{% if page.url == sec.url %} aria-current="page"{% endif %}>Overview</a>
+  {%- for c in sec.children %}
+  <a href="{{ c.url }}"{% if page.url == c.url %} aria-current="page"{% endif %}>{{ c.title }}</a>
+  {%- endfor %}
+</nav>
+{%- endif %}

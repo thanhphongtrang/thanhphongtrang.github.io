@@ -1,0 +1,19 @@
+# Top nav and section sub-menus. Order here = order on the site.
+# Add a sub-page: one line here plus one page file in academic/ or industry/.
+- title: Academic work
+  url: /academic/
+  children:
+    - { title: Research,     url: /academic/research/ }
+    - { title: Publications, url: /academic/publications/ }
+    - { title: Teaching,     url: /academic/teaching/ }
+    - { title: Talks,        url: /academic/talks/ }
+    - { title: Artefacts,    url: /academic/artefacts/ }
+- title: Industry work
+  url: /industry/
+  children:
+    - { title: Case studies, url: /industry/case-studies/ }
+    - { title: MySwedenLife, url: /industry/myswedenlife/ }
+- title: Blog
+  url: /blog/
+- title: CV
+  url: /cv/

@@ -564,7 +564,7 @@ blockquote {
 }
 
 @media print {
-  .site-head nav, .site-foot, .skip-link, .provenance, .cv-actions { display: none; }
+  .site-head nav, .subtabs, .site-foot, .skip-link, .provenance, .cv-actions { display: none; }
   body { background: #fff; color: #000; font-size: 10.5pt; line-height: 1.42; }
   a { color: #000; }
   .prose { padding-bottom: 0; }
@@ -574,4 +574,62 @@ blockquote {
   p { margin: 0 0 0.5rem; }
   li { margin-bottom: 0.15rem; }
   .card, .pubs > li { break-inside: avoid; }
+}
+
+/* --- Hover menus and section sub-tabs ------------------------------------ */
+
+.site-head nav .has-menu { position: relative; }
+.site-head nav .chev {
+  display: inline-block;
+  width: 0.38em; height: 0.38em;
+  margin-left: 0.4em;
+  border: solid currentColor;
+  border-width: 0 1.5px 1.5px 0;
+  transform: translateY(-0.15em) rotate(45deg);
+}
+.site-head nav .menu {
+  display: none;
+  flex-direction: column;
+  gap: 0.1rem;
+  position: absolute;
+  top: 100%;
+  left: -0.75rem;
+  min-width: 11rem;
+  padding: 0.4rem;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+.site-head nav .menu a { display: block; padding: 0.35rem 0.6rem; }
+@media (hover: hover) {
+  .site-head nav .has-menu:hover .menu,
+  .site-head nav .has-menu:focus-within .menu { display: flex; }
+}
+
+.subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.15rem;
+  margin: 0 0 2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+.subtabs a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.94rem;
+}
+.subtabs a:hover { color: var(--accent); }
+.subtabs a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+/* Phones: no hover menu, so no chevron, and a tighter row keeps four items on one line. */
+@media (max-width: 480px) {
+  .site-head nav ul { gap: 0.35rem 0.9rem; }
+  .site-head nav .chev { display: none; }
 }
