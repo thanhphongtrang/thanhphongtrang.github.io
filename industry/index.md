@@ -12,7 +12,7 @@ redirect_from:
 I build the things I study with. That is not a hobby bolted onto the research; it
 is the reason the research can ask what it asks.
 
-- [Case studies](/industry/case-studies/): AI inside human decisions, from my years at Volvo Cars.
+- [Case studies](/industry/case-studies/): AI inside human decisions, from Volvo Cars and Eliq.
 - [MySwedenLife](/industry/myswedenlife/): a venture of my own.
 
 ## Recently

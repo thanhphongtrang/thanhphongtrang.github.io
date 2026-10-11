@@ -4,13 +4,15 @@
    ========================================================================= */
 
 :root {
-  --bg:      #fafbf9;
-  --surface: #f1f4f0;
-  --text:    #1b1d1b;
-  --muted:   #545b54;
-  --rule:    #e1e6e0;
-  --accent:  #146840;
-  --accent-bg: #e7f1ea;
+  /* Dark is the default for everyone; there is no light variant. */
+  color-scheme: dark;
+  --bg:      #171a18;
+  --surface: #1f241f;
+  --text:    #e9ece8;
+  --muted:   #a6aea5;
+  --rule:    #303830;
+  --accent:  #7fcf9f;
+  --accent-bg: #1f2b22;
 
   --serif: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", Charter, serif;
   --sans:  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -18,18 +20,6 @@
 
   --wrap: 46rem;
   --step: 1.6rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg:      #171a18;
-    --surface: #1f241f;
-    --text:    #e9ece8;
-    --muted:   #a6aea5;
-    --rule:    #303830;
-    --accent:  #7fcf9f;
-    --accent-bg: #1f2b22;
-  }
 }
 
 *, *::before, *::after { box-sizing: border-box; }

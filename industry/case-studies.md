@@ -3,8 +3,8 @@ layout: page
 title: "Case studies"
 permalink: /industry/case-studies/
 section: industry
-standfirst: "Four years at Volvo Cars, building AI meant to help a person decide rather than to decide for them."
-description: "Product case studies from Phong Trang's years at Volvo Cars."
+standfirst: "AI products I built at Volvo Cars and Eliq, meant to help a person decide rather than to decide for them."
+description: "Product case studies from Phong Trang's work at Volvo Cars and Eliq."
 redirect_from:
   - /portfolio/
 ---

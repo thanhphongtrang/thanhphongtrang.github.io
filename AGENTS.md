@@ -34,14 +34,14 @@ owner's explicit say-so.**
 |---|---|
 | `_data/news.yml` | News feed. Ordered by `sort:` date. Home shows the 3 newest; `/news/` shows all. Has a TENSE FLAG comment. |
 | `_data/publications.yml` | Publications, split `peer_reviewed:` / `other:`. Author strings AS PUBLISHED. |
-| `_data/work.yml` | Research instrument + Volvo-era applied work + the Eliq line. |
+| `_data/work.yml` | Research instrument + featured industry cards (Eliq, Volvo Cars) + the Eliq "Recently" paragraph. |
 | `_data/links.yml` | Footer profile links. `url: ~` hides an item until filled in. |
 | `_layouts/` | `default` (shell), `page` (renders `subtabs.html` when front matter has `section:`), `portfolio` (breadcrumb + neutral note), `post` (blog), `redirect` (script-free, for `redirect_from`). |
 | `_data/nav.yml` | The one file driving the top nav, hover menus and section sub-tabs. New sub-page = one line here plus one page file. |
 | `_includes/` | `head`, `nav` (CSS-only hover menu), `subtabs` (section row), `footer`, `instrument` (research-instrument block, used on Artefacts). |
 | `index.md` | Home: identity line, glance strip (CSS-only trajectory), bio, 3 newest news items, contact. Nothing else belongs here. |
 | `academic/` | Overview, research, publications, teaching, talks, artefacts. Explicit `permalink` and `section: academic` on each. |
-| `industry/` | Overview (holds the Eliq line), case studies, MySwedenLife. `section: industry`. |
+| `industry/` | Overview (holds the Eliq "Recently" paragraph), case studies, MySwedenLife. `section: industry`. |
 | `blog.md` + `_posts/` | Blog index and posts (`/blog/YYYY/slug/`). `_TEMPLATE.md.example` shows the front matter. |
 | `news.md` `cv.md` | Other pages. News is off the nav; home links to `/news/`. |
 | `_portfolio/` | Industry case studies, listed on `/industry/case-studies/`. URLs stay `/portfolio/<name>/`. |
@@ -69,14 +69,14 @@ back to education for the doctorate. A return, not a pivot.
    published, never retroactively normalised.
 2. **The 2023 GUPEA item is a master's thesis, not a paper.** It stays under
    "Other research outputs", labelled. Never promote it to peer-reviewed.
-3. **Eliq**: exactly one woven line under "Recently" on the Industry work
-   overview (`/industry/`), and nowhere else except the one cleared case study
-   `_portfolio/eliq-genai-coach.md` (owner sign-off; first-person register, no
-   colleague names, no client utility, no product name, no unsourced figures;
-   anything further needs the owner's explicit go-ahead). No
-   logo, no employment-timeline block, never a "project", dates loose.
-   **Eliq's clients are never named anywhere**, nor their products, nor
-   marketing copy about them. If asked to add any of that, push back.
+3. **Eliq**: allowed in exactly these places: the "Recently" paragraph on
+   `/industry/`, the featured card in `_data/work.yml`, the news item, and the
+   case study `_portfolio/eliq-genai-coach.md` (Phong approved it 2026-10-11;
+   its summary states "May 2026" and the role "AI Product Builder"). In all of
+   them: **Eliq's clients are never named**, nor their products, nor any
+   colleague, nor the coach's product name, nor any accuracy percentage or
+   commercial figure (price, cost, value ratio). Edits to the case-study prose
+   need Phong's go-ahead. If asked to add any of the banned items, push back.
 4. **No unpublished research findings.** The instrument is "in development".
    The 2024 Volvo study: describe the method (traces + survey, n=127), never
    results. The instrument repo (`graite-instrument`) went public 2026-07-17,

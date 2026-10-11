@@ -27,6 +27,21 @@ instrument:
   screenshot: true # placeholder slot until Phong supplies a real capture
 
 applied:
+  - title: "GenAI Energy Coach"
+    org: "Eliq"
+    years: "2026"
+    thread: "AI explaining people's own data to them"
+    summary: >-
+      A generative AI coach that explains a household's energy bill as a
+      conversation, grounded in the platform's own consumption data. Pitched,
+      defined, built and priced end to end.
+    outcomes:
+      - "Live at three utility clients"
+      - "Five failure classes found and closed before client testing"
+      - "A live audit of which pricing inputs were sourced, built into the tool"
+    stack: "Azure OpenAI · MCP · .NET · Lovable · Claude"
+    url: /portfolio/eliq-genai-coach/
+
   - title: "Data Analyst Agent"
     org: "Volvo Cars"
     years: "2024–2025"
@@ -81,3 +96,4 @@ recent:
     answer is grounded and true before someone acts on it, and how you keep human
     judgment in the loop when the machine does the explaining. It is the same
     question my doctorate asks, met in a consumer product rather than a classroom.
+    [Read the case study](/portfolio/eliq-genai-coach/).
