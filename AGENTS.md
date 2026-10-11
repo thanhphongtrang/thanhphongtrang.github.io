@@ -24,6 +24,10 @@ owner's explicit say-so.**
 - Hand-written theme. The old academicpages/Minimal Mistakes template was
   deleted deliberately. Do not reintroduce jQuery, Leaflet, Disqus, font
   packs, or any of it.
+- **Dark-only by choice (owner's decision, 2026-10-11).** `assets/css/style.css`
+  has no light variant and sets `color-scheme: dark`. The SVG diagrams carry
+  their own light/dark styles and follow the page's dark scheme in Chrome, so
+  leave them as they are.
 - Content edited monthly lives in `_data/*.yml`. Prose lives in root `.md`
   files. The point: the owner can add a news item from a phone's GitHub web
   UI and it self-deploys.
@@ -32,7 +36,7 @@ owner's explicit say-so.**
 
 | Path | What it is |
 |---|---|
-| `_data/news.yml` | News feed. Ordered by `sort:` date. Home shows the 3 newest; `/news/` shows all. Has a TENSE FLAG comment. |
+| `_data/news.yml` | News feed. Ordered by `sort:` date. Home shows the 3 newest; `/news/` shows all. |
 | `_data/publications.yml` | Publications, split `peer_reviewed:` / `other:`. Author strings AS PUBLISHED. |
 | `_data/work.yml` | Research instrument + featured industry cards (Eliq, Volvo Cars) + the Eliq "Recently" paragraph. |
 | `_data/links.yml` | Footer profile links. `url: ~` hides an item until filled in. |
@@ -42,9 +46,10 @@ owner's explicit say-so.**
 | `index.md` | Home: identity line, glance strip (CSS-only trajectory), bio, 3 newest news items, contact. Nothing else belongs here. |
 | `academic/` | Overview, research, publications, teaching, talks, artefacts. Explicit `permalink` and `section: academic` on each. |
 | `industry/` | Overview (holds the Eliq "Recently" paragraph), case studies, MySwedenLife. `section: industry`. |
-| `blog.md` + `_posts/` | Blog index and posts (`/blog/YYYY/slug/`). `_TEMPLATE.md.example` shows the front matter. |
+| `blog.md` + `_posts/` | Blog index and posts (`/blog/YYYY/slug/`). `_TEMPLATE.md.example` shows the front matter. Owner writes the posts. |
 | `news.md` `cv.md` | Other pages. News is off the nav; home links to `/news/`. |
-| `_portfolio/` | Industry case studies, listed on `/industry/case-studies/`. URLs stay `/portfolio/<name>/`. |
+| `_portfolio/` | Nine industry case studies, listed on `/industry/case-studies/`. URLs stay `/portfolio/<name>/`. Includes `eliq-genai-coach.md` and `ai-native-operations.md` (see rule 3). |
+| `assets/portfolio-img/` | Case-study images, one folder per study. `energy-coach/` serves the Eliq study, `ai-native-ops/` the AI-native operations study (three SVGs). |
 | `assets/css/style.css` | The one stylesheet. |
 | `_config.yml` | Note the `defaults:` ordering comment; it is load-bearing. |
 
@@ -55,7 +60,7 @@ halves of one bridge between academia and industry. Academic work comes first
 and is the home of the doctorate; industry work is the practice and evidence
 behind it. Identity line, verbatim, never reworded:
 
-> I research how teachers keep professional judgment when AI joins the work.
+> I research how professionals keep judgment when AI joins the work.
 > And I build the tools to study it.
 
 The bio's spine is a closed loop: language teacher in Ho Chi Minh City →
@@ -152,11 +157,11 @@ get mangled.
    `_portfolio/data-analyst-agent.html`. Restore only if repo goes public.
 2. Six orphaned testimonial photos (~928KB) in
    `assets/portfolio-img/testimonials/`; undecided.
-3. ~~Instrument screenshot~~ done: real capture in `_includes/instrument.html`,
-   shown on the Artefacts page.
-4. TENSE FLAG in `_data/news.yml`: "Starting" → "Started" once August 2026
-   arrives.
-5. Headshot possibly replaced with one that reads "researcher".
+3. Headshot possibly replaced with one that reads "researcher".
+4. Client-name check: `.claude/private-context.md` was missing on the machine
+   used 2026-10-11, so the built `_site/` has not been grepped for Eliq client
+   names since the two new case studies were added. Run it wherever that file
+   lives.
 
 ## Resolved (kept for history, do not re-open without instruction)
 
@@ -167,6 +172,12 @@ get mangled.
   same way after any CV content change; there is no build-time automation
   for it. 2026-07-17.
 - Instrument repo `graite-instrument` went public. 2026-07-17.
+- TENSE FLAG in `_data/news.yml`: "Starting" changed to "Started", comment
+  removed. 2026-10-11.
+- Energy Coach case study published: images uploaded, `energy-coach` exclusion
+  removed from `_config.yml`. 2026-10-11.
+- Instrument screenshot: real capture in `_includes/instrument.html`, shown on
+  the Artefacts page. 2026-10-11.
 
 ## The PhD vault (separate thing)
 

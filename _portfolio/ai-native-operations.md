@@ -72,7 +72,7 @@ They also raised a worry I had not planned for: running out of tokens before the
 
 Start with the information that already exists and is hard to find, not with the org chart. Put a person at every point where a mistake is costly, and enforce it with permissions. Let one team prove a workflow before asking anyone else to adopt it. And budget for the moment your team depends on the tool, because it comes sooner than you think.
 
-*This way of working started with how I organize my own work. I write about that on the [blog](/blog/).*
+*This way of working started with how I organize my own work. I write about that on the [My one-person org chart](/blog/2026/my-one-person-org-chart/).*
 
 ## References
 
