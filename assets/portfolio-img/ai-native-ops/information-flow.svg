@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 490" role="img" aria-labelledby="ifT ifD" font-family="system-ui,-apple-system,'Segoe UI',sans-serif">
+<title id="ifT">Changing what travels up the org chart</title>
+<desc id="ifD">Before: staff questions in sales, service delivery and engineering climb from team lead to manager to leadership, waiting at each step, with teams separated into silos. After: staff ask a shared memory of HubSpot, Confluence and Jira, searched by Claude, and leaders' Slack stand-ins answer from each leader's own knowledge. Only exceptions reach leadership, summarized and ranked by urgency. A person still approves anything high-stakes.</desc>
+<style>
+.bg{fill:#fafbf9}
+.card{fill:#ffffff;stroke:#e1e6e0;stroke-width:1}
+.accentfill{fill:#e7f1ea;stroke:#146840;stroke-width:1.5}
+.out{fill:#ffffff;stroke:#146840;stroke-width:1.5}
+.chip{fill:#f1f4f0;stroke:#e1e6e0;stroke-width:1}
+.warnfill{fill:#fbf0e2;stroke:#8a4b0f;stroke-width:1}
+.title{fill:#1b1d1b;font-family:Georgia,serif}
+.big{fill:#1b1d1b;font-family:Georgia,serif}
+.t{fill:#1b1d1b}
+.muted{fill:#545b54}
+.accent{fill:#146840;font-weight:600}
+.warn{fill:#8a4b0f;font-weight:600}
+.col{fill:#545b54;letter-spacing:1.5px}
+.arrow{stroke:#545b54;stroke-width:1.5;fill:none}
+.accentarrow{stroke:#146840;stroke-width:1.5;fill:none}
+.dash{stroke:#545b54;stroke-width:1.2;fill:none;stroke-dasharray:4 4}
+.silo{stroke:#c9d1c8;stroke-width:1;fill:none;stroke-dasharray:3 5}
+.ah{fill:#545b54}
+.aha{fill:#146840}
+.divider{stroke:#e1e6e0;stroke-width:1}
+@media (prefers-color-scheme:dark){
+.bg{fill:#171a18}
+.card{fill:#1f241f;stroke:#303830}
+.accentfill{fill:#1f2b22;stroke:#7fcf9f}
+.out{fill:#1f241f;stroke:#7fcf9f}
+.chip{fill:#171a18;stroke:#303830}
+.warnfill{fill:#2e2416;stroke:#f0b878}
+.title,.big,.t{fill:#e9ece8}
+.muted,.col{fill:#a6aea5}
+.accent{fill:#7fcf9f}
+.warn{fill:#f0b878}
+.arrow,.dash{stroke:#a6aea5}
+.accentarrow{stroke:#7fcf9f}
+.silo{stroke:#3d463d}
+.ah{fill:#a6aea5}
+.aha{fill:#7fcf9f}
+.divider{stroke:#303830}
+}
+</style>
+<defs><marker id="ah" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path class="ah" d="M0,0 L9,4.5 L0,9 z"/></marker><marker id="aha" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path class="aha" d="M0,0 L9,4.5 L0,9 z"/></marker></defs>
+<rect class="bg" x="0" y="0" width="900" height="490" rx="10"/>
+<text class="title" x="24" y="38" font-size="21">Changing what travels up the org chart</text><text class="muted" x="24" y="60" font-size="13">Same people, same leaders. Most questions no longer need to climb.</text><line class="divider" x1="450" y1="86" x2="450" y2="472"/><text class="col" x="24" y="98" font-size="11">BEFORE: QUESTIONS CLIMB AND WAIT</text><rect class="card" x="24" y="112" width="402" height="36" rx="6"/><text class="t" x="225.0" y="134.7" font-size="13" text-anchor="middle">Leadership, across three countries</text><rect class="card" x="24" y="200" width="130" height="34" rx="6"/><text class="t" x="89.0" y="221.3" font-size="12" text-anchor="middle">Manager</text><rect class="card" x="24" y="286" width="130" height="34" rx="6"/><text class="t" x="89.0" y="307.3" font-size="12" text-anchor="middle">Team lead</text><rect class="chip" x="24" y="372" width="130" height="34" rx="17"/><text class="t" x="89.0" y="393.3" font-size="12" text-anchor="middle">Sales</text><path class="arrow" d="M89 372 V324" marker-end="url(#ah)"/><path class="arrow" d="M89 286 V238" marker-end="url(#ah)"/><path class="arrow" d="M89 200 V152" marker-end="url(#ah)"/><text class="muted" x="97" y="352" font-size="11">wait</text><text class="muted" x="97" y="266" font-size="11">wait</text><text class="muted" x="97" y="180" font-size="11">wait</text><rect class="card" x="160" y="200" width="130" height="34" rx="6"/><text class="t" x="225.0" y="221.3" font-size="12" text-anchor="middle">Manager</text><rect class="card" x="160" y="286" width="130" height="34" rx="6"/><text class="t" x="225.0" y="307.3" font-size="12" text-anchor="middle">Team lead</text><rect class="chip" x="160" y="372" width="130" height="34" rx="17"/><text class="t" x="225.0" y="393.3" font-size="12" text-anchor="middle">Service delivery</text><path class="arrow" d="M225 372 V324" marker-end="url(#ah)"/><path class="arrow" d="M225 286 V238" marker-end="url(#ah)"/><path class="arrow" d="M225 200 V152" marker-end="url(#ah)"/><text class="muted" x="233" y="352" font-size="11">wait</text><text class="muted" x="233" y="266" font-size="11">wait</text><text class="muted" x="233" y="180" font-size="11">wait</text><rect class="card" x="296" y="200" width="130" height="34" rx="6"/><text class="t" x="361.0" y="221.3" font-size="12" text-anchor="middle">Manager</text><rect class="card" x="296" y="286" width="130" height="34" rx="6"/><text class="t" x="361.0" y="307.3" font-size="12" text-anchor="middle">Team lead</text><rect class="chip" x="296" y="372" width="130" height="34" rx="17"/><text class="t" x="361.0" y="393.3" font-size="12" text-anchor="middle">Engineering</text><path class="arrow" d="M361 372 V324" marker-end="url(#ah)"/><path class="arrow" d="M361 286 V238" marker-end="url(#ah)"/><path class="arrow" d="M361 200 V152" marker-end="url(#ah)"/><text class="muted" x="369" y="352" font-size="11">wait</text><text class="muted" x="369" y="266" font-size="11">wait</text><text class="muted" x="369" y="180" font-size="11">wait</text><line class="silo" x1="157" y1="196" x2="157" y2="410"/><line class="silo" x1="293" y1="196" x2="293" y2="410"/><text class="muted" x="225" y="440" font-size="12" text-anchor="middle">Information moves along reporting lines, so teams drift into silos.</text><text class="muted" x="225" y="458" font-size="12" text-anchor="middle">Last year's decision lives in someone's notes.</text><text class="col" x="474" y="98" font-size="11">AFTER: ANSWERED WHERE THEY ARISE</text><rect class="card" x="474" y="112" width="402" height="36" rx="6"/><text class="t" x="675.0" y="134.7" font-size="13" text-anchor="middle">Leadership</text><rect class="card" x="474" y="196" width="402" height="48" rx="6"/><text class="t" x="675.0" y="216.2" font-size="13" text-anchor="middle">Leaders' stand-ins in Slack</text><text class="muted" x="675.0" y="233.2" font-size="12" text-anchor="middle">answer from each leader's own knowledge</text><rect class="accentfill" x="474" y="286" width="402" height="58" rx="8"/><text class="accent" x="675.0" y="311.2" font-size="13" text-anchor="middle">Shared memory, searched by Claude</text><text class="muted" x="675.0" y="328.2" font-size="12" text-anchor="middle">HubSpot · Confluence · Jira</text><rect class="chip" x="474" y="384" width="126" height="34" rx="17"/><text class="t" x="537.0" y="405.3" font-size="12" text-anchor="middle">Sales</text><path class="accentarrow" d="M537 384 V350" marker-end="url(#aha)"/><rect class="chip" x="612" y="384" width="126" height="34" rx="17"/><text class="t" x="675.0" y="405.3" font-size="12" text-anchor="middle">Service delivery</text><path class="accentarrow" d="M675 384 V350" marker-end="url(#aha)"/><rect class="chip" x="750" y="384" width="126" height="34" rx="17"/><text class="t" x="813.0" y="405.3" font-size="12" text-anchor="middle">Engineering</text><path class="accentarrow" d="M813 384 V350" marker-end="url(#aha)"/><path class="arrow" d="M675 286 V250" marker-end="url(#ah)"/><path class="dash" d="M675 196 V154" marker-end="url(#ah)"/><text class="t" x="686" y="168" font-size="12">only what it cannot answer,</text><text class="muted" x="686" y="184" font-size="12">summarized and ranked by urgency</text><text class="muted" x="675" y="440" font-size="12" text-anchor="middle">Most questions are answered from the shared memory.</text><text class="muted" x="675" y="458" font-size="12" text-anchor="middle">A person still approves anything high-stakes.</text></svg>
