@@ -1,0 +1,102 @@
+<svg viewBox="0 0 980 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="gftitle gfdesc" font-family="Georgia, 'Times New Roman', serif">
+  <title id="gftitle">A launch readiness framework: AND, not average</title>
+  <desc id="gfdesc">Seven independent gates a launch must clear — compliance sign-off, data correctness, safety guardrails, delivery mechanism, accuracy bar, engagement signal, and client confirmation. All seven must pass; five passing and two open is not mostly ready, it is not ready.</desc>
+
+  <style>
+    .gate-box { fill: #ffffff; stroke: #9aa5b1; stroke-width: 1.5; }
+    .gate-box.open { stroke-dasharray: 5 4; }
+    .gate-label { font-size: 15px; fill: #22303c; }
+    .gate-sub { font-size: 12px; fill: #5b6673; font-style: italic; }
+    .arrow { stroke: #9aa5b1; stroke-width: 1.5; marker-end: url(#arrowhead); }
+    .heading { font-size: 20px; fill: #1a2027; font-weight: bold; }
+    .caption { font-size: 13.5px; fill: #3d4854; }
+    .mark-pass { fill: #2e7d5b; font-size: 18px; font-weight: bold; }
+    .mark-open { fill: #a35b1f; font-size: 18px; font-weight: bold; }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9aa5b1"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="34" class="heading">A launch readiness framework</text>
+  <text x="20" y="56" class="caption">Seven gates, evaluated independently. The rule is AND, not average.</text>
+
+  <!-- Row of 7 gates -->
+  <!-- box width ~118, gap ~16, start x=20, y=90, height=140 -->
+  <g>
+    <!-- Gate 1 -->
+    <rect x="20" y="90" width="118" height="140" rx="8" class="gate-box"/>
+    <text x="79" y="120" text-anchor="middle" class="mark-pass">✓</text>
+    <text x="79" y="150" text-anchor="middle" class="gate-label">Data</text>
+    <text x="79" y="168" text-anchor="middle" class="gate-label">correctness</text>
+    <text x="79" y="205" text-anchor="middle" class="gate-sub">verified against</text>
+    <text x="79" y="220" text-anchor="middle" class="gate-sub">source, not assumed</text>
+
+    <line x1="138" y1="160" x2="158" y2="160" class="arrow"/>
+
+    <!-- Gate 2 -->
+    <rect x="158" y="90" width="118" height="140" rx="8" class="gate-box"/>
+    <text x="217" y="120" text-anchor="middle" class="mark-pass">✓</text>
+    <text x="217" y="150" text-anchor="middle" class="gate-label">Safety</text>
+    <text x="217" y="168" text-anchor="middle" class="gate-label">guardrails</text>
+    <text x="217" y="205" text-anchor="middle" class="gate-sub">refuses out-of-scope</text>
+    <text x="217" y="220" text-anchor="middle" class="gate-sub">and unsafe asks</text>
+
+    <line x1="276" y1="160" x2="296" y2="160" class="arrow"/>
+
+    <!-- Gate 3 -->
+    <rect x="296" y="90" width="118" height="140" rx="8" class="gate-box open"/>
+    <text x="355" y="120" text-anchor="middle" class="mark-open">○</text>
+    <text x="355" y="150" text-anchor="middle" class="gate-label">Compliance</text>
+    <text x="355" y="168" text-anchor="middle" class="gate-label">sign-off</text>
+    <text x="355" y="205" text-anchor="middle" class="gate-sub">a named owner's</text>
+    <text x="355" y="220" text-anchor="middle" class="gate-sub">recorded decision</text>
+
+    <line x1="414" y1="160" x2="434" y2="160" class="arrow"/>
+
+    <!-- Gate 4 -->
+    <rect x="434" y="90" width="118" height="140" rx="8" class="gate-box open"/>
+    <text x="493" y="120" text-anchor="middle" class="mark-open">○</text>
+    <text x="493" y="150" text-anchor="middle" class="gate-label">Delivery</text>
+    <text x="493" y="168" text-anchor="middle" class="gate-label">mechanism</text>
+    <text x="493" y="205" text-anchor="middle" class="gate-sub">can reach exactly</text>
+    <text x="493" y="220" text-anchor="middle" class="gate-sub">the intended cohort</text>
+
+    <line x1="552" y1="160" x2="572" y2="160" class="arrow"/>
+
+    <!-- Gate 5 -->
+    <rect x="572" y="90" width="118" height="140" rx="8" class="gate-box"/>
+    <text x="631" y="120" text-anchor="middle" class="mark-pass">✓</text>
+    <text x="631" y="150" text-anchor="middle" class="gate-label">Accuracy</text>
+    <text x="631" y="168" text-anchor="middle" class="gate-label">bar</text>
+    <text x="631" y="205" text-anchor="middle" class="gate-sub">measured against a</text>
+    <text x="631" y="220" text-anchor="middle" class="gate-sub">graded reference set</text>
+
+    <line x1="690" y1="160" x2="710" y2="160" class="arrow"/>
+
+    <!-- Gate 6 -->
+    <rect x="710" y="90" width="118" height="140" rx="8" class="gate-box open"/>
+    <text x="769" y="120" text-anchor="middle" class="mark-open">○</text>
+    <text x="769" y="150" text-anchor="middle" class="gate-label">Engagement</text>
+    <text x="769" y="168" text-anchor="middle" class="gate-label">signal</text>
+    <text x="769" y="205" text-anchor="middle" class="gate-sub">enough real use to</text>
+    <text x="769" y="220" text-anchor="middle" class="gate-sub">read, not a guess</text>
+
+    <line x1="828" y1="160" x2="848" y2="160" class="arrow"/>
+
+    <!-- Gate 7 -->
+    <rect x="848" y="90" width="118" height="140" rx="8" class="gate-box open"/>
+    <text x="907" y="120" text-anchor="middle" class="mark-open">○</text>
+    <text x="907" y="150" text-anchor="middle" class="gate-label">Client</text>
+    <text x="907" y="168" text-anchor="middle" class="gate-label">confirmation</text>
+    <text x="907" y="205" text-anchor="middle" class="gate-sub">written, not an</text>
+    <text x="907" y="220" text-anchor="middle" class="gate-sub">impression in a call</text>
+  </g>
+
+  <line x1="20" y1="260" x2="966" y2="260" stroke="#c7ccd1" stroke-width="1"/>
+  <text x="20" y="288" class="caption">Five gates clear does not mean the launch is five-sevenths ready. Every gate has to clear.</text>
+  <text x="20" y="310" class="caption">A single open gate — of any of the seven — holds the whole launch, by design.</text>
+  <text x="20" y="338" class="gate-sub">Illustrative framework, not a live status board. Gate statuses shown here are for explanation only.</text>
+</svg>

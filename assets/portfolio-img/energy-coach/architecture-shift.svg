@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-labelledby="asT asD" font-family="system-ui,-apple-system,'Segoe UI',sans-serif">
+<title id="asT">Architecture shift for the GenAI energy coach</title>
+<desc id="asD">Left: the shipped design, where a single model call does seven jobs on every turn (detect intent, detect language, read tone, choose data, apply safety rules, write the reply, pick a widget), guided by one long instruction file. Right: the direction I set, where an out-of-scope question gets a fixed hand-off with no model call, and an in-scope question goes to a narrower model call that picks one typed tool (consumption, cost, anomaly, one contract per job) and explains what the tool returned. The same analysis logic is re-exposed as tools.</desc>
+<style>
+.bg{fill:#fafbf9}
+.card{fill:#ffffff;stroke:#e1e6e0;stroke-width:1}
+.accentfill{fill:#e7f1ea;stroke:#146840;stroke-width:1.5}
+.out{fill:#ffffff;stroke:#146840;stroke-width:1.5}
+.chip{fill:#f1f4f0;stroke:#e1e6e0;stroke-width:1}
+.title{fill:#1b1d1b;font-family:Georgia,serif}
+.t{fill:#1b1d1b}
+.muted{fill:#545b54}
+.accent{fill:#146840;font-weight:600}
+.col{fill:#545b54;letter-spacing:1.5px}
+.arrow{stroke:#545b54;stroke-width:1.5;fill:none}
+.dash{stroke:#545b54;stroke-width:1.2;fill:none;stroke-dasharray:4 4}
+.ah{fill:#545b54}
+.divider{stroke:#e1e6e0;stroke-width:1}
+@media (prefers-color-scheme:dark){
+.bg{fill:#171a18}
+.card{fill:#1f241f;stroke:#303830}
+.accentfill{fill:#1f2b22;stroke:#7fcf9f}
+.out{fill:#1f241f;stroke:#7fcf9f}
+.chip{fill:#171a18;stroke:#303830}
+.title,.t{fill:#e9ece8}
+.muted,.col{fill:#a6aea5}
+.accent{fill:#7fcf9f}
+.arrow,.dash{stroke:#a6aea5}
+.ah{fill:#a6aea5}
+.divider{stroke:#303830}
+}
+</style>
+<defs><marker id="ah" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path class="ah" d="M0,0 L9,4.5 L0,9 z"/></marker></defs>
+<rect class="bg" x="0" y="0" width="900" height="500" rx="10"/>
+<text class="title" x="24" y="38" font-size="21">From one model doing everything to typed tools</text>
+<text class="muted" x="24" y="60" font-size="13">The same analysis logic, re-exposed so the model only has to route and explain.</text>
+
+<line class="divider" x1="450" y1="86" x2="450" y2="476"/>
+
+<!-- LEFT: shipped -->
+<text class="col" x="24" y="98" font-size="11">SHIPPED: ONE CALL, SEVEN JOBS</text>
+<rect class="card" x="24" y="112" width="402" height="36" rx="6"/>
+<text class="t" x="225" y="135" font-size="13" text-anchor="middle">A customer asks a question</text>
+<path class="arrow" d="M225 148 V168" marker-end="url(#ah)"/>
+
+<rect class="accentfill" x="24" y="172" width="402" height="196" rx="8"/>
+<text class="accent" x="40" y="196" font-size="14">One model call, every turn</text>
+<rect class="chip" x="40" y="210" width="180" height="28" rx="14"/><text class="t" x="130" y="229" font-size="12" text-anchor="middle">Detect intent</text>
+<rect class="chip" x="230" y="210" width="180" height="28" rx="14"/><text class="t" x="320" y="229" font-size="12" text-anchor="middle">Detect language</text>
+<rect class="chip" x="40" y="246" width="180" height="28" rx="14"/><text class="t" x="130" y="265" font-size="12" text-anchor="middle">Read tone</text>
+<rect class="chip" x="230" y="246" width="180" height="28" rx="14"/><text class="t" x="320" y="265" font-size="12" text-anchor="middle">Choose which data</text>
+<rect class="chip" x="40" y="282" width="180" height="28" rx="14"/><text class="t" x="130" y="301" font-size="12" text-anchor="middle">Apply safety rules</text>
+<rect class="chip" x="230" y="282" width="180" height="28" rx="14"/><text class="t" x="320" y="301" font-size="12" text-anchor="middle">Write the reply</text>
+<rect class="chip" x="135" y="318" width="180" height="28" rx="14"/><text class="t" x="225" y="337" font-size="12" text-anchor="middle">Pick a widget</text>
+
+<path class="arrow" d="M225 368 V388" marker-end="url(#ah)"/>
+<rect class="card" x="24" y="392" width="402" height="36" rx="6"/>
+<text class="t" x="225" y="415" font-size="13" text-anchor="middle">Reply</text>
+<text class="muted" x="225" y="456" font-size="12" text-anchor="middle">Guided by one long instruction file carrying every rule for every job.</text>
+<text class="muted" x="225" y="474" font-size="12" text-anchor="middle">Failures here are routing problems, not prompt problems.</text>
+
+<!-- RIGHT: direction -->
+<text class="col" x="474" y="98" font-size="11">THE DIRECTION I SET: ROUTE, THEN EXPLAIN</text>
+<rect class="card" x="474" y="112" width="402" height="36" rx="6"/>
+<text class="t" x="675" y="135" font-size="13" text-anchor="middle">A customer asks a question</text>
+<path class="arrow" d="M675 148 V168" marker-end="url(#ah)"/>
+
+<rect class="card" x="575" y="172" width="200" height="36" rx="18"/>
+<text class="t" x="675" y="195" font-size="13" text-anchor="middle">In scope?</text>
+
+<path class="arrow" d="M575 190 H520 V232" marker-end="url(#ah)"/>
+<text class="muted" x="548" y="184" font-size="11" text-anchor="middle">no</text>
+<rect class="card" x="474" y="236" width="120" height="58" rx="6"/>
+<text class="t" x="534" y="259" font-size="12" text-anchor="middle">Fixed hand-off</text>
+<text class="muted" x="534" y="277" font-size="11" text-anchor="middle">no model call</text>
+
+<path class="arrow" d="M675 208 V232" marker-end="url(#ah)"/>
+<text class="muted" x="688" y="224" font-size="11">yes</text>
+<rect class="accentfill" x="612" y="236" width="264" height="58" rx="8"/>
+<text class="accent" x="744" y="260" font-size="13" text-anchor="middle">Narrower model call</text>
+<text class="t" x="744" y="280" font-size="12" text-anchor="middle">picks a tool, explains its answer</text>
+
+<path class="arrow" d="M744 294 V314" marker-end="url(#ah)"/>
+<rect class="chip" x="612" y="318" width="124" height="28" rx="14"/><text class="t" x="674" y="337" font-size="12" text-anchor="middle">Consumption</text>
+<rect class="chip" x="752" y="318" width="124" height="28" rx="14"/><text class="t" x="814" y="337" font-size="12" text-anchor="middle">Cost</text>
+<rect class="chip" x="612" y="352" width="124" height="28" rx="14"/><text class="t" x="674" y="371" font-size="12" text-anchor="middle">Anomaly</text>
+<rect class="chip" x="752" y="352" width="124" height="28" rx="14"/><text class="t" x="814" y="371" font-size="12" text-anchor="middle">One per job</text>
+
+<path class="arrow" d="M744 380 V388" marker-end="url(#ah)"/>
+<rect class="out" x="474" y="392" width="402" height="36" rx="6"/>
+<text class="t" x="675" y="415" font-size="13" text-anchor="middle">Reply, grounded in the tool's own answer</text>
+<text class="muted" x="675" y="456" font-size="12" text-anchor="middle">Typed tools over the Model Context Protocol (MCP).</text>
+<text class="muted" x="675" y="474" font-size="12" text-anchor="middle">Each tool has one contract, so each failure has one place to look.</text>
+</svg>
