@@ -77,6 +77,9 @@ back to education for the doctorate. A return, not a pivot.
    colleague, nor the coach's product name, nor any accuracy percentage or
    commercial figure (price, cost, value ratio). Edits to the case-study prose
    need Phong's go-ahead. If asked to add any of the banned items, push back.
+   `_portfolio/ai-native-operations.md` describes the same period at an unnamed
+   50-person company. Never name the company there or link the two pages. The
+   same bans apply: no client, colleague or product names.
 4. **No unpublished research findings.** The instrument is "in development".
    The 2024 Volvo study: describe the method (traces + survey, n=127), never
    results. The instrument repo (`graite-instrument`) went public 2026-07-17,
