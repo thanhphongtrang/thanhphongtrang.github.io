@@ -4,9 +4,11 @@ excerpt: "Designed, built and measured an AI operating layer for a ten-year-old 
 collection: portfolio
 ---
 
+- **Focus:** AI productivity and digital workplace adoption.
 - **The company:** a 50-person energy-software startup, ten years old, with teams in three countries.
-- **My role:** I designed it, built it with our engineering managers and two super users, led the rollout, and designed how we would know it worked.
+- **My role:** I set the direction and priorities, built it with our engineering managers and two super users, led adoption across teams, and designed how we measured the value.
 - **The result:** 20% fewer meeting minutes, a sales assistant and a Ruby developer we did not need to hire, and an AI bill of 10,000 SEK a month.
+- **Governance:** a person approves every high-stakes change, and permission limits keep work such as pricing outside the AI.
 - **The idea in one line:** we did not remove the org chart. We changed what has to travel up it.
 
 ## Why org charts slow companies down
@@ -72,7 +74,7 @@ They also raised a worry I had not planned for: running out of tokens before the
 
 Start with the information that already exists and is hard to find, not with the org chart. Put a person at every point where a mistake is costly, and enforce it with permissions. Let one team prove a workflow before asking anyone else to adopt it. And budget for the moment your team depends on the tool, because it comes sooner than you think.
 
-*This way of working started with how I organize my own work. I write about that on the [My one-person org chart](/blog/2026/my-one-person-org-chart/).*
+*This way of working started with how I organize my own work. I write about that in [My one-person org chart](/blog/2026/my-one-person-org-chart/).*
 
 ## References
 
